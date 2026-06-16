@@ -24,14 +24,14 @@ opencode:
 
 ```json
 [
-  {"pr": 104,  "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 1141, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 1229, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 1513, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 155,  "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 475,  "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 907,  "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 974,  "test": "unknown",  "type": "logic",         "desc": "unknown"}
+  {"pr": 104, "test": "unknown", "type": "spec", "desc": "unknown"},
+  {"pr": 1141, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 1229, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 1513, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 155, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 475, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 907, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 974, "test": "need_check", "type": "need_classification", "desc": "unknown"}
 ]
 ```
 
@@ -39,7 +39,8 @@ opencode:
 
 ```yaml
 bug_type_breakdown:
-  logic: 8
+  need_classification: 7
+  spec: 1
 ```
 
 ## 对比官方
@@ -62,4 +63,4 @@ comparison_with_official:
 
 ## 结论
 
-DeepSeek V4 Flash (OpenCode) 在 ibex 上 27/35 (77%)，高于官方 V3.2 (Codex) 的 60%。OpenCode agent 在 Verilog 项目上表现优于 Codex，模型升级也带来了 17% 的提升。0 基础设施错误。
+DeepSeek V4 Flash (OpenCode) 在 ibex 上 27/35 (77%)。0 基础设施错误。

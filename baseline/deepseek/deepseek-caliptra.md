@@ -1,4 +1,4 @@
-# Caliptra Analysis (DeepSeek V4 Flash)
+# Caliptra-Rtl Analysis (DeepSeek V4 Flash)
 
 ## 总体结果
 
@@ -24,9 +24,9 @@ opencode:
 
 ```json
 [
-  {"pr": 1033, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 70,   "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 725,  "test": "unknown",  "type": "logic",         "desc": "unknown"}
+  {"pr": 1033, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 70, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 725, "test": "need_check", "type": "need_classification", "desc": "unknown"}
 ]
 ```
 
@@ -34,7 +34,7 @@ opencode:
 
 ```yaml
 bug_type_breakdown:
-  logic: 3
+  need_classification: 3
 ```
 
 ## 对比官方
@@ -49,7 +49,7 @@ comparison_with_official:
     prs: [70, 725]
   opencode_only:
     count: 2
-    prs: [244, 760]
+    prs: [134, 195]
   neither:
     count: 1
     prs: [1033]
@@ -57,4 +57,4 @@ comparison_with_official:
 
 ## 结论
 
-DeepSeek V4 Flash (OpenCode) 在 caliptra 上 13/16 (81%)，与官方 V3.2 (Codex) 持平。0 基础设施错误。
+DeepSeek V4 Flash (OpenCode) 在 caliptra-rtl 上 13/16 (81%)。0 基础设施错误。

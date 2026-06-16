@@ -1,4 +1,4 @@
-# CVA6 Analysis (DeepSeek V4 Flash)
+# Cva6 Analysis (DeepSeek V4 Flash)
 
 ## 总体结果
 
@@ -7,8 +7,8 @@ official:
   agent: Codex CLI
   model: DeepSeek V3.2
   resolved: 24
-  total: 34
-  pct: 71
+  total: 35
+  pct: 69
   infra_errors: 0
 
 opencode:
@@ -24,12 +24,12 @@ opencode:
 
 ```json
 [
-  {"pr": 2279, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 2420, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 2802, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 2844, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 2989, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 3042, "test": "unknown",  "type": "logic",         "desc": "unknown"}
+  {"pr": 2279, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 2420, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 2802, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 2844, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 2989, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 3042, "test": "unknown", "type": "config_integ", "desc": "unknown"}
 ]
 ```
 
@@ -37,7 +37,8 @@ opencode:
 
 ```yaml
 bug_type_breakdown:
-  logic: 6
+  config_integ: 1
+  need_classification: 5
 ```
 
 ## 对比官方
@@ -52,7 +53,7 @@ comparison_with_official:
     prs: [2420, 2989]
   opencode_only:
     count: 6
-    prs: [2053, 2123, 2603, 2658, 2833, 2938]
+    prs: [2248, 2476, 2944, 3107, 3168, 3231]
   neither:
     count: 4
     prs: [2279, 2802, 2844, 3042]
@@ -60,4 +61,4 @@ comparison_with_official:
 
 ## 结论
 
-DeepSeek V4 Flash (OpenCode) 在 cva6 上 28/34 (82%)，高于官方 V3.2 (Codex) 的 71%。表现优于官方 V3.2，0 基础设施错误。
+DeepSeek V4 Flash (OpenCode) 在 cva6 上 28/34 (82%)。0 基础设施错误。

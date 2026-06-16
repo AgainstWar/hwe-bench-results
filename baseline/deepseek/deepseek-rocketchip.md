@@ -1,4 +1,4 @@
-# RocketChip Analysis (DeepSeek V4 Flash)
+# Rocket-Chip Analysis (DeepSeek V4 Flash)
 
 ## 总体结果
 
@@ -24,30 +24,30 @@ opencode:
 
 ```json
 [
-  {"pr": 1093, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 1176, "test": "unknown",  "type": "interface",     "desc": "unknown"},
-  {"pr": 1493, "test": "unknown",  "type": "config_integ",  "desc": "unknown"},
-  {"pr": 1656, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 1761, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 177,  "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 1878, "test": "unknown",  "type": "spec",          "desc": "unknown"},
-  {"pr": 2018, "test": "unknown",  "type": "interface",     "desc": "unknown"},
-  {"pr": 2036, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 2167, "test": "unknown",  "type": "timing_sync",   "desc": "unknown"},
-  {"pr": 2213, "test": "unknown",  "type": "interface",     "desc": "unknown"},
-  {"pr": 2368, "test": "unknown",  "type": "config_integ",  "desc": "unknown"},
-  {"pr": 2543, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 2621, "test": "unknown",  "type": "config_integ",  "desc": "unknown"},
-  {"pr": 3004, "test": "unknown",  "type": "timing_sync",   "desc": "unknown"},
-  {"pr": 3256, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 3526, "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 3600, "test": "unknown",  "type": "spec",          "desc": "unknown"},
-  {"pr": 3624, "test": "unknown",  "type": "spec",          "desc": "unknown"},
-  {"pr": 3651, "test": "unknown",  "type": "spec",          "desc": "unknown"},
-  {"pr": 387,  "test": "unknown",  "type": "timing_sync",   "desc": "unknown"},
-  {"pr": 404,  "test": "unknown",  "type": "logic",         "desc": "unknown"},
-  {"pr": 485,  "test": "unknown",  "type": "interface",     "desc": "unknown"},
-  {"pr": 745,  "test": "unknown",  "type": "config_integ",  "desc": "unknown"}
+  {"pr": 1093, "test": "bus_error_unit_rv32_elaboration", "type": "sw_hw_interact", "desc": "unknown"},
+  {"pr": 1176, "test": "tl_mmio_port_internal_wiring", "type": "interface", "desc": "unknown"},
+  {"pr": 1493, "test": "async_pbus_bootrom_access", "type": "config_integ", "desc": "unknown"},
+  {"pr": 1656, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 1761, "test": "csr-tvec-uninitialized-alignment", "type": "logic", "desc": "unknown"},
+  {"pr": 177, "test": "lrsc_mshr_secondary_dirty", "type": "logic", "desc": "unknown"},
+  {"pr": 1878, "test": "misa_x_bit", "type": "spec", "desc": "unknown"},
+  {"pr": 2018, "test": "unknown", "type": "interface", "desc": "unknown"},
+  {"pr": 2036, "test": "mret_not_misdetected_as_dret", "type": "logic", "desc": "unknown"},
+  {"pr": 2167, "test": "jtag_async_reset", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 2213, "test": "debug_apb_gap_behavior", "type": "interface", "desc": "unknown"},
+  {"pr": 2368, "test": "asyncvalidsync-mixed-reset-elaboration", "type": "config_integ", "desc": "unknown"},
+  {"pr": 2543, "test": "heterogeneous_hartid_elaboration", "type": "logic", "desc": "unknown"},
+  {"pr": 2621, "test": "unknown", "type": "config_integ", "desc": "unknown"},
+  {"pr": 3004, "test": "frontend_progress_quiesce", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 3256, "test": "aes64ks1i_decode", "type": "logic", "desc": "unknown"},
+  {"pr": 3526, "test": "unknown", "type": "logic", "desc": "unknown"},
+  {"pr": 3600, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 3624, "test": "hypervisor_tinst_warl", "type": "spec", "desc": "unknown"},
+  {"pr": 3651, "test": "unknown", "type": "spec", "desc": "unknown"},
+  {"pr": 387, "test": "async_queue_half_reset", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 404, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 485, "test": "diplomatic_ahb_elaboration", "type": "interface", "desc": "unknown"},
+  {"pr": 745, "test": "rocc_example_elaboration", "type": "config_integ", "desc": "unknown"}
 ]
 ```
 
@@ -55,11 +55,13 @@ opencode:
 
 ```yaml
 bug_type_breakdown:
-  logic: 9
-  interface: 4
-  timing_sync: 3
-  spec: 4
   config_integ: 4
+  interface: 4
+  logic: 6
+  need_classification: 3
+  spec: 3
+  sw_hw_interact: 1
+  timing_sync: 3
 ```
 
 ## 对比官方
@@ -68,18 +70,18 @@ bug_type_breakdown:
 comparison_with_official:
   both_resolved:
     count: 7
-    prs: [542, 576, 1330, 2984, 2988, 2994, 3065]
+    prs: [1330, 2984, 2988, 2994, 3065, 542, 576]
   official_only:
     count: 9
-    prs: [177, 404, 1093, 1176, 1878, 2018, 2036, 2213, 3256]
+    prs: [1093, 1176, 177, 1878, 2018, 2036, 2213, 3256, 404]
   opencode_only:
     count: 1
-    prs: [1656]
+    prs: [1069]
   neither:
     count: 15
-    prs: [387, 485, 745, 1493, 1761, 2167, 2368, 2543, 2621, 3004, 3526, 3600, 3624, 3651]
+    prs: [1493, 1656, 1761, 2167, 2368, 2543, 2621, 3004, 3526, 3600, 3624, 3651, 387, 485, 745]
 ```
 
 ## 结论
 
-DeepSeek V4 Flash (OpenCode) 在 rocketchip 上 8/32 (25%)，低于官方 V3.2 (Codex) 的 50%。Chisel 项目构建体系过重，agent run 期间无法获取仿真反馈，修复以静态分析为主。0 基础设施错误。
+DeepSeek V4 Flash (OpenCode) 在 rocket-chip 上 8/32 (25%)。0 基础设施错误。
