@@ -42,27 +42,121 @@ opencode:
 
 ## Unresolved Cases
 
-```json
-[
-  {"pr": 177, "test": "lrsc_mshr_secondary_dirty", "type": "logic", "desc": "unknown"},
-  {"pr": 387, "test": "async_queue_half_reset", "type": "timing_sync", "desc": "unknown"},
-  {"pr": 485, "test": "diplomatic_ahb_elaboration", "type": "interface", "desc": "unknown"},
-  {"pr": 745, "test": "rocc_example_elaboration", "type": "config_integ", "desc": "unknown"},
-  {"pr": 1493, "test": "async_pbus_bootrom_access", "type": "config_integ", "desc": "unknown"},
-  {"pr": 1656, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 1761, "test": "csr-tvec-uninitialized-alignment", "type": "logic", "desc": "unknown"},
-  {"pr": 2018, "test": "unknown", "type": "interface", "desc": "unknown"},
-  {"pr": 2036, "test": "mret_not_misdetected_as_dret", "type": "logic", "desc": "unknown"},
-  {"pr": 2167, "test": "jtag_async_reset", "type": "timing_sync", "desc": "unknown"},
-  {"pr": 2368, "test": "asyncvalidsync-mixed-reset-elaboration", "type": "config_integ", "desc": "unknown"},
-  {"pr": 2543, "test": "heterogeneous_hartid_elaboration", "type": "logic", "desc": "unknown"},
-  {"pr": 2621, "test": "unknown", "type": "config_integ", "desc": "unknown"},
-  {"pr": 3004, "test": "frontend_progress_quiesce", "type": "timing_sync", "desc": "unknown"},
-  {"pr": 3065, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 3256, "test": "aes64ks1i_decode", "type": "logic", "desc": "unknown"},
-  {"pr": 3526, "test": "unknown", "type": "logic", "desc": "unknown"},
-  {"pr": 3624, "test": "hypervisor_tinst_warl", "type": "spec", "desc": "unknown"},
-  {"pr": 3651, "test": "unknown", "type": "spec", "desc": "unknown"}
+```json[
+  {
+    "pr": 177,
+    "test": "lrsc_mshr_secondary_dirty",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 387,
+    "test": "async_queue_half_reset",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 485,
+    "test": "diplomatic_ahb_elaboration",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 745,
+    "test": "rocc_example_elaboration",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1493,
+    "test": "async_pbus_bootrom_access",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1656,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1761,
+    "test": "csr-tvec-uninitialized-alignment",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2018,
+    "test": "unknown",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2036,
+    "test": "mret_not_misdetected_as_dret",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2167,
+    "test": "jtag_async_reset",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2368,
+    "test": "asyncvalidsync-mixed-reset-elaboration",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2543,
+    "test": "heterogeneous_hartid_elaboration",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2621,
+    "test": "unknown",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3004,
+    "test": "frontend_progress_quiesce",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3065,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3256,
+    "test": "aes64ks1i_decode",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3526,
+    "test": "unknown",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3624,
+    "test": "hypervisor_tinst_warl",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3651,
+    "test": "unknown",
+    "type": "spec",
+    "desc": "unknown"
+  }
 ]
 ```
 

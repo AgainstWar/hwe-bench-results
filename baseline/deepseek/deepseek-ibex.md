@@ -38,7 +38,7 @@ opencode:
   {
     "pr": 1229,
     "test": "need_check",
-    "type": "need_classification",
+    "type": "interface",
     "desc": "unknown"
   },
   {

@@ -22,32 +22,151 @@ opencode:
 
 ## 未解决 Case
 
-```json
-[
-  {"pr": 1093, "test": "bus_error_unit_rv32_elaboration", "type": "sw_hw_interact", "desc": "unknown"},
-  {"pr": 1176, "test": "tl_mmio_port_internal_wiring", "type": "interface", "desc": "unknown"},
-  {"pr": 1493, "test": "async_pbus_bootrom_access", "type": "config_integ", "desc": "unknown"},
-  {"pr": 1656, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 1761, "test": "csr-tvec-uninitialized-alignment", "type": "logic", "desc": "unknown"},
-  {"pr": 177, "test": "lrsc_mshr_secondary_dirty", "type": "logic", "desc": "unknown"},
-  {"pr": 1878, "test": "misa_x_bit", "type": "spec", "desc": "unknown"},
-  {"pr": 2018, "test": "unknown", "type": "interface", "desc": "unknown"},
-  {"pr": 2036, "test": "mret_not_misdetected_as_dret", "type": "logic", "desc": "unknown"},
-  {"pr": 2167, "test": "jtag_async_reset", "type": "timing_sync", "desc": "unknown"},
-  {"pr": 2213, "test": "debug_apb_gap_behavior", "type": "interface", "desc": "unknown"},
-  {"pr": 2368, "test": "asyncvalidsync-mixed-reset-elaboration", "type": "config_integ", "desc": "unknown"},
-  {"pr": 2543, "test": "heterogeneous_hartid_elaboration", "type": "logic", "desc": "unknown"},
-  {"pr": 2621, "test": "unknown", "type": "config_integ", "desc": "unknown"},
-  {"pr": 3004, "test": "frontend_progress_quiesce", "type": "timing_sync", "desc": "unknown"},
-  {"pr": 3256, "test": "aes64ks1i_decode", "type": "logic", "desc": "unknown"},
-  {"pr": 3526, "test": "unknown", "type": "logic", "desc": "unknown"},
-  {"pr": 3600, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 3624, "test": "hypervisor_tinst_warl", "type": "spec", "desc": "unknown"},
-  {"pr": 3651, "test": "unknown", "type": "spec", "desc": "unknown"},
-  {"pr": 387, "test": "async_queue_half_reset", "type": "timing_sync", "desc": "unknown"},
-  {"pr": 404, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 485, "test": "diplomatic_ahb_elaboration", "type": "interface", "desc": "unknown"},
-  {"pr": 745, "test": "rocc_example_elaboration", "type": "config_integ", "desc": "unknown"}
+```json[
+  {
+    "pr": 1093,
+    "test": "bus_error_unit_rv32_elaboration",
+    "type": "sw_hw_interact",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1176,
+    "test": "tl_mmio_port_internal_wiring",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1493,
+    "test": "async_pbus_bootrom_access",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1656,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1761,
+    "test": "csr-tvec-uninitialized-alignment",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 177,
+    "test": "lrsc_mshr_secondary_dirty",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1878,
+    "test": "misa_x_bit",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2018,
+    "test": "unknown",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2036,
+    "test": "mret_not_misdetected_as_dret",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2167,
+    "test": "jtag_async_reset",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2213,
+    "test": "debug_apb_gap_behavior",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2368,
+    "test": "asyncvalidsync-mixed-reset-elaboration",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2543,
+    "test": "heterogeneous_hartid_elaboration",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2621,
+    "test": "unknown",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3004,
+    "test": "frontend_progress_quiesce",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3256,
+    "test": "aes64ks1i_decode",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3526,
+    "test": "unknown",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3600,
+    "test": "need_check",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3624,
+    "test": "hypervisor_tinst_warl",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3651,
+    "test": "unknown",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 387,
+    "test": "async_queue_half_reset",
+    "type": "timing_sync",
+    "desc": "unknown"
+  },
+  {
+    "pr": 404,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 485,
+    "test": "diplomatic_ahb_elaboration",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 745,
+    "test": "rocc_example_elaboration",
+    "type": "config_integ",
+    "desc": "unknown"
+  }
 ]
 ```
 
@@ -67,19 +186,13 @@ bug_type_breakdown:
 ## 对比官方
 
 ```yaml
-comparison_with_official:
-  both_resolved:
-    count: 7
-    prs: [1330, 2984, 2988, 2994, 3065, 542, 576]
-  official_only:
-    count: 9
-    prs: [1093, 1176, 177, 1878, 2018, 2036, 2213, 3256, 404]
-  opencode_only:
-    count: 1
-    prs: [1069]
-  neither:
-    count: 15
-    prs: [1493, 1656, 1761, 2167, 2368, 2543, 2621, 3004, 3526, 3600, 3624, 3651, 387, 485, 745]
+bug_type_breakdown:
+  config_integ: 4
+  interface: 5
+  logic: 7
+  spec: 3
+  sw_hw_interact: 1
+  timing_sync: 4
 ```
 
 ## 结论

@@ -43,19 +43,73 @@ opencode:
 
 ## Unresolved Cases
 
-```json
-[
-  {"pr": 104, "test": "unknown", "type": "spec", "desc": "unknown"},
-  {"pr": 155, "test": "need_check", "type": "logic", "desc": "unknown"},
-  {"pr": 293, "test": "need_check", "type": "interface", "desc": "unknown"},
-  {"pr": 475, "test": "need_check", "type": "spec", "desc": "unknown"},
-  {"pr": 907, "test": "need_check", "type": "interface", "desc": "unknown"},
-  {"pr": 1135, "test": "need_check", "type": "config_integ", "desc": "unknown"},
-  {"pr": 1229, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 1469, "test": "need_check", "type": "spec", "desc": "unknown"},
-  {"pr": 1513, "test": "need_check", "type": "logic", "desc": "unknown"},
-  {"pr": 1816, "test": "need_check", "type": "spec", "desc": "unknown"},
-  {"pr": 1865, "test": "unknown", "type": "interface", "desc": "unknown"}
+```json[
+  {
+    "pr": 104,
+    "test": "unknown",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 155,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 293,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 475,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 907,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1135,
+    "test": "need_check",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1229,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1469,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1513,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1816,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1865,
+    "test": "unknown",
+    "type": "interface",
+    "desc": "unknown"
+  }
 ]
 ```
 
