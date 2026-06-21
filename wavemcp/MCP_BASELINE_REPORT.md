@@ -189,6 +189,23 @@
 | xiangshan | 40/54 74% | 25/54 46% | 12/53 23% | **18/53 34%** | +6 |
 | **Total** | **145/172 (84%)** | **99/172 (58%)** | **88/172 (51%)** | **97/172 (56%)** | **+9** |
 
+## Bug Type Impact Summary
+
+MCP 在不同 Bug 类型上的净影响：
+
+| Bug Type | +MCP Solved | -MCP Lost | Net |
+|----------|:-:|:-:|:-:|
+| interface | +5 | -2 | +3 |
+| spec | +3 | -2 | +1 |
+| logic | +3 | -5 | -2 |
+| timing_sync | +3 | -1 | +2 |
+| config_integ | +1 | -1 | 0 |
+| sw_hw_interact | +1 | 0 | +1 |
+| sw_hw_config | +1 | -1 | 0 |
+| **Total** | **+17** | **-12** | **+5** |
+
+Note: Some PRs have unknown classification and are not included in per-type totals. Total MCP impact from all sources is +9.
+
 ## 核心发现
 
 1. **MCP 首次实现全面净正收益（+9）**，简单提示词策略优于强制使用
