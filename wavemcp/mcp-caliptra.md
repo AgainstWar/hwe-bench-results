@@ -25,26 +25,30 @@ opencode:
   None
 
 ### MCP Lost
-  ❌ pr-633: unknown (unknown)
+  ❌ pr-633: logic
 
 ## Bug Type Impact (MCP Changes)
 
 | Bug Type | +MCP Solved | -MCP Lost | Net |
 |----------|:-:|:-:|:-:|
-| unknown | +0 | -1 | -1 |
+| logic | +0 | -1 | -1 |
 
 ## Unresolved Cases
 
 ```json
 [
-  {"pr": 70, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 633, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 725, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1033, "test": "need_check", "type": "need_classification", "desc": "unknown"}
+  {"pr": 70, "test": "need_check", "type": "logic", "desc": "unknown"},
+  {"pr": 633, "test": "need_check", "type": "logic", "desc": "unknown"},
+  {"pr": 725, "test": "need_check", "type": "logic", "desc": "unknown"},
+  {"pr": 1033, "test": "need_check", "type": "sw_hw_config", "desc": "unknown"}
 ]
 ```
 
 ## Bug Type Breakdown (Unresolved)
 
 ```yaml
-  need_classification: 4
+  logic: 3
+  sw_hw_config: 1
 ```
 
 ## Comparison with Official GPT-5.4

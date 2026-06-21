@@ -22,14 +22,43 @@ opencode:
 
 ## 未解决 Case
 
-```json
-[
-  {"pr": 2279, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 2420, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 2802, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 2844, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 2989, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 3042, "test": "unknown", "type": "config_integ", "desc": "unknown"}
+```json[
+  {
+    "pr": 2279,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2420,
+    "test": "need_check",
+    "type": "config_integ",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2802,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2844,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 2989,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 3042,
+    "test": "unknown",
+    "type": "config_integ",
+    "desc": "unknown"
+  }
 ]
 ```
 

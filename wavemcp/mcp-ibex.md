@@ -22,37 +22,51 @@ opencode:
 | Infra Errors | 0 | 0 |
 
 ### MCP Newly Solved
-  ✅ pr-974: unknown (unknown)
-  ✅ pr-1141: unknown (unknown)
+  ✅ pr-974: timing_sync
+  ✅ pr-1141: interface
 
 ### MCP Lost
-  ❌ pr-293: unknown (unknown)
-  ❌ pr-1135: unknown (unknown)
-  ❌ pr-1469: unknown (unknown)
-  ❌ pr-1816: unknown (unknown)
-  ❌ pr-1865: unknown (interface)
+  ❌ pr-293: interface
+  ❌ pr-1135: config_integ
+  ❌ pr-1469: spec
+  ❌ pr-1816: spec
+  ❌ pr-1865: interface
 
 ## Bug Type Impact (MCP Changes)
 
 | Bug Type | +MCP Solved | -MCP Lost | Net |
 |----------|:-:|:-:|:-:|
-| interface | +0 | -1 | -1 |
-| unknown | +2 | -4 | -2 |
+| config_integ | +0 | -1 | -1 |
+| interface | +1 | -2 | -1 |
+| spec | +0 | -2 | -2 |
+| timing_sync | +1 | -0 | +1 |
 
 ## Unresolved Cases
 
 ```json
 [
-  {"pr": 104, "test": "unknown", "type": "spec", "desc": "unknown"},  {"pr": 155, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 293, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 475, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 907, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1135, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1229, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1469, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1513, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1816, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1865, "test": "unknown", "type": "interface", "desc": "unknown"}
+  {"pr": 104, "test": "unknown", "type": "spec", "desc": "unknown"},
+  {"pr": 155, "test": "need_check", "type": "logic", "desc": "unknown"},
+  {"pr": 293, "test": "need_check", "type": "interface", "desc": "unknown"},
+  {"pr": 475, "test": "need_check", "type": "spec", "desc": "unknown"},
+  {"pr": 907, "test": "need_check", "type": "interface", "desc": "unknown"},
+  {"pr": 1135, "test": "need_check", "type": "config_integ", "desc": "unknown"},
+  {"pr": 1229, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 1469, "test": "need_check", "type": "spec", "desc": "unknown"},
+  {"pr": 1513, "test": "need_check", "type": "logic", "desc": "unknown"},
+  {"pr": 1816, "test": "need_check", "type": "spec", "desc": "unknown"},
+  {"pr": 1865, "test": "unknown", "type": "interface", "desc": "unknown"}
 ]
 ```
 
 ## Bug Type Breakdown (Unresolved)
 
 ```yaml
-  interface: 1
-  need_classification: 9
-  spec: 1
+  config_integ: 1
+  interface: 3
+  logic: 2
+  need_classification: 1
+  spec: 4
 ```
 
 ## Comparison with Official GPT-5.4

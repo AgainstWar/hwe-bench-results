@@ -22,22 +22,22 @@ opencode:
 | Infra Errors | 0 | 0 |
 
 ### MCP Newly Solved
-  ✅ pr-739: unknown (unknown)
-  ✅ pr-1679: unknown (unknown)
-  ✅ pr-1820: unknown (unknown)
-  ✅ pr-2351: unknown (unknown)
-  ✅ pr-2513: fusiondecoder_same_src_guard (logic)
-  ✅ pr-2781: unknown (unknown)
-  ✅ pr-2997: frontend_fallthrough_address_regression (logic)
-  ✅ pr-3555: unknown (unknown)
-  ✅ pr-3717: csrpermit_vstimecmp_exii (spec)
-  ✅ pr-5182: unknown (unknown)
+  ✅ pr-739: unknown
+  ✅ pr-1679: unknown
+  ✅ pr-1820: unknown
+  ✅ pr-2351: unknown
+  ✅ pr-2513: logic
+  ✅ pr-2781: unknown
+  ✅ pr-2997: logic
+  ✅ pr-3555: unknown
+  ✅ pr-3717: spec
+  ✅ pr-5182: unknown
 
 ### MCP Lost
-  ❌ pr-2483: hperf_counter_selection_logic (logic)
-  ❌ pr-3867: dispatch_single_step_redirect_reuse (logic)
-  ❌ pr-4943: frontend_tl_user_fields_contract (sw_hw_config)
-  ❌ pr-5700: unknown (unknown)
+  ❌ pr-2483: logic
+  ❌ pr-3867: logic
+  ❌ pr-4943: sw_hw_config
+  ❌ pr-5700: unknown
 
 ## Bug Type Impact (MCP Changes)
 
@@ -52,7 +52,41 @@ opencode:
 
 ```json
 [
-  {"pr": 655, "test": "loadpipe_data_port_conflict", "type": "logic", "desc": "unknown"},  {"pr": 1242, "test": "statusarray_store_set_wakeup", "type": "logic", "desc": "unknown"},  {"pr": 1323, "test": "csr_mask_behavior", "type": "spec", "desc": "unknown"},  {"pr": 1395, "test": "memblock_atomic_exception_hold", "type": "logic", "desc": "unknown"},  {"pr": 1401, "test": "loadunit_refill_replay", "type": "timing_sync", "desc": "unknown"},  {"pr": 1602, "test": "wb2ctrl_load_writeback_delay", "type": "timing_sync", "desc": "unknown"},  {"pr": 1694, "test": "loadunit_replay_from_fetch", "type": "logic", "desc": "unknown"},  {"pr": 1793, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 1907, "test": "ctrlblock_redirect_vset", "type": "logic", "desc": "unknown"},  {"pr": 2095, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 2195, "test": "memblock_io_compile", "type": "timing_sync", "desc": "unknown"},  {"pr": 2246, "test": "fpga_platform_private_l2_db_gating", "type": "config_integ", "desc": "unknown"},  {"pr": 2483, "test": "hperf_counter_selection_logic", "type": "logic", "desc": "unknown"},  {"pr": 3307, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 3329, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 3636, "test": "s3_fallthrough_target", "type": "logic", "desc": "unknown"},  {"pr": 3753, "test": "interrupt_filter_aia_topi_priority_matrix", "type": "spec", "desc": "unknown"},  {"pr": 3859, "test": "rvc_fs_off_illegal", "type": "spec", "desc": "unknown"},  {"pr": 3867, "test": "dispatch_single_step_redirect_reuse", "type": "logic", "desc": "unknown"},  {"pr": 3907, "test": "dret_event_virtual_mode", "type": "spec", "desc": "unknown"},  {"pr": 3955, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 4110, "test": "dcache_cmo_source_capacity", "type": "sw_hw_config", "desc": "unknown"},  {"pr": 4166, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 4179, "test": "interrupt_filter_priority_regression", "type": "spec", "desc": "unknown"},  {"pr": 4426, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 4442, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 4533, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 4750, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 4943, "test": "frontend_tl_user_fields_contract", "type": "sw_hw_config", "desc": "unknown"},  {"pr": 4968, "test": "tage_reset_compatibility", "type": "timing_sync", "desc": "unknown"},  {"pr": 5189, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 5496, "test": "kunminghuv2minimalconfig_verilog", "type": "sw_hw_config", "desc": "unknown"},  {"pr": 5593, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 5687, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 5700, "test": "need_check", "type": "need_classification", "desc": "unknown"}
+  {"pr": 655, "test": "loadpipe_data_port_conflict", "type": "logic", "desc": "unknown"},
+  {"pr": 1242, "test": "statusarray_store_set_wakeup", "type": "logic", "desc": "unknown"},
+  {"pr": 1323, "test": "csr_mask_behavior", "type": "spec", "desc": "unknown"},
+  {"pr": 1395, "test": "memblock_atomic_exception_hold", "type": "logic", "desc": "unknown"},
+  {"pr": 1401, "test": "loadunit_refill_replay", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 1602, "test": "wb2ctrl_load_writeback_delay", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 1694, "test": "loadunit_replay_from_fetch", "type": "logic", "desc": "unknown"},
+  {"pr": 1793, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 1907, "test": "ctrlblock_redirect_vset", "type": "logic", "desc": "unknown"},
+  {"pr": 2095, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 2195, "test": "memblock_io_compile", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 2246, "test": "fpga_platform_private_l2_db_gating", "type": "config_integ", "desc": "unknown"},
+  {"pr": 2483, "test": "hperf_counter_selection_logic", "type": "logic", "desc": "unknown"},
+  {"pr": 3307, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 3329, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 3636, "test": "s3_fallthrough_target", "type": "logic", "desc": "unknown"},
+  {"pr": 3753, "test": "interrupt_filter_aia_topi_priority_matrix", "type": "spec", "desc": "unknown"},
+  {"pr": 3859, "test": "rvc_fs_off_illegal", "type": "spec", "desc": "unknown"},
+  {"pr": 3867, "test": "dispatch_single_step_redirect_reuse", "type": "logic", "desc": "unknown"},
+  {"pr": 3907, "test": "dret_event_virtual_mode", "type": "spec", "desc": "unknown"},
+  {"pr": 3955, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 4110, "test": "dcache_cmo_source_capacity", "type": "sw_hw_config", "desc": "unknown"},
+  {"pr": 4166, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 4179, "test": "interrupt_filter_priority_regression", "type": "spec", "desc": "unknown"},
+  {"pr": 4426, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 4442, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 4533, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 4750, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 4943, "test": "frontend_tl_user_fields_contract", "type": "sw_hw_config", "desc": "unknown"},
+  {"pr": 4968, "test": "tage_reset_compatibility", "type": "timing_sync", "desc": "unknown"},
+  {"pr": 5189, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 5496, "test": "kunminghuv2minimalconfig_verilog", "type": "sw_hw_config", "desc": "unknown"},
+  {"pr": 5593, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 5687, "test": "need_check", "type": "need_classification", "desc": "unknown"},
+  {"pr": 5700, "test": "need_check", "type": "need_classification", "desc": "unknown"}
 ]
 ```
 

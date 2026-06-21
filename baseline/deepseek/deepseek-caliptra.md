@@ -22,11 +22,25 @@ opencode:
 
 ## 未解决 Case
 
-```json
-[
-  {"pr": 1033, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 70, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 725, "test": "need_check", "type": "need_classification", "desc": "unknown"}
+```json[
+  {
+    "pr": 1033,
+    "test": "need_check",
+    "type": "sw_hw_config",
+    "desc": "unknown"
+  },
+  {
+    "pr": 70,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 725,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  }
 ]
 ```
 

@@ -22,9 +22,9 @@ opencode:
 | Infra Errors | 0 | 0 |
 
 ### MCP Newly Solved
-  ✅ pr-2279: unknown (unknown)
-  ✅ pr-2420: unknown (unknown)
-  ✅ pr-2989: unknown (unknown)
+  ✅ pr-2279: interface
+  ✅ pr-2420: config_integ
+  ✅ pr-2989: spec
 
 ### MCP Lost
   None
@@ -33,13 +33,18 @@ opencode:
 
 | Bug Type | +MCP Solved | -MCP Lost | Net |
 |----------|:-:|:-:|:-:|
-| unknown | +3 | -0 | +3 |
+| config_integ | +1 | -0 | +1 |
+| interface | +1 | -0 | +1 |
+| spec | +1 | -0 | +1 |
 
 ## Unresolved Cases
 
 ```json
 [
-  {"pr": 2170, "test": "unknown", "type": "config_integ", "desc": "unknown"},  {"pr": 2802, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 2844, "test": "need_check", "type": "need_classification", "desc": "unknown"},  {"pr": 3042, "test": "unknown", "type": "config_integ", "desc": "unknown"}
+  {"pr": 2170, "test": "unknown", "type": "config_integ", "desc": "unknown"},
+  {"pr": 2802, "test": "need_check", "type": "spec", "desc": "unknown"},
+  {"pr": 2844, "test": "need_check", "type": "spec", "desc": "unknown"},
+  {"pr": 3042, "test": "unknown", "type": "config_integ", "desc": "unknown"}
 ]
 ```
 
@@ -47,7 +52,7 @@ opencode:
 
 ```yaml
   config_integ: 2
-  need_classification: 2
+  spec: 2
 ```
 
 ## Comparison with Official GPT-5.4

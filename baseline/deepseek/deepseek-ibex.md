@@ -22,16 +22,55 @@ opencode:
 
 ## 未解决 Case
 
-```json
-[
-  {"pr": 104, "test": "unknown", "type": "spec", "desc": "unknown"},
-  {"pr": 1141, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 1229, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 1513, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 155, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 475, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 907, "test": "need_check", "type": "need_classification", "desc": "unknown"},
-  {"pr": 974, "test": "need_check", "type": "need_classification", "desc": "unknown"}
+```json[
+  {
+    "pr": 104,
+    "test": "unknown",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1141,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1229,
+    "test": "need_check",
+    "type": "need_classification",
+    "desc": "unknown"
+  },
+  {
+    "pr": 1513,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 155,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "unknown"
+  },
+  {
+    "pr": 475,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "unknown"
+  },
+  {
+    "pr": 907,
+    "test": "need_check",
+    "type": "interface",
+    "desc": "unknown"
+  },
+  {
+    "pr": 974,
+    "test": "need_check",
+    "type": "timing_sync",
+    "desc": "unknown"
+  }
 ]
 ```
 
