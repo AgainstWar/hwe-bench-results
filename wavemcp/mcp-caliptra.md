@@ -37,10 +37,30 @@ opencode:
 
 ```json
 [
-  {"pr": 70, "test": "need_check", "type": "logic", "desc": "unknown"},
-  {"pr": 633, "test": "need_check", "type": "logic", "desc": "unknown"},
-  {"pr": 725, "test": "need_check", "type": "logic", "desc": "unknown"},
-  {"pr": 1033, "test": "need_check", "type": "sw_hw_config", "desc": "unknown"}
+  {
+    "pr": 70,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 633,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 725,
+    "test": "need_check",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1033,
+    "test": "need_check",
+    "type": "sw_hw_config",
+    "desc": "N/A"
+  }
 ]
 ```
 

@@ -27,19 +27,19 @@ opencode:
     "pr": 1033,
     "test": "need_check",
     "type": "sw_hw_config",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 70,
     "test": "need_check",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 725,
     "test": "need_check",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   }
 ]
 ```

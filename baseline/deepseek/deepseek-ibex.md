@@ -27,49 +27,49 @@ opencode:
     "pr": 104,
     "test": "unknown",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 1141,
     "test": "need_check",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 1229,
     "test": "need_check",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 1513,
     "test": "need_check",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 155,
     "test": "need_check",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 475,
     "test": "need_check",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 907,
     "test": "need_check",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 974,
     "test": "need_check",
     "type": "timing_sync",
-    "desc": "unknown"
+    "desc": "N/A"
   }
 ]
 ```

@@ -41,10 +41,30 @@ opencode:
 
 ```json
 [
-  {"pr": 2170, "test": "unknown", "type": "config_integ", "desc": "unknown"},
-  {"pr": 2802, "test": "need_check", "type": "spec", "desc": "unknown"},
-  {"pr": 2844, "test": "need_check", "type": "spec", "desc": "unknown"},
-  {"pr": 3042, "test": "unknown", "type": "config_integ", "desc": "unknown"}
+  {
+    "pr": 2170,
+    "test": "unknown",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2802,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2844,
+    "test": "need_check",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3042,
+    "test": "unknown",
+    "type": "config_integ",
+    "desc": "N/A"
+  }
 ]
 ```
 

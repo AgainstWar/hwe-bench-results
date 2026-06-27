@@ -27,37 +27,37 @@ opencode:
     "pr": 2279,
     "test": "need_check",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2420,
     "test": "need_check",
     "type": "config_integ",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2802,
     "test": "need_check",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2844,
     "test": "need_check",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2989,
     "test": "need_check",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3042,
     "test": "unknown",
     "type": "config_integ",
-    "desc": "unknown"
+    "desc": "N/A"
   }
 ]
 ```

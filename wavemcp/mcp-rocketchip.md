@@ -47,115 +47,115 @@ opencode:
     "pr": 177,
     "test": "lrsc_mshr_secondary_dirty",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 387,
     "test": "async_queue_half_reset",
     "type": "timing_sync",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 485,
     "test": "diplomatic_ahb_elaboration",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 745,
     "test": "rocc_example_elaboration",
     "type": "config_integ",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 1493,
     "test": "async_pbus_bootrom_access",
     "type": "config_integ",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 1656,
     "test": "need_check",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 1761,
     "test": "csr-tvec-uninitialized-alignment",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2018,
     "test": "unknown",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2036,
     "test": "mret_not_misdetected_as_dret",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2167,
     "test": "jtag_async_reset",
     "type": "timing_sync",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2368,
     "test": "asyncvalidsync-mixed-reset-elaboration",
     "type": "config_integ",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2543,
     "test": "heterogeneous_hartid_elaboration",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 2621,
     "test": "unknown",
     "type": "config_integ",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3004,
     "test": "frontend_progress_quiesce",
     "type": "timing_sync",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3065,
     "test": "need_check",
     "type": "interface",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3256,
     "test": "aes64ks1i_decode",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3526,
     "test": "unknown",
     "type": "logic",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3624,
     "test": "hypervisor_tinst_warl",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   },
   {
     "pr": 3651,
     "test": "unknown",
     "type": "spec",
-    "desc": "unknown"
+    "desc": "N/A"
   }
 ]
 ```
