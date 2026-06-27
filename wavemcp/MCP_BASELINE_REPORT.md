@@ -195,16 +195,14 @@ MCP 在不同 Bug 类型上的净影响：
 
 | Bug Type | +MCP Solved | -MCP Lost | Net |
 |----------|:-:|:-:|:-:|
-| interface | +5 | -2 | +3 |
-| spec | +3 | -2 | +1 |
-| logic | +3 | -5 | -2 |
-| timing_sync | +3 | -1 | +2 |
+| interface | +7 | -3 | +4 |
+| spec | +4 | -2 | +2 |
+| timing_sync | +2 | 0 | +2 |
+| logic | +4 | -4 | 0 |
 | config_integ | +1 | -1 | 0 |
-| sw_hw_interact | +1 | 0 | +1 |
 | sw_hw_config | +1 | -1 | 0 |
-| **Total** | **+17** | **-12** | **+5** |
-
-Note: Some PRs have unknown classification and are not included in per-type totals. Total MCP impact from all sources is +9.
+| sw_hw_interact | +1 | 0 | +1 |
+| **Total** | **+20** | **-11** | **+9** |
 
 ## 核心发现
 
