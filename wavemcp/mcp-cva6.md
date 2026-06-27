@@ -43,7 +43,7 @@ opencode:
 [
   {
     "pr": 2170,
-    "test": "unknown",
+    "test": "N/A",
     "type": "config_integ",
     "desc": "N/A"
   },
@@ -61,7 +61,7 @@ opencode:
   },
   {
     "pr": 3042,
-    "test": "unknown",
+    "test": "N/A",
     "type": "config_integ",
     "desc": "N/A"
   }

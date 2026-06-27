@@ -87,7 +87,7 @@ opencode:
   },
   {
     "pr": 2018,
-    "test": "unknown",
+    "test": "N/A",
     "type": "interface",
     "desc": "N/A"
   },
@@ -117,7 +117,7 @@ opencode:
   },
   {
     "pr": 2621,
-    "test": "unknown",
+    "test": "N/A",
     "type": "config_integ",
     "desc": "N/A"
   },
@@ -141,7 +141,7 @@ opencode:
   },
   {
     "pr": 3526,
-    "test": "unknown",
+    "test": "N/A",
     "type": "logic",
     "desc": "N/A"
   },
@@ -153,7 +153,7 @@ opencode:
   },
   {
     "pr": 3651,
-    "test": "unknown",
+    "test": "N/A",
     "type": "spec",
     "desc": "N/A"
   }

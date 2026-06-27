@@ -25,7 +25,7 @@ opencode:
 ```json[
   {
     "pr": 104,
-    "test": "unknown",
+    "test": "N/A",
     "type": "spec",
     "desc": "N/A"
   },
