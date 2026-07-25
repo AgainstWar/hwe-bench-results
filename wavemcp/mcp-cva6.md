@@ -87,3 +87,8 @@ opencode:
 ## Conclusion
 
 MCP + WAVES positive net gain of +3 on CVA6. Zero infrastructure errors.
+## Precision
+
+- Precision: 88.6% (31/35)
+- Recall: 88.6% (31/35)
+

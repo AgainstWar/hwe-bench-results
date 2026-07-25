@@ -135,3 +135,9 @@ opencode:
 ## Conclusion
 
 MCP + WAVES slight regression (-3) on Ibex, but narrowing vs old MCP runs. Zero infrastructure errors.
+## Precision
+
+- Precision: 68.6% (24/35)
+- Recall: 68.6% (24/35)
+- 空 patch: 2 个 (276, 332)
+

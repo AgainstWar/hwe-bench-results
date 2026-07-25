@@ -185,6 +185,19 @@
 | xiangshan | 40/54 **74%** | 25/54 **46%** | 27/54 **50%** | **12/51 24%** | — |
 | **Total** | **145/172 (84%)** | **99/171 (58%)** | **116/170 (68%)** | **88/171 (51%)** | — |
 
+
+## Precision 统计
+
+| Repo | Precision | Recall | 空 patch |
+|------|:--------:|:------:|:--------:|
+| ibex | 77.1% | 77.1% | 0 |
+| cva6 | 82.4% | 82.4% | 0 |
+| caliptra | 81.2% | 81.2% | 0 |
+| rocketchip | 25.0% | 25.0% | 0 |
+| xiangshan | 23.5% | 23.5% | 0 |
+
+注：所有 PR 均提交了 patch，Precision = Recall。
+
 ## 核心发现
 
 1. **Verilog 项目**：DeepSeek V4 Flash (OpenCode) 得分 77-82%，反超官方 DeepSeek V3.2 (Codex) 的 60-71%。OpenCode agent 在 Verilog 项目上表现优于 Codex CLI。

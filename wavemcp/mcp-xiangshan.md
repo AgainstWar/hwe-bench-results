@@ -287,3 +287,9 @@ opencode:
 ## Conclusion
 
 MCP + WAVES positive net gain of +6 on XiangShan. Zero infrastructure errors.
+## Precision
+
+- Precision: 34.0% (18/53)
+- Recall: 34.0% (18/53)
+- 空 patch: 1 个 (5080)
+

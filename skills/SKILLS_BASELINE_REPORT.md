@@ -79,6 +79,17 @@
 丢失: logic(-4), sw_hw_config(-1), timing_sync(-1)
 
 
+
+## Precision 统计
+
+| Repo | Precision | Recall | 空 patch |
+|------|:--------:|:------:|:--------:|
+| ibex | 61.8% | 61.8% | 1 |
+| cva6 | 80.6% | 80.6% | 4 |
+| caliptra | 78.6% | 78.6% | 4 |
+| rocketchip | 31.0% | 31.0% | 3 |
+| xiangshan | 34.0% | 34.0% | 10 |
+
 ## 结论
 
 1. **MCP (wave) 效果最好 (+9)**，在 Verilog 和 Chisel 项目上都稳定正收益

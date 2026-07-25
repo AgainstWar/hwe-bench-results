@@ -55,3 +55,9 @@ MCP+Repair:
   logic: 3
   sw_hw_config: 1
 ```
+## Precision
+
+- Precision: 73.3% (11/15)
+- Recall: 73.3% (11/15)
+- 空 patch: 1 个 (633)
+

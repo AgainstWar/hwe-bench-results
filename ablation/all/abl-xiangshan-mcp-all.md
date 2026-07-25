@@ -117,3 +117,9 @@ mcp_all:
   sw_hw_config: 3
   timing_sync: 5
 ```
+## Precision
+
+- Precision: 50.0% (25/50)
+- Recall: 50.0% (25/50)
+- 空 patch: 4 个 (2195, 3753, 5080, 5189)
+

@@ -71,3 +71,8 @@ MCP+Repair:
   sw_hw_interact: 1
   timing_sync: 4
 ```
+## Precision
+
+- Precision: 37.5% (12/32)
+- Recall: 37.5% (12/32)
+

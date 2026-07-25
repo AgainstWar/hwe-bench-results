@@ -83,3 +83,9 @@ skills:
 ## 结论
 
 Skills 在该项目上有轻微退步。 基础设施错误为 0。
+## Precision
+
+- Precision: 61.8% (21/34)
+- Recall: 61.8% (21/34)
+- 空 patch: 1 个 (1584)
+

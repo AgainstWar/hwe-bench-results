@@ -72,3 +72,9 @@ mcp_all:
   logic: 1
   spec: 2
 ```
+## Precision
+
+- Precision: 87.1% (27/31)
+- Recall: 87.1% (27/31)
+- 空 patch: 4 个 (2170, 2282, 2916, 3226)
+

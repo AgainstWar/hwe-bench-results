@@ -287,3 +287,9 @@ bug_type_breakdown:
 ## 结论
 
 DeepSeek V4 Flash (OpenCode) 在 XiangShan 上 12/51 (24%)。0 基础设施错误。
+## Precision
+
+- Precision (有 patch 的 PR 中通过的比率): 23.5% (12/51)
+- Recall (全部 PR 中解决的比率): 23.5% (12/51)
+- 空 patch: 3 个 (5080, 5189, 5593)
+

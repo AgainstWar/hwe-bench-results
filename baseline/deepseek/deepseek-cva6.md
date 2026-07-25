@@ -91,3 +91,9 @@ comparison_with_official:
 ## 结论
 
 DeepSeek V4 Flash (OpenCode) 在 cva6 上 28/34 (82%)。0 基础设施错误。
+## Precision
+
+- Precision (有 patch 的 PR 中通过的比率): 82.4% (28/34)
+- Recall (全部 PR 中解决的比率): 82.4% (28/34)
+- 空 patch: 1 个 (2170)
+

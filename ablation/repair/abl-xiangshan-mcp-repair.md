@@ -88,3 +88,9 @@ MCP+Repair:
   sw_hw_config: 3
   timing_sync: 5
 ```
+## Precision
+
+- Precision: 44.2% (23/52)
+- Recall: 44.2% (23/52)
+- 空 patch: 2 个 (5182, 5700)
+

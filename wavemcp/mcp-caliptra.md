@@ -83,3 +83,8 @@ opencode:
 ## Conclusion
 
 MCP + WAVES slight regression (-1) on Caliptra, but narrowing vs old MCP runs. Zero infrastructure errors.
+## Precision
+
+- Precision: 75.0% (12/16)
+- Recall: 75.0% (12/16)
+

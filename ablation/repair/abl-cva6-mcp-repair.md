@@ -59,3 +59,8 @@ MCP+Repair:
   logic: 1
   spec: 2
 ```
+## Precision
+
+- Precision: 85.7% (30/35)
+- Recall: 85.7% (30/35)
+

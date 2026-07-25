@@ -71,3 +71,9 @@ MCP+Locate:
   sw_hw_interact: 1
   timing_sync: 2
 ```
+## Precision
+
+- Precision: 26.9% (7/26)
+- Recall: 26.9% (7/26)
+- 空 patch: 6 个 (1330, 177, 2984, 3004, 3624, 576)
+

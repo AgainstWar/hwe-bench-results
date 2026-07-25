@@ -125,6 +125,11 @@ MCP + All 同时启用 WAVES MCP、locate skill 和 repair skill。
 共 26 个空 patch，三个功能同时启用超出 agent 处理能力。xiangshan（+13）表现最佳，其他项目退步。详细数据见 all/ 目录。
 
 
+
+## Precision 统计
+
+MCP+Locate, MCP+Repair, MCP+All 三个配置的 Precision 数据见对应子目录（locate/, repair/, all/）的 SUMMARY.md。
+
 ## 结论
 
 ### MCP + Locate

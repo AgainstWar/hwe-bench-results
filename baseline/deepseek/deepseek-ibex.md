@@ -103,3 +103,8 @@ comparison_with_official:
 ## 结论
 
 DeepSeek V4 Flash (OpenCode) 在 ibex 上 27/35 (77%)。0 基础设施错误。
+## Precision
+
+- Precision (有 patch 的 PR 中通过的比率): 77.1% (27/35)
+- Recall (全部 PR 中解决的比率): 77.1% (27/35)
+

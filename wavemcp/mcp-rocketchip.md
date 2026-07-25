@@ -183,3 +183,9 @@ opencode:
 ## Conclusion
 
 MCP + WAVES positive net gain of +4 on RocketChip. Zero infrastructure errors.
+## Precision
+
+- Precision: 38.7% (12/31)
+- Recall: 38.7% (12/31)
+- 空 patch: 1 个 (3600)
+

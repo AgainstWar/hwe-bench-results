@@ -92,3 +92,9 @@ skills:
 ## 结论
 
 Skills 在该项目上正收益。 基础设施错误为 0。
+## Precision
+
+- Precision: 31.0% (9/29)
+- Recall: 31.0% (9/29)
+- 空 patch: 3 个 (1330, 2984, 3526)
+

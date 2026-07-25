@@ -76,3 +76,9 @@ MCP+Locate:
   spec: 2
   timing_sync: 1
 ```
+## Precision
+
+- Precision: 67.9% (19/28)
+- Recall: 67.9% (19/28)
+- 空 patch: 7 个 (1135, 1584, 222, 465, 475, 882, 907)
+

@@ -67,3 +67,9 @@ mcp_all:
   interface: 1
   logic: 1
 ```
+## Precision
+
+- Precision: 80.0% (8/10)
+- Recall: 80.0% (8/10)
+- 空 patch: 6 个 (1033, 1073, 1089, 298, 594, 725)
+

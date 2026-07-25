@@ -72,3 +72,8 @@ comparison_with_official:
 ## 结论
 
 DeepSeek V4 Flash (OpenCode) 在 caliptra-rtl 上 13/16 (81%)。0 基础设施错误。
+## Precision
+
+- Precision (有 patch 的 PR 中通过的比率): 81.2% (13/16)
+- Recall (全部 PR 中解决的比率): 81.2% (13/16)
+

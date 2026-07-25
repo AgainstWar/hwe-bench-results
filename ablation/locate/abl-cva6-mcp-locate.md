@@ -68,3 +68,9 @@ MCP+Locate:
   logic: 1
   spec: 1
 ```
+## Precision
+
+- Precision: 85.7% (24/28)
+- Recall: 85.7% (24/28)
+- 空 patch: 7 个 (2017, 2282, 2420, 2468, 2844, 2916, 3168)
+

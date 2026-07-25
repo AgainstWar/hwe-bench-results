@@ -71,3 +71,9 @@ MCP+Repair:
   logic: 3
   spec: 2
 ```
+## Precision
+
+- Precision: 74.2% (23/31)
+- Recall: 74.2% (23/31)
+- 空 patch: 4 个 (1469, 176, 293, 332)
+

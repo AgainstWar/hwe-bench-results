@@ -61,3 +61,9 @@ MCP+Locate:
 ```yaml
   timing_sync: 1
 ```
+## Precision
+
+- Precision: 88.9% (8/9)
+- Recall: 88.9% (8/9)
+- 空 patch: 7 个 (1033, 1073, 1089, 298, 633, 70, 786)
+
