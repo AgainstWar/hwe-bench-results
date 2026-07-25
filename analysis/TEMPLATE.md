@@ -1,10 +1,10 @@
 # Analysis Template
 
-用这个模板分析每个 repo 的失败补丁。
+用这个模板分析每个 repo 的结果：修复率、未解决 case、bug 分类、官方对比，以及文件级修改精度。
 
 ## 前置脚本
 
-先运行 `analyze_repo.py` 获取未解决 case 列表和与官方的对比:
+### 1. analyze_repo.py — 解析基础数据
 
 ```bash
 cd /path/to/hwe-bench/results-archive/analysis
@@ -22,20 +22,57 @@ python3 analyze_repo.py rocketchip ../baseline/hwe-rocketchip-full.tar.gz ../../
 - 显示官方是否也未能解决
 - 输出汇总统计 (都解了/官方独占/都没解)
 
+### 2. compute_precision.py — 计算文件级修改精度
+
+```bash
+cd /path/to/hwe-bench
+uv run python results-archive/analysis/compute_precision.py \
+  --patches <extracted_dir>/patches/patches.jsonl \
+  --dataset datasets/<repo>.jsonl
+```
+
+示例:
+```bash
+uv run python results-archive/analysis/compute_precision.py \
+  --patches /tmp/batch/gpt5.4-ibex/results/hwe-ibex-full/patches/patches.jsonl \
+  --dataset datasets/lowRISC__ibex.jsonl
+```
+
+该脚本会:
+- 从 patches.jsonl 解析 agent 修改的所有文件路径
+- 从 dataset JSONL 读取 ground-truth 的 modified_files
+- 输出 Overall File-Level Precision（论文 Table 3 同口径）和 per-case 明细
+
+#### 精度指标定义
+
+```
+precision = |agent_files ∩ ground_truth_files| / |agent_files|
+```
+
+- **agent_files**：agent 生成的 patch 中涉及的所有文件
+- **ground_truth_files**：官方 PR 实际修改的文件列表（dataset JSONL 中的 `modified_files` 字段）
+- **Overall Precision**：所有 case 的匹配文件数总和 / 所有 case 的 agent 修改文件数总和（论文 Table 3 的计算方式）
+
 ## 数据来源
 
-- 官方结果: `/home/username/hwe-bench-artifacts/results/{repo}/gpt5.4/eval/final_report.json`
-- OpenCode 结果: 从 `results-archive/baseline/` 对应 tarball 解压后找到 `eval/final_report.json`
-- 失败 case 的 fix.patch: `eval_workdir/{org}/{repo}/evals/pr-{N}/fix.patch`
-- 失败 case 的 report: `eval_workdir/{org}/{repo}/evals/pr-{N}/report.json`
-- 原始 PR 信息: GitHub 上 `{org}/{repo}/pull/{N}`
+| 数据 | 来源 |
+|------|------|
+| 官方 resolved/unresolved | `/home/username/hwe-bench-artifacts/results/{repo}/gpt5.4/eval/final_report.json` |
+| 本地方 resolved/unresolved | tarball 解压后的 `eval/final_report.json` |
+| agent 修改文件列表 | tarball 解压后的 `patches/patches.jsonl`（`compute_precision.py` 自动解析） |
+| ground-truth 修改文件 | `datasets/{org}__{repo}.jsonl` 的 `modified_files` 字段 |
+| 失败 case 的 fix.patch | `eval_workdir/{org}/{repo}/evals/pr-{N}/fix.patch` |
+| 失败 case 的 report | `eval_workdir/{org}/{repo}/evals/pr-{N}/report.json` |
+| 原始 PR 信息 | GitHub 上 `{org}/{repo}/pull/{N}` |
 
 ## 步骤
 
-1. 运行 `analyze_repo.py` 获取基础数据
-2. 对于 OpenCode 未解决的每个 PR，查阅 GitHub PR 描述，确定 bug 类别
-3. 汇总分类统计
-4. 按 TEMPLATE 格式写入对应 md 文件
+1. 解压 tarball，找到 `patches/patches.jsonl` 和 `eval/final_report.json`
+2. 运行 `analyze_repo.py` 获取 resolved/unresolved 基础数据
+3. 运行 `compute_precision.py` 获取文件级精度
+4. 对于未解决的每个 PR，查阅 GitHub PR 描述，确定 bug 类别
+5. 汇总分类统计
+6. 按本模板格式写入对应 md 文件
 
 ## Bug 类别
 
@@ -65,6 +102,7 @@ official:
   total: {N}
   pct: {N}
   infra_errors: 0
+  precision: {N}    # ← 新增: 官方 agent 的文件级精度
 
 opencode:
   agent: OpenCode
@@ -73,7 +111,30 @@ opencode:
   total: {N}
   pct: {N}
   infra_errors: 0
+  precision: {N}    # ← 新增: 我方 agent 的文件级精度
 ```
+
+## 文件级精度明细
+
+```yaml
+precision_detail:
+  official:
+    overall: {N}            # Overall File-Level Precision（论文同口径）
+    average_per_case: {N}   # 每个 case 的 precision 取平均
+  opencode:
+    overall: {N}
+    average_per_case: {N}
+  comparison:               # 精度对比
+    official_higher_on: [list]    # 官方精度更高的 case
+    opencode_higher_on: [list]    # 我方精度更高的 case
+```
+
+低精度 case 通常反映:
+- 错误的 fault localization（改了不该改的模块）
+- 过度修改相邻文件
+- 调试过程遗留的中间产物（临时脚本、备份文件）
+
+高精度低修复率说明 agent 找到了正确的文件但未给出正确的逻辑修改。
 
 ## 未解决 Case
 
