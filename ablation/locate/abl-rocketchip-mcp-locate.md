@@ -1,57 +1,24 @@
-# Rocketchip MCP+Locate Analysis
+# RocketChip MCP+LOCATE Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 8/32 (25%)
-mcp_alone:
-  resolved: 12/32 (38%)
-MCP+Locate:
-  resolved: 7/32 (22%)
+mcp+locate:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 7
+  total: 32
+  resolved_rate: 21.9%
+  file_level_precision: 76.2%
+  infra_errors: 0
 ```
 
-## MCP+Locate vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Locate |
-|------|:--------:|:-------:|
-| 解决 | 8/32 (25%) | 7/32 (22%) |
-| 净变化 | | -1 |
-### 新解决
-  ✅ pr-485 (interface)
-  ✅ pr-1878 (spec)
-  ✅ pr-3600 (timing_sync)
-### 丢失
-  ❌ pr-576 (logic)
-  ❌ pr-1330 (logic)
-  ❌ pr-2984 (logic)
-  ❌ pr-3065 (interface)
-## MCP+Locate vs MCP alone
-
-| 指标 | MCP alone | MCP+Locate |
-|------|:--------:|:-------:|
-| 解决 | 12/32 (38%) | 7/32 (22%) |
-| 净变化 | | -5 |
-
-### 相对 MCP 新解决
-  ✅ pr-485: interface
-  ✅ pr-3600: timing_sync
-### 相对 MCP 丢失
-  ❌ pr-404: logic
-  ❌ pr-576: logic
-  ❌ pr-1093: sw_hw_interact
-  ❌ pr-1176: interface
-  ❌ pr-1330: logic
-  ❌ pr-2213: interface
-  ❌ pr-2984: logic
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| interface | +1 | -1 | +0 |
-| logic | +0 | -3 | -3 |
-| spec | +1 | -0 | +1 |
-| timing_sync | +1 | -0 | +1 |
+| 指标 | Baseline | MCP+LOCATE |
+|------|:--------:|:-------------:|
+| Resolved Rate | 8/32 (25.0%) | 7/32 (21.9%) |
+| File-Level Precision | 87.0% | 76.2% |
 
 ## 未解决 Case
 
@@ -71,9 +38,3 @@ MCP+Locate:
   sw_hw_interact: 1
   timing_sync: 2
 ```
-## Precision
-
-- Precision: 26.9% (7/26)
-- Recall: 26.9% (7/26)
-- 空 patch: 6 个 (1330, 177, 2984, 3004, 3624, 576)
-

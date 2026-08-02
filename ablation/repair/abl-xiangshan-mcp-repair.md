@@ -1,74 +1,24 @@
-# Xiangshan MCP+Repair Analysis
+# XiangShan MCP+REPAIR Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 12/54 (22%)
-mcp_alone:
-  resolved: 18/54 (33%)
-MCP+Repair:
-  resolved: 23/54 (43%)
+mcp+repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 23
+  total: 54
+  resolved_rate: 42.6%
+  file_level_precision: 80.2%
+  infra_errors: 0
 ```
 
-## MCP+Repair vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 12/54 (22%) | 23/54 (43%) |
-| 净变化 | | +11 |
-### 新解决
-  ✅ pr-739 (timing_sync)
-  ✅ pr-1323 (spec)
-  ✅ pr-1679 (interface)
-  ✅ pr-1820 (sw_hw_config)
-  ✅ pr-2095 (logic)
-  ✅ pr-2513 (logic)
-  ✅ pr-2997 (logic)
-  ✅ pr-3329 (interface)
-  ✅ pr-3555 (spec)
-  ✅ pr-3717 (spec)
-  ✅ pr-3859 (spec)
-  ✅ pr-3955 (interface)
-  ✅ pr-4968 (timing_sync)
-  ✅ pr-5080 (logic)
-  ✅ pr-5593 (interface)
-### 丢失
-  ❌ pr-1931 (logic)
-  ❌ pr-2483 (logic)
-  ❌ pr-4943 (sw_hw_config)
-  ❌ pr-5700 (logic)
-## MCP+Repair vs MCP alone
-
-| 指标 | MCP alone | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 18/54 (33%) | 23/54 (43%) |
-| 净变化 | | +5 |
-
-### 相对 MCP 新解决
-  ✅ pr-1323: spec
-  ✅ pr-2095: logic
-  ✅ pr-3329: interface
-  ✅ pr-3859: spec
-  ✅ pr-3867: logic
-  ✅ pr-3955: interface
-  ✅ pr-4968: timing_sync
-  ✅ pr-5080: logic
-  ✅ pr-5593: interface
-### 相对 MCP 丢失
-  ❌ pr-1931: logic
-  ❌ pr-2351: interface
-  ❌ pr-2781: interface
-  ❌ pr-5182: logic
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| interface | +4 | -0 | +4 |
-| logic | +4 | -3 | +1 |
-| spec | +4 | -0 | +4 |
-| sw_hw_config | +1 | -1 | +0 |
-| timing_sync | +2 | -0 | +2 |
+| 指标 | Baseline | MCP+REPAIR |
+|------|:--------:|:-------------:|
+| Resolved Rate | 12/54 (22.2%) | 23/54 (42.6%) |
+| File-Level Precision | 89.7% | 80.2% |
 
 ## 未解决 Case
 
@@ -88,9 +38,3 @@ MCP+Repair:
   sw_hw_config: 3
   timing_sync: 5
 ```
-## Precision
-
-- Precision: 44.2% (23/52)
-- Recall: 44.2% (23/52)
-- 空 patch: 2 个 (5182, 5700)
-

@@ -45,9 +45,12 @@ uv run python results-archive/analysis/compute_precision.py \
 
 #### 精度指标定义
 
-```
-precision = |agent_files ∩ ground_truth_files| / |agent_files|
-```
+本文档涉及两个互补指标（与论文 Metrics 章节一致）：
+
+1. **Resolved Rate（修复率）**：agent 生成的 patch 使验证测试从 FAIL 转为 PASS 的任务比例 = `resolved / total`
+2. **File-Level Precision（文件级修改精度）**：agent 修改的文件中，出现在 ground-truth patch 中的比例 = `|agent_files ∩ ground_truth_files| / |agent_files|`
+
+注意：File-Level Precision **不是** `resolved / submitted`。它衡量的是**故障定位的准确性**——agent 是否修改了正确的文件、是否避免了修改无关文件。
 
 - **agent_files**：agent 生成的 patch 中涉及的所有文件
 - **ground_truth_files**：官方 PR 实际修改的文件列表（dataset JSONL 中的 `modified_files` 字段）
@@ -100,18 +103,18 @@ official:
   model: gpt-5.4
   resolved: {N}
   total: {N}
-  pct: {N}
+  resolved_rate: {N}          # Resolved Rate: 通过验证的任务比例（论文指标 1）
+  file_level_precision: {N}   # File-Level Precision: 文件级修改精度（论文指标 2）
   infra_errors: 0
-  precision: {N}    # ← 新增: 官方 agent 的文件级精度
 
 opencode:
   agent: OpenCode
   model: gpt-5.4
   resolved: {N}
   total: {N}
-  pct: {N}
+  resolved_rate: {N}          # Resolved Rate: 通过验证的任务比例
+  file_level_precision: {N}   # File-Level Precision: 文件级修改精度
   infra_errors: 0
-  precision: {N}    # ← 新增: 我方 agent 的文件级精度
 ```
 
 ## 文件级精度明细

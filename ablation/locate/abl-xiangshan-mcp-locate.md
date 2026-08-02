@@ -1,68 +1,24 @@
-# Xiangshan MCP+Locate Analysis
+# XiangShan MCP+LOCATE Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 12/54 (22%)
-mcp_alone:
-  resolved: 18/54 (33%)
-MCP+Locate:
-  resolved: 8/54 (15%)
+mcp+locate:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 8
+  total: 54
+  resolved_rate: 14.8%
+  file_level_precision: 80.0%
+  infra_errors: 0
 ```
 
-## MCP+Locate vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Locate |
-|------|:--------:|:-------:|
-| 解决 | 12/54 (22%) | 8/54 (15%) |
-| 净变化 | | -4 |
-### 新解决
-  ✅ pr-1679 (interface)
-  ✅ pr-2513 (logic)
-  ✅ pr-3717 (spec)
-  ✅ pr-5080 (logic)
-### 丢失
-  ❌ pr-39 (logic)
-  ❌ pr-2483 (logic)
-  ❌ pr-2845 (timing_sync)
-  ❌ pr-3182 (logic)
-  ❌ pr-3867 (logic)
-  ❌ pr-4337 (logic)
-  ❌ pr-4943 (sw_hw_config)
-  ❌ pr-4959 (logic)
-## MCP+Locate vs MCP alone
-
-| 指标 | MCP alone | MCP+Locate |
-|------|:--------:|:-------:|
-| 解决 | 18/54 (33%) | 8/54 (15%) |
-| 净变化 | | -10 |
-
-### 相对 MCP 新解决
-  ✅ pr-5080: logic
-  ✅ pr-5700: logic
-### 相对 MCP 丢失
-  ❌ pr-39: logic
-  ❌ pr-739: timing_sync
-  ❌ pr-1820: sw_hw_config
-  ❌ pr-2351: interface
-  ❌ pr-2781: interface
-  ❌ pr-2845: timing_sync
-  ❌ pr-2997: logic
-  ❌ pr-3182: logic
-  ❌ pr-3555: spec
-  ❌ pr-4337: logic
-  ❌ pr-4959: logic
-  ❌ pr-5182: logic
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| interface | +1 | -0 | +1 |
-| logic | +2 | -6 | -4 |
-| spec | +1 | -0 | +1 |
-| sw_hw_config | +0 | -1 | -1 |
-| timing_sync | +0 | -1 | -1 |
+| 指标 | Baseline | MCP+LOCATE |
+|------|:--------:|:-------------:|
+| Resolved Rate | 12/54 (22.2%) | 8/54 (14.8%) |
+| File-Level Precision | 89.7% | 80.0% |
 
 ## 未解决 Case
 
@@ -81,9 +37,3 @@ MCP+Locate:
   sw_hw_config: 3
   timing_sync: 4
 ```
-## Precision
-
-- Precision: 27.6% (8/29)
-- Recall: 27.6% (8/29)
-- 空 patch: 25 个 (1242, 1323, 1395, 1401, 1694, 1793, 1820, 2246, 2351, 2483, 2781, 2845, 3182, 3329, 3555, 3859, 3955, 39, 4426, 4442, 4959, 5182, 5189, 655, 739)
-

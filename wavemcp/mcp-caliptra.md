@@ -1,90 +1,36 @@
-# Caliptra MCP + WAVES Analysis
+# Caliptra MCP Analysis
 
-## Overall Results
+## 总体结果
 
 ```yaml
-opencode:
+mcp:
   agent: OpenCode
   model: DeepSeek V4 Flash
-  mcp: WAVES + waves-debug skill
   resolved: 12
   total: 16
-  pct: 75%
+  resolved_rate: 75.0%
+  file_level_precision: 86.4%
   infra_errors: 0
 ```
 
-## MCP vs Baseline (No MCP)
+## 指标对比
 
-| Metric | Baseline | MCP |
-|---|---|---|
-| Resolved | 13/16 (81%) | 12/16 (75%) |
-| Net Change | | -1 |
-| Infra Errors | 0 | 0 |
+| 指标 | Baseline | MCP |
+|------|:--------:|:-------------:|
+| Resolved Rate | 13/16 (81.2%) | 12/16 (75.0%) |
+| File-Level Precision | 90.0% | 86.4% |
 
-### MCP Newly Solved
-  None
-
-### MCP Lost
-  ❌ pr-633: logic
-
-## Bug Type Impact (MCP Changes)
-
-| Bug Type | +MCP Solved | -MCP Lost | Net |
-|----------|:-:|:-:|:-:|
-| logic | +0 | -1 | -1 |
-
-## Unresolved Cases
+## 未解决 Case
 
 ```json
 [
-  {
-    "pr": 70,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  },
-  {
-    "pr": 633,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  },
-  {
-    "pr": 725,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1033,
-    "test": "need_check",
-    "type": "sw_hw_config",
-    "desc": "N/A"
-  }
+  {"pr": 70, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 633, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 725, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 1033, "test": "N/A", "type": "sw_hw_config", "desc": "N/A"}
 ]
 ```
 
-## Bug Type Breakdown (Unresolved)
+## Bug 类型分布
 
 ```yaml
   logic: 3
   sw_hw_config: 1
 ```
-
-## Comparison with Official GPT-5.4
-
-| Category | Count | PRs |
-|---|---|---|
-| Both Resolved | 12 | 134, 195, 252, 298, 506, 594, 747, 757, 786, 963, 1073, 1089 |
-| Official Only | 4 | 70, 633, 725, 1033 |
-| MCP Only | 0 | None |
-| Neither | 0 | None |
-
-## Conclusion
-
-MCP + WAVES slight regression (-1) on Caliptra, but narrowing vs old MCP runs. Zero infrastructure errors.
-## Precision
-
-- Precision: 75.0% (12/16)
-- Recall: 75.0% (12/16)
-

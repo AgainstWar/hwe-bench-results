@@ -1,79 +1,36 @@
-# Caliptra-Rtl Analysis (DeepSeek V4 Flash)
+# Caliptra BASELINE Analysis
 
 ## 总体结果
 
 ```yaml
-official:
-  agent: Codex CLI
-  model: DeepSeek V3.2
-  resolved: 13
-  total: 16
-  pct: 81
-  infra_errors: 0
-
-opencode:
+baseline:
   agent: OpenCode
   model: DeepSeek V4 Flash
   resolved: 13
   total: 16
-  pct: 81
+  resolved_rate: 81.2%
+  file_level_precision: 90.0%
   infra_errors: 0
 ```
 
+## 指标对比
+
+| 指标 | Baseline | BASELINE |
+|------|:--------:|:-------------:|
+| Resolved Rate | 13/16 (81.2%) | 13/16 (81.2%) |
+| File-Level Precision | 90.0% | 90.0% |
+
 ## 未解决 Case
 
-```json[
-  {
-    "pr": 1033,
-    "test": "need_check",
-    "type": "sw_hw_config",
-    "desc": "N/A"
-  },
-  {
-    "pr": 70,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  },
-  {
-    "pr": 725,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  }
+```json
+[
+  {"pr": 70, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 725, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 1033, "test": "N/A", "type": "sw_hw_config", "desc": "N/A"}
 ]
 ```
 
-## 按 Bug 类型统计
+## Bug 类型分布
 
 ```yaml
-bug_type_breakdown:
-  need_classification: 3
+  logic: 2
+  sw_hw_config: 1
 ```
-
-## 对比官方
-
-```yaml
-comparison_with_official:
-  both_resolved:
-    count: 11
-    prs: [1073, 1089, 252, 298, 506, 594, 633, 747, 757, 786, 963]
-  official_only:
-    count: 2
-    prs: [70, 725]
-  opencode_only:
-    count: 2
-    prs: [134, 195]
-  neither:
-    count: 1
-    prs: [1033]
-```
-
-## 结论
-
-DeepSeek V4 Flash (OpenCode) 在 caliptra-rtl 上 13/16 (81%)。0 基础设施错误。
-## Precision
-
-- Precision (有 patch 的 PR 中通过的比率): 81.2% (13/16)
-- Recall (全部 PR 中解决的比率): 81.2% (13/16)
-

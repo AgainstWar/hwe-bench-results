@@ -1,99 +1,37 @@
-# Cva6 Analysis (DeepSeek V4 Flash)
+# CVA6 BASELINE Analysis
 
 ## 总体结果
 
 ```yaml
-official:
-  agent: Codex CLI
-  model: DeepSeek V3.2
-  resolved: 24
-  total: 35
-  pct: 69
-  infra_errors: 0
-
-opencode:
+baseline:
   agent: OpenCode
   model: DeepSeek V4 Flash
   resolved: 28
-  total: 34
-  pct: 82
+  total: 35
+  resolved_rate: 80.0%
+  file_level_precision: 79.0%
   infra_errors: 0
 ```
 
+## 指标对比
+
+| 指标 | Baseline | BASELINE |
+|------|:--------:|:-------------:|
+| Resolved Rate | 28/35 (80.0%) | 28/35 (80.0%) |
+| File-Level Precision | 79.0% | 79.0% |
+
 ## 未解决 Case
 
-```json[
-  {
-    "pr": 2279,
-    "test": "need_check",
-    "type": "interface",
-    "desc": "N/A"
-  },
-  {
-    "pr": 2420,
-    "test": "need_check",
-    "type": "config_integ",
-    "desc": "N/A"
-  },
-  {
-    "pr": 2802,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 2844,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 2989,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 3042,
-    "test": "N/A",
-    "type": "config_integ",
-    "desc": "N/A"
-  }
+```json
+[
+  {"pr": 2279, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 2420, "test": "N/A", "type": "config_integ", "desc": "N/A"},  {"pr": 2802, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 2844, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 2989, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 3042, "test": "N/A", "type": "config_integ", "desc": "N/A"}
 ]
 ```
 
-## 按 Bug 类型统计
+## Bug 类型分布
 
 ```yaml
-bug_type_breakdown:
-  config_integ: 1
-  need_classification: 5
+  config_integ: 2
+  interface: 1
+  spec: 3
 ```
-
-## 对比官方
-
-```yaml
-comparison_with_official:
-  both_resolved:
-    count: 22
-    prs: [1482, 2017, 2032, 2282, 2330, 2374, 2375, 2468, 2469, 2549, 2589, 2685, 2711, 2728, 2916, 2945, 3059, 3137, 3171, 3191, 3204, 3226]
-  official_only:
-    count: 2
-    prs: [2420, 2989]
-  opencode_only:
-    count: 6
-    prs: [2248, 2476, 2944, 3107, 3168, 3231]
-  neither:
-    count: 4
-    prs: [2279, 2802, 2844, 3042]
-```
-
-## 结论
-
-DeepSeek V4 Flash (OpenCode) 在 cva6 上 28/34 (82%)。0 基础设施错误。
-## Precision
-
-- Precision (有 patch 的 PR 中通过的比率): 82.4% (28/34)
-- Recall (全部 PR 中解决的比率): 82.4% (28/34)
-- 空 patch: 1 个 (2170)
-

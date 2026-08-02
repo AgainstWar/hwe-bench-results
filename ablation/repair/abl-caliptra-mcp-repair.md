@@ -1,45 +1,24 @@
-# Caliptra MCP+Repair Analysis
+# Caliptra MCP+REPAIR Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 13/16 (81%)
-mcp_alone:
-  resolved: 12/16 (75%)
-MCP+Repair:
-  resolved: 11/16 (69%)
+mcp+repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 11
+  total: 16
+  resolved_rate: 68.8%
+  file_level_precision: 14.4%
+  infra_errors: 0
 ```
 
-## MCP+Repair vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 13/16 (81%) | 11/16 (69%) |
-| 净变化 | | -2 |
-### 新解决
-  无
-
-### 丢失
-  ❌ pr-594 (logic)
-  ❌ pr-633 (logic)
-## MCP+Repair vs MCP alone
-
-| 指标 | MCP alone | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 12/16 (75%) | 11/16 (69%) |
-| 净变化 | | -1 |
-
-### 相对 MCP 新解决
-  无
-
-### 相对 MCP 丢失
-  ❌ pr-594: logic
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| logic | +0 | -2 | -2 |
+| 指标 | Baseline | MCP+REPAIR |
+|------|:--------:|:-------------:|
+| Resolved Rate | 13/16 (81.2%) | 11/16 (68.8%) |
+| File-Level Precision | 90.0% | 14.4% |
 
 ## 未解决 Case
 
@@ -55,9 +34,3 @@ MCP+Repair:
   logic: 3
   sw_hw_config: 1
 ```
-## Precision
-
-- Precision: 73.3% (11/15)
-- Recall: 73.3% (11/15)
-- 空 patch: 1 个 (633)
-

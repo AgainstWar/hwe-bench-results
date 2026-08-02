@@ -1,143 +1,38 @@
-# Ibex MCP + WAVES Analysis
+# Ibex MCP Analysis
 
-## Overall Results
+## 总体结果
 
 ```yaml
-opencode:
+mcp:
   agent: OpenCode
   model: DeepSeek V4 Flash
-  mcp: WAVES + waves-debug skill
   resolved: 24
   total: 35
-  pct: 69%
+  resolved_rate: 68.6%
+  file_level_precision: 88.2%
   infra_errors: 0
 ```
 
-## MCP vs Baseline (No MCP)
+## 指标对比
 
-| Metric | Baseline | MCP |
-|---|---|---|
-| Resolved | 27/35 (77%) | 24/35 (69%) |
-| Net Change | | -3 |
-| Infra Errors | 0 | 0 |
+| 指标 | Baseline | MCP |
+|------|:--------:|:-------------:|
+| Resolved Rate | 27/35 (77.1%) | 24/35 (68.6%) |
+| File-Level Precision | 79.2% | 88.2% |
 
-### MCP Newly Solved
-  ✅ pr-974: timing_sync
-  ✅ pr-1141: interface
+## 未解决 Case
 
-### MCP Lost
-  ❌ pr-293: interface
-  ❌ pr-1135: config_integ
-  ❌ pr-1469: spec
-  ❌ pr-1816: spec
-  ❌ pr-1865: interface
-
-## Bug Type Impact (MCP Changes)
-
-| Bug Type | +MCP Solved | -MCP Lost | Net |
-|----------|:-:|:-:|:-:|
-| config_integ | +0 | -1 | -1 |
-| interface | +1 | -2 | -1 |
-| spec | +0 | -2 | -2 |
-| timing_sync | +1 | -0 | +1 |
-
-## Unresolved Cases
-
-```json[
-  {
-    "pr": 104,
-    "test": "N/A",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 155,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  },
-  {
-    "pr": 293,
-    "test": "need_check",
-    "type": "interface",
-    "desc": "N/A"
-  },
-  {
-    "pr": 475,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 907,
-    "test": "need_check",
-    "type": "interface",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1135,
-    "test": "need_check",
-    "type": "config_integ",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1229,
-    "test": "need_check",
-    "type": "interface",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1469,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1513,
-    "test": "need_check",
-    "type": "logic",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1816,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 1865,
-    "test": "N/A",
-    "type": "interface",
-    "desc": "N/A"
-  }
+```json
+[
+  {"pr": 104, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 155, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 293, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 475, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 907, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 1135, "test": "N/A", "type": "config_integ", "desc": "N/A"},  {"pr": 1229, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 1469, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 1513, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 1816, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 1865, "test": "N/A", "type": "interface", "desc": "N/A"}
 ]
 ```
 
-## Bug Type Breakdown (Unresolved)
+## Bug 类型分布
 
 ```yaml
   config_integ: 1
-  interface: 3
+  interface: 4
   logic: 2
-  need_classification: 1
   spec: 4
 ```
-
-## Comparison with Official GPT-5.4
-
-| Category | Count | PRs |
-|---|---|---|
-| Both Resolved | 22 | 45, 48, 54, 83, 122, 157, 166, 167, 176, 222, 244, 282, 332, 377, 465, 882, 974, 1141, 1383, 1584, 1735, 2232 |
-| Official Only | 10 | 155, 293, 475, 907, 1135, 1229, 1469, 1513, 1816, 1865 |
-| MCP Only | 2 | 276, 1780 |
-| Neither | 1 | 104 |
-
-## Conclusion
-
-MCP + WAVES slight regression (-3) on Ibex, but narrowing vs old MCP runs. Zero infrastructure errors.
-## Precision
-
-- Precision: 68.6% (24/35)
-- Recall: 68.6% (24/35)
-- 空 patch: 2 个 (276, 332)
-

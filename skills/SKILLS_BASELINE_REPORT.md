@@ -80,15 +80,20 @@
 
 
 
-## Precision 统计
 
-| Repo | Precision | Recall | 空 patch |
-|------|:--------:|:------:|:--------:|
-| ibex | 61.8% | 61.8% | 1 |
-| cva6 | 80.6% | 80.6% | 4 |
-| caliptra | 78.6% | 78.6% | 4 |
-| rocketchip | 31.0% | 31.0% | 3 |
-| xiangshan | 34.0% | 34.0% | 10 |
+## 指标统计
+
+本报告使用论文的两个互补指标：
+- **Resolved Rate**：agent patch 使测试 FAIL→PASS 的任务比例
+- **File-Level Precision**：agent 修改的文件中出现在 ground-truth patch 中的比例 = |agent_files ∩ ground_truth_files| / |agent_files|
+
+| Repo | Resolved Rate | File-Level Precision |
+|------|:------------:|:---------------------:|
+| ibex | (见总体结果) | 84.9% |
+| cva6 | (见总体结果) | 74.6% |
+| caliptra | (见总体结果) | 76.2% |
+| rocketchip | (见总体结果) | 73.7% |
+| xiangshan | (见总体结果) | 71.7% |
 
 ## 结论
 

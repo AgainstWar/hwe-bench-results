@@ -126,9 +126,19 @@ MCP + All 同时启用 WAVES MCP、locate skill 和 repair skill。
 
 
 
-## Precision 统计
 
-MCP+Locate, MCP+Repair, MCP+All 三个配置的 Precision 数据见对应子目录（locate/, repair/, all/）的 SUMMARY.md。
+## File-Level Precision 汇总
+
+| Config | ibex | cva6 | caliptra | rocketchip | xiangshan |
+|--------|:----:|:----:|:--------:|:----------:|:---------:|
+| Baseline | 79.2% | 79.0% | 90.0% | 87.0% | 89.7% |
+| MCP | 88.2% | 84.7% | 86.4% | 86.1% | 87.6% |
+| Skills | 84.9% | 74.6% | 76.2% | 73.7% | 71.7% |
+| MCP+Locate | 80.5% | 82.1% | 100.0% | 76.2% | 80.0% |
+| MCP+Repair | 85.7% | 81.8% | 14.4% | 89.1% | 80.2% |
+| MCP+All | 80.4% | 81.5% | 78.6% | 55.7% | 80.7% |
+
+注：File-Level Precision = |agent_files ∩ ground_truth_files| / |agent_files|，衡量故障定位的准确性。
 
 ## 结论
 

@@ -190,16 +190,6 @@
 | **Total** | **145/172 (84%)** | **99/172 (58%)** | **88/172 (51%)** | **97/172 (56%)** | **+9** |
 
 
-## Precision 统计
-
-| Repo | Precision | Recall | 空 patch |
-|------|:--------:|:------:|:--------:|
-| ibex | 68.6% | 68.6% | 2 |
-| cva6 | 88.6% | 88.6% | 0 |
-| caliptra | 75.0% | 75.0% | 0 |
-| rocketchip | 38.7% | 38.7% | 1 |
-| xiangshan | 34.0% | 34.0% | 1 |
-
 ## Bug Type Impact Summary
 
 MCP 在不同 Bug 类型上的净影响：
@@ -214,6 +204,21 @@ MCP 在不同 Bug 类型上的净影响：
 | sw_hw_config | +1 | -1 | 0 |
 | sw_hw_interact | +1 | 0 | +1 |
 | **Total** | **+20** | **-11** | **+9** |
+
+
+## 指标统计
+
+本报告使用论文的两个互补指标：
+- **Resolved Rate**：agent patch 使测试 FAIL→PASS 的任务比例
+- **File-Level Precision**：agent 修改的文件中出现在 ground-truth patch 中的比例 = |agent_files ∩ ground_truth_files| / |agent_files|
+
+| Repo | Resolved Rate | File-Level Precision |
+|------|:------------:|:---------------------:|
+| ibex | (见总体结果) | 88.2% |
+| cva6 | (见总体结果) | 84.7% |
+| caliptra | (见总体结果) | 86.4% |
+| rocketchip | (见总体结果) | 86.1% |
+| xiangshan | (见总体结果) | 87.6% |
 
 ## 核心发现
 

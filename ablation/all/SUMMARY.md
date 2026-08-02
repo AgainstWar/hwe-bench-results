@@ -22,15 +22,16 @@ xiangshan: 4 - 2195, 3753, 5080, 5189
 总计 26 个空 patch，影响评分。
 
 
-## Precision 统计
 
-| Repo | Precision | Recall | 空 patch |
-|------|:--------:|:------:|:--------:|
-| xiangshan | 50.0% | 50.0% | 4 |
-| rocketchip | 24.0% | 24.0% | 7 |
-| ibex | 76.7% | 76.7% | 5 |
-| cva6 | 87.1% | 87.1% | 4 |
-| caliptra | 80.0% | 80.0% | 6 |
+## 指标统计
+
+| Repo | Resolved Rate | File-Level Precision |
+|------|:------------:|:---------------------:|
+| ibex | (见总体结果) | 80.4% |
+| cva6 | (见总体结果) | 81.5% |
+| caliptra | (见总体结果) | 78.6% |
+| rocketchip | (见总体结果) | 55.7% |
+| xiangshan | (见总体结果) | 80.7% |
 
 ## 分项目
 

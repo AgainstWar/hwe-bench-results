@@ -1,57 +1,24 @@
-# Rocketchip MCP+Repair Analysis
+# RocketChip MCP+REPAIR Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 8/32 (25%)
-mcp_alone:
-  resolved: 12/32 (38%)
-MCP+Repair:
-  resolved: 12/32 (38%)
+mcp+repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 12
+  total: 32
+  resolved_rate: 37.5%
+  file_level_precision: 89.1%
+  infra_errors: 0
 ```
 
-## MCP+Repair vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 8/32 (25%) | 12/32 (38%) |
-| 净变化 | | +4 |
-### 新解决
-  ✅ pr-177 (logic)
-  ✅ pr-404 (logic)
-  ✅ pr-1878 (spec)
-  ✅ pr-2213 (interface)
-  ✅ pr-2368 (config_integ)
-  ✅ pr-2621 (config_integ)
-### 丢失
-  ❌ pr-576 (logic)
-  ❌ pr-1069 (logic)
-## MCP+Repair vs MCP alone
-
-| 指标 | MCP alone | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 12/32 (38%) | 12/32 (38%) |
-| 净变化 | | +0 |
-
-### 相对 MCP 新解决
-  ✅ pr-177: logic
-  ✅ pr-2368: config_integ
-  ✅ pr-2621: config_integ
-  ✅ pr-3065: interface
-### 相对 MCP 丢失
-  ❌ pr-576: logic
-  ❌ pr-1069: logic
-  ❌ pr-1093: sw_hw_interact
-  ❌ pr-1176: interface
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| config_integ | +2 | -0 | +2 |
-| interface | +1 | -0 | +1 |
-| logic | +2 | -2 | +0 |
-| spec | +1 | -0 | +1 |
+| 指标 | Baseline | MCP+REPAIR |
+|------|:--------:|:-------------:|
+| Resolved Rate | 8/32 (25.0%) | 12/32 (37.5%) |
+| File-Level Precision | 87.0% | 89.1% |
 
 ## 未解决 Case
 
@@ -71,8 +38,3 @@ MCP+Repair:
   sw_hw_interact: 1
   timing_sync: 4
 ```
-## Precision
-
-- Precision: 37.5% (12/32)
-- Recall: 37.5% (12/32)
-

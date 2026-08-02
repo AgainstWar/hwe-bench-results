@@ -1,59 +1,24 @@
-# Ibex MCP+Repair Analysis
+# Ibex MCP+REPAIR Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 27/35 (77%)
-mcp_alone:
-  resolved: 24/35 (69%)
-MCP+Repair:
-  resolved: 23/35 (66%)
+mcp+repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 23
+  total: 35
+  resolved_rate: 65.7%
+  file_level_precision: 85.7%
+  infra_errors: 0
 ```
 
-## MCP+Repair vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 27/35 (77%) | 23/35 (66%) |
-| 净变化 | | -4 |
-### 新解决
-  ✅ pr-475 (spec)
-  ✅ pr-974 (timing_sync)
-  ✅ pr-1141 (interface)
-### 丢失
-  ❌ pr-176 (logic)
-  ❌ pr-293 (interface)
-  ❌ pr-332 (spec)
-  ❌ pr-882 (logic)
-  ❌ pr-1135 (config_integ)
-  ❌ pr-1469 (spec)
-  ❌ pr-1584 (spec)
-## MCP+Repair vs MCP alone
-
-| 指标 | MCP alone | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 24/35 (69%) | 23/35 (66%) |
-| 净变化 | | -1 |
-
-### 相对 MCP 新解决
-  ✅ pr-475: spec
-  ✅ pr-1816: spec
-  ✅ pr-1865: interface
-### 相对 MCP 丢失
-  ❌ pr-176: logic
-  ❌ pr-332: spec
-  ❌ pr-882: logic
-  ❌ pr-1584: spec
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| config_integ | +0 | -1 | -1 |
-| interface | +1 | -1 | +0 |
-| logic | +0 | -2 | -2 |
-| spec | +1 | -3 | -2 |
-| timing_sync | +1 | -0 | +1 |
+| 指标 | Baseline | MCP+REPAIR |
+|------|:--------:|:-------------:|
+| Resolved Rate | 27/35 (77.1%) | 23/35 (65.7%) |
+| File-Level Precision | 79.2% | 85.7% |
 
 ## 未解决 Case
 
@@ -71,9 +36,3 @@ MCP+Repair:
   logic: 3
   spec: 2
 ```
-## Precision
-
-- Precision: 74.2% (23/31)
-- Recall: 74.2% (23/31)
-- 空 patch: 4 个 (1469, 176, 293, 332)
-

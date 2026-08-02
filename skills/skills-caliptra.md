@@ -1,55 +1,30 @@
-# Caliptra Skills (locate + repair) Analysis
+# Caliptra SKILLS Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  agent: OpenCode
-  model: DeepSeek V4 Flash
-  resolved: 13
-  total: 16
-  pct: 81%
-  infra_errors: 0
-
 skills:
   agent: OpenCode
   model: DeepSeek V4 Flash
-  skills: locate + repair
   resolved: 11
   total: 16
-  pct: 69%
+  resolved_rate: 68.8%
+  file_level_precision: 76.2%
   infra_errors: 0
 ```
 
-## Skills vs Baseline
+## 指标对比
 
-| 指标 | Baseline | Skills |
-|------|:--------:|:------:|
-| 解决 | 13/16 (81%) | 11/16 (69%) |
-| 净变化 | | -2 |
-| 基础设施错误 | 0 | 0 |
-
-### 新解决
-  无
-
-### 丢失
-  ❌ pr-195: logic
-  ❌ pr-757: timing_sync
-
-## Bug Type 影响
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| logic | +0 | -1 | -1 |
-| timing_sync | +0 | -1 | -1 |
+| 指标 | Baseline | SKILLS |
+|------|:--------:|:-------------:|
+| Resolved Rate | 13/16 (81.2%) | 11/16 (68.8%) |
+| File-Level Precision | 90.0% | 76.2% |
 
 ## 未解决 Case
 
 ```json
 [
-  {"pr": 725, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 757, "test": "N/A", "type": "timing_sync", "desc": "N/A"},
-  {"pr": 1033, "test": "N/A", "type": "sw_hw_config", "desc": "N/A"}
+  {"pr": 725, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 757, "test": "N/A", "type": "timing_sync", "desc": "N/A"},  {"pr": 1033, "test": "N/A", "type": "sw_hw_config", "desc": "N/A"}
 ]
 ```
 
@@ -60,13 +35,3 @@ skills:
   sw_hw_config: 1
   timing_sync: 1
 ```
-
-## 结论
-
-Skills 在该项目上有轻微退步。 基础设施错误为 0。
-## Precision
-
-- Precision: 78.6% (11/14)
-- Recall: 78.6% (11/14)
-- 空 patch: 4 个 (1033, 195, 70, 747)
-

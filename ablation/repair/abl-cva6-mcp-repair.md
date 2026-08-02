@@ -1,48 +1,24 @@
-# Cva6 MCP+Repair Analysis
+# CVA6 MCP+REPAIR Analysis
 
 ## 总体结果
 
 ```yaml
-baseline:
-  resolved: 28/35 (80%)
-mcp_alone:
-  resolved: 31/35 (89%)
-MCP+Repair:
-  resolved: 30/35 (86%)
+mcp+repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
+  resolved: 30
+  total: 35
+  resolved_rate: 85.7%
+  file_level_precision: 81.8%
+  infra_errors: 0
 ```
 
-## MCP+Repair vs Baseline
+## 指标对比
 
-| 指标 | Baseline | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 28/35 (80%) | 30/35 (86%) |
-| 净变化 | | +2 |
-### 新解决
-  ✅ pr-2279 (interface)
-  ✅ pr-2420 (config_integ)
-  ✅ pr-2989 (spec)
-### 丢失
-  ❌ pr-2032 (logic)
-## MCP+Repair vs MCP alone
-
-| 指标 | MCP alone | MCP+Repair |
-|------|:--------:|:-------:|
-| 解决 | 31/35 (89%) | 30/35 (86%) |
-| 净变化 | | -1 |
-
-### 相对 MCP 新解决
-  无
-
-### 相对 MCP 丢失
-  ❌ pr-2032: logic
-## Bug Type 影响（vs Baseline）
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| config_integ | +1 | -0 | +1 |
-| interface | +1 | -0 | +1 |
-| logic | +0 | -1 | -1 |
-| spec | +1 | -0 | +1 |
+| 指标 | Baseline | MCP+REPAIR |
+|------|:--------:|:-------------:|
+| Resolved Rate | 28/35 (80.0%) | 30/35 (85.7%) |
+| File-Level Precision | 79.0% | 81.8% |
 
 ## 未解决 Case
 
@@ -59,8 +35,3 @@ MCP+Repair:
   logic: 1
   spec: 2
 ```
-## Precision
-
-- Precision: 85.7% (30/35)
-- Recall: 85.7% (30/35)
-

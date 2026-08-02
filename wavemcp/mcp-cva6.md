@@ -1,94 +1,36 @@
-# CVA6 MCP + WAVES Analysis
+# CVA6 MCP Analysis
 
-## Overall Results
+## 总体结果
 
 ```yaml
-opencode:
+mcp:
   agent: OpenCode
   model: DeepSeek V4 Flash
-  mcp: WAVES + waves-debug skill
   resolved: 31
   total: 35
-  pct: 89%
+  resolved_rate: 88.6%
+  file_level_precision: 84.7%
   infra_errors: 0
 ```
 
-## MCP vs Baseline (No MCP)
+## 指标对比
 
-| Metric | Baseline | MCP |
-|---|---|---|
-| Resolved | 28/35 (80%) | 31/35 (89%) |
-| Net Change | | +3 |
-| Infra Errors | 0 | 0 |
+| 指标 | Baseline | MCP |
+|------|:--------:|:-------------:|
+| Resolved Rate | 28/35 (80.0%) | 31/35 (88.6%) |
+| File-Level Precision | 79.0% | 84.7% |
 
-### MCP Newly Solved
-  ✅ pr-2279: interface
-  ✅ pr-2420: config_integ
-  ✅ pr-2989: spec
-
-### MCP Lost
-  None
-
-## Bug Type Impact (MCP Changes)
-
-| Bug Type | +MCP Solved | -MCP Lost | Net |
-|----------|:-:|:-:|:-:|
-| config_integ | +1 | -0 | +1 |
-| interface | +1 | -0 | +1 |
-| spec | +1 | -0 | +1 |
-
-## Unresolved Cases
+## 未解决 Case
 
 ```json
 [
-  {
-    "pr": 2170,
-    "test": "N/A",
-    "type": "config_integ",
-    "desc": "N/A"
-  },
-  {
-    "pr": 2802,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 2844,
-    "test": "need_check",
-    "type": "spec",
-    "desc": "N/A"
-  },
-  {
-    "pr": 3042,
-    "test": "N/A",
-    "type": "config_integ",
-    "desc": "N/A"
-  }
+  {"pr": 2170, "test": "N/A", "type": "config_integ", "desc": "N/A"},  {"pr": 2802, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 2844, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 3042, "test": "N/A", "type": "config_integ", "desc": "N/A"}
 ]
 ```
 
-## Bug Type Breakdown (Unresolved)
+## Bug 类型分布
 
 ```yaml
   config_integ: 2
   spec: 2
 ```
-
-## Comparison with Official GPT-5.4
-
-| Category | Count | PRs |
-|---|---|---|
-| Both Resolved | 31 | 1482, 2017, 2032, 2248, 2279, 2282, 2330, 2374, 2375, 2420, 2468, 2469, 2476, 2549, 2589, 2685, 2711, 2728, 2916, 2944, 2945, 2989, 3059, 3107, 3137, 3168, 3171, 3191, 3204, 3226, 3231 |
-| Official Only | 3 | 2170, 2802, 2844 |
-| MCP Only | 0 | None |
-| Neither | 1 | 3042 |
-
-## Conclusion
-
-MCP + WAVES positive net gain of +3 on CVA6. Zero infrastructure errors.
-## Precision
-
-- Precision: 88.6% (31/35)
-- Recall: 88.6% (31/35)
-
