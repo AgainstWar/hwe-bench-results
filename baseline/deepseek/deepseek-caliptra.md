@@ -56,3 +56,16 @@ baseline:
   logic: 2
   sw_hw_config: 1
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 16
+  status: resolved=13 unresolved=3
+  prompt_k: 456.7
+  completion_k: 11.7
+  cache_hit_pct: 96.0
+  tool_calls: 19.6
+  cost_usd: 0.000000
+```

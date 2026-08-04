@@ -72,3 +72,16 @@ mcp+locate:
   sw_hw_config: 3
   timing_sync: 4
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 32
+  status: resolved=7 unresolved=25
+  prompt_k: 895.0
+  completion_k: 3.7
+  cache_hit_pct: 95.8
+  tool_calls: 25.5
+  cost_usd: 0.013533
+```

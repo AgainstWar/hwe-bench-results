@@ -72,3 +72,16 @@ skills:
   interface: 1
   spec: 2
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 35
+  status: resolved=25 unresolved=10
+  prompt_k: 878.7
+  completion_k: 4.0
+  cache_hit_pct: 95.6
+  tool_calls: 26.1
+  cost_usd: 0.011276
+```

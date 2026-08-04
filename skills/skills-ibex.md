@@ -75,3 +75,16 @@ skills:
   logic: 4
   spec: 5
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 35
+  status: resolved=21 unresolved=14
+  prompt_k: 1361.3
+  completion_k: 5.3
+  cache_hit_pct: 96.7
+  tool_calls: 31.6
+  cost_usd: 0.016751
+```

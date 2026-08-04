@@ -56,3 +56,16 @@ mcp:
   logic: 3
   sw_hw_config: 1
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 16
+  status: resolved=12 unresolved=4
+  prompt_k: 803.2
+  completion_k: 4.2
+  cache_hit_pct: 95.0
+  tool_calls: 22.8
+  cost_usd: 0.012190
+```

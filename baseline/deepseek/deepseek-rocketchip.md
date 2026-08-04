@@ -76,3 +76,16 @@ baseline:
   sw_hw_interact: 1
   timing_sync: 4
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 32
+  status: resolved=8 unresolved=24
+  prompt_k: 671.5
+  completion_k: 3.4
+  cache_hit_pct: 95.7
+  tool_calls: 22.8
+  cost_usd: 0.010688
+```

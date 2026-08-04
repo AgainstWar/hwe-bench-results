@@ -77,3 +77,15 @@ locate:
 | pr-3065 | 100.0% | 1/1 |
 | pr-3256 | 100.0% | 1/1 |
 
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 16
+  status: resolved=13 unresolved=3
+  prompt_k: (K)
+  completion_k: (K)
+  cache_hit_pct: (%)
+  tool_calls: 29.5
+  cost_usd: 0.2274
+```

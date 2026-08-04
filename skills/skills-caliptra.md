@@ -55,3 +55,16 @@ skills:
   sw_hw_config: 1
   timing_sync: 1
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 16
+  status: resolved=11 unresolved=5
+  prompt_k: 781.7
+  completion_k: 3.9
+  cache_hit_pct: 94.0
+  tool_calls: 22.4
+  cost_usd: 0.014015
+```

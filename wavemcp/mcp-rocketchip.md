@@ -74,3 +74,16 @@ mcp:
   spec: 2
   timing_sync: 3
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 32
+  status: resolved=12 unresolved=20
+  prompt_k: 843.0
+  completion_k: 3.5
+  cache_hit_pct: 95.9
+  tool_calls: 23.3
+  cost_usd: 0.012307
+```

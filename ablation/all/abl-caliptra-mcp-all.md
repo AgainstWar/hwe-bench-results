@@ -50,3 +50,16 @@ mcp+all:
   interface: 1
   logic: 1
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 32
+  status: resolved=6 unresolved=26
+  prompt_k: 816.6
+  completion_k: 3.8
+  cache_hit_pct: 95.5
+  tool_calls: 25.4
+  cost_usd: 0.012653
+```

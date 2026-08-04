@@ -77,3 +77,16 @@ mcp:
   logic: 2
   spec: 4
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 38
+  status: resolved=27 unresolved=11
+  prompt_k: 1167.7
+  completion_k: 4.0
+  cache_hit_pct: 96.5
+  tool_calls: 26.1
+  cost_usd: 0.016043
+```

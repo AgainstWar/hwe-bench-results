@@ -77,3 +77,16 @@ baseline:
   spec: 2
   timing_sync: 1
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 35
+  status: resolved=27 unresolved=8
+  prompt_k: 856.3
+  completion_k: 17.7
+  cache_hit_pct: 97.0
+  tool_calls: 23.2
+  cost_usd: 0.000000
+```

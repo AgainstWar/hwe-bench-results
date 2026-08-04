@@ -76,3 +76,16 @@ mcp+repair:
   sw_hw_interact: 1
   timing_sync: 4
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 54
+  status: patch_submitted=54
+  prompt_k: 999.0
+  completion_k: 4.0
+  cache_hit_pct: 95.6
+  tool_calls: 27.4
+  cost_usd: 0.014582
+```

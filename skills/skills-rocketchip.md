@@ -72,3 +72,16 @@ skills:
   spec: 2
   timing_sync: 4
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 32
+  status: resolved=9 unresolved=23
+  prompt_k: 985.4
+  completion_k: 4.0
+  cache_hit_pct: 96.2
+  tool_calls: 27.9
+  cost_usd: 0.013785
+```

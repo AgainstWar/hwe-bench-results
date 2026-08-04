@@ -95,3 +95,16 @@ baseline:
   sw_hw_config: 3
   timing_sync: 7
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 54
+  status: patch_submitted=54
+  prompt_k: 861.5
+  completion_k: 3.8
+  cache_hit_pct: 96.1
+  tool_calls: 25.1
+  cost_usd: 0.012535
+```

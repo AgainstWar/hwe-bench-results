@@ -75,3 +75,16 @@ baseline:
   interface: 1
   spec: 3
 ```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 35
+  status: resolved=28 unresolved=7
+  prompt_k: 571.7
+  completion_k: 8.7
+  cache_hit_pct: 97.0
+  tool_calls: 17.2
+  cost_usd: 0.000000
+```

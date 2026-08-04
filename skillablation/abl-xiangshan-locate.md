@@ -87,3 +87,15 @@ locate:
 | pr-4764 | 0.0% | 0/3 |
 | pr-5182 | 0.0% | 0/1 |
 
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 16
+  status: resolved=13 unresolved=3
+  prompt_k: (K)
+  completion_k: (K)
+  cache_hit_pct: (%)
+  tool_calls: 29.5
+  cost_usd: 0.2274
+```
