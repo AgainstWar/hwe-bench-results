@@ -71,15 +71,14 @@ mcp+locate:
   timing_sync: 2
 ```
 
+
 ## Token 统计（token_report.py）
 
-```yaml
-token_statistics:
-  tasks: 54
-  status: patch_submitted=52 error=2
-  prompt_k: 797.0
-  completion_k: 3.7
-  cache_hit_pct: 94.5
-  tool_calls: 22.5
-  cost_usd: 0.013089
-```
+### 平均指标
+
+
+
+### 逐 Task 明细
+
+注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
+

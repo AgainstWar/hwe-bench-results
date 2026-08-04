@@ -94,15 +94,14 @@ locate:
 | pr-3191 | 100.0% | 1/1 |
 | pr-3231 | 100.0% | 1/1 |
 
+
 ## Token 统计（token_report.py）
 
-```yaml
-token_statistics:
-  tasks: 54
-  status: patch_submitted=54
-  prompt_k: 1311.4
-  completion_k: 5.2
-  cache_hit_pct: 96.6
-  tool_calls: 33.0
-  cost_usd: 0.016408
-```
+### 平均指标
+
+
+
+### 逐 Task 明细
+
+注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
+

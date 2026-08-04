@@ -72,15 +72,14 @@ mcp+all:
   spec: 2
 ```
 
+
 ## Token 统计（token_report.py）
 
-```yaml
-token_statistics:
-  tasks: 54
-  status: patch_submitted=54
-  prompt_k: 1028.3
-  completion_k: 4.1
-  cache_hit_pct: 95.7
-  tool_calls: 25.9
-  cost_usd: 0.014935
-```
+### 平均指标
+
+
+
+### 逐 Task 明细
+
+注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
+
