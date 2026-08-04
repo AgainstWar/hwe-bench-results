@@ -140,6 +140,11 @@ MCP + All 同时启用 WAVES MCP、locate skill 和 repair skill。
 
 注：File-Level Precision = |agent_files ∩ ground_truth_files| / |agent_files|，衡量故障定位的准确性。
 
+
+## Token 消耗统计
+
+Token 统计（per-task 明细 + 平均指标）见各子目录的 SUMMARY.md 和各项目独立报告。
+
 ## 结论
 
 ### MCP + Locate

@@ -201,6 +201,19 @@
 | rocketchip | (见总体结果) | 87.0% |
 | xiangshan | (见总体结果) | 89.7% |
 
+
+## Token 消耗统计
+
+| Repo | Tasks | Prompt(K) | Comp(K) | Cache% | Calls | Cost($) |
+|------|-------|-----------|---------|--------|-------|--------|
+| ibex | 35 | 856.3 | 17.7 | 97.0 | 23.2 | 0.000000 |
+| cva6 | 35 | 571.7 | 8.7 | 97.0 | 17.2 | 0.000000 |
+| caliptra | 16 | 456.7 | 11.7 | 96.0 | 19.6 | 0.000000 |
+| rocketchip | 32 | 671.5 | 3.4 | 95.7 | 22.8 | 0.010688 |
+| xiangshan | 54 | 861.5 | 3.8 | 96.1 | 25.1 | 0.012535 |
+
+注：per-task 明细见各项目独立报告。
+
 ## 核心发现
 
 1. **Verilog 项目**：DeepSeek V4 Flash (OpenCode) 得分 77-82%，反超官方 DeepSeek V3.2 (Codex) 的 60-71%。OpenCode agent 在 Verilog 项目上表现优于 Codex CLI。
