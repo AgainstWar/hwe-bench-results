@@ -110,11 +110,11 @@ repair:
 
 ```yaml
 token_statistics:
-  tasks: 16
-  status: resolved=13 unresolved=3
-  prompt_k: 1050.5
-  completion_k: 5.0
-  cache_hit_pct: 95.7
-  tool_calls: 29.5
-  cost_usd: 0.014214
+  tasks: 54
+  status: patch_submitted=54
+  prompt_k: 1311.4
+  completion_k: 5.2
+  cache_hit_pct: 96.6
+  tool_calls: 33.0
+  cost_usd: 0.016408
 ```

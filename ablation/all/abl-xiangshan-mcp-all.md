@@ -99,11 +99,11 @@ mcp+all:
 
 ```yaml
 token_statistics:
-  tasks: 32
-  status: resolved=6 unresolved=26
-  prompt_k: 816.6
-  completion_k: 3.8
-  cache_hit_pct: 95.5
-  tool_calls: 25.4
-  cost_usd: 0.012653
+  tasks: 54
+  status: patch_submitted=54
+  prompt_k: 1028.3
+  completion_k: 4.1
+  cache_hit_pct: 95.7
+  tool_calls: 25.9
+  cost_usd: 0.014935
 ```

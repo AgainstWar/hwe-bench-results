@@ -77,11 +77,11 @@ mcp+locate:
 
 ```yaml
 token_statistics:
-  tasks: 32
-  status: resolved=7 unresolved=25
-  prompt_k: 895.0
+  tasks: 54
+  status: patch_submitted=52 error=2
+  prompt_k: 797.0
   completion_k: 3.7
-  cache_hit_pct: 95.8
-  tool_calls: 25.5
-  cost_usd: 0.013533
+  cache_hit_pct: 94.5
+  tool_calls: 22.5
+  cost_usd: 0.013089
 ```
