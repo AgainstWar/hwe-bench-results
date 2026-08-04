@@ -59,13 +59,37 @@ mcp:
 
 ## Token 统计（token_report.py）
 
+### 平均指标
+
 ```yaml
 token_statistics:
   tasks: 16
-  status: resolved=12 unresolved=4
+  status: unresolved=16
   prompt_k: 803.2
   completion_k: 4.2
   cache_hit_pct: 95.0
   tool_calls: 22.8
   cost_usd: 0.012190
 ```
+
+### 逐 Task 明细
+
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| caliptra-rtl-pr-1033__qACeaKT | unresolved | 663.2 | 3.3 | 0.0124 | 93.7 | 22 |
+| caliptra-rtl-pr-1073__FDdfikp | resolved | 642.8 | 2.7 | 0.0151 | 91.6 | 15 |
+| caliptra-rtl-pr-1089__7wYq4pr | resolved | 539.9 | 2.7 | 0.0117 | 93.2 | 14 |
+| caliptra-rtl-pr-134__hqK3jMA | resolved | 976.9 | 6.7 | 0.0117 | 95.4 | 40 |
+| caliptra-rtl-pr-195__DWwc6TM | resolved | 227.5 | 2.0 | 0.0069 | 88.2 | 11 |
+| caliptra-rtl-pr-252__DVV6fPj | resolved | 136.7 | 1.6 | 0.0037 | 87.0 | 8 |
+| caliptra-rtl-pr-298__ygNLP36 | resolved | 222.2 | 1.9 | 0.0050 | 89.5 | 13 |
+| caliptra-rtl-pr-506__thTxvCs | resolved | 694.6 | 3.3 | 0.0117 | 93.5 | 26 |
+| caliptra-rtl-pr-594__Lzb9YD4 | resolved | 2279.2 | 16.8 | 0.0239 | 97.5 | 48 |
+| caliptra-rtl-pr-633__ArmMvzT | unresolved | 463.1 | 3.5 | 0.0086 | 91.9 | 24 |
+| caliptra-rtl-pr-70__dozjhmd | unresolved | 2821.1 | 6.1 | 0.0337 | 97.5 | 48 |
+| caliptra-rtl-pr-725__XJzd2TP | unresolved | 1729.8 | 6.5 | 0.0171 | 96.6 | 34 |
+| caliptra-rtl-pr-747__J2Eg593 | resolved | 238.7 | 1.8 | 0.0066 | 89.3 | 12 |
+| caliptra-rtl-pr-757__LrVoPKj | resolved | 444.9 | 3.7 | 0.0108 | 93.1 | 19 |
+| caliptra-rtl-pr-786__4BUS58m | resolved | 646.7 | 3.2 | 0.0121 | 91.5 | 23 |
+| caliptra-rtl-pr-963__uXHeLnK | resolved | 124.6 | 1.0 | 0.0040 | 87.7 | 7 |
+

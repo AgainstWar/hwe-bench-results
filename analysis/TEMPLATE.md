@@ -150,6 +150,8 @@ opencode:
 
 ## Token 统计（token_report.py）
 
+### 平均指标
+
 ```yaml
 token_statistics:
   prompt_k: {N}          # 平均 Prompt tokens (K)
@@ -161,6 +163,18 @@ token_statistics:
   resolved: {N}          # 通过验证的任务数（需 --eval）
   unresolved: {N}        # 未通过的任务数
 ```
+
+### 逐 Task 明细
+
+```markdown
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| ibex-pr-104 | unresolved | 150.2 | 5.1 | 0.0150 | 43.2 | 24 |
+| ibex-pr-1135 | resolved | 180.5 | 6.3 | 0.0182 | 51.0 | 31 |
+| ... | ... | ... | ... | ... | ... | ... |
+```
+
+逐 task 表从 `token_report.py --details` 输出中提取。每个 task 一行，包含状态、Prompt(K)、Completion(K)、Cost($)、Cache%、Tool Calls。任务状态由 `--eval` 参数决定：传入 `--eval` 时显示 `resolved`/`unresolved`，未传入时显示 `patch_submitted`。
 
 ## 文件级精度明细
 

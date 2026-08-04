@@ -86,8 +86,13 @@ comparison_with_official:
 ## 结论
 
 所有 27 个失败均为 patch 质量问题，基础设施错误 = 0。主要 bug 类型为 logic（52%）和 Spec（22%）。官方能解而 OpenCode 不能解的 17 个 case 中，logic 类占多数，反映了当前模型在 Chisel 硬件逻辑修复上的能力退化。Verilog 项目（Ibex、CVA6、Caliptra）不受此影响，OpenCode 达到 91-100% 的修复率。
+## File-Level Precision
+
+- **Overall**: 81.1%
 
 ## Token 统计（token_report.py）
+
+### 平均指标
 
 ```yaml
 token_statistics:
@@ -100,6 +105,58 @@ token_statistics:
   cost_usd: 0.727621
 ```
 
-## File-Level Precision
+### 逐 Task 明细
 
-- **Overall**: 81.1%
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| XiangShan-pr-1242__LiATbEc | patch_submitted | 1032.7 | 3.1 | 0.6285 | 94.9 | 41 |
+| XiangShan-pr-1323__uwKyVtn | patch_submitted | 1799.1 | 3.5 | 0.8218 | 94.0 | 49 |
+| XiangShan-pr-1395__Hfq5oeh | patch_submitted | 1176.4 | 3.9 | 0.7157 | 94.8 | 56 |
+| XiangShan-pr-1401__eA7kskA | patch_submitted | 2715.2 | 5.9 | 1.3220 | 95.3 | 65 |
+| XiangShan-pr-1602__gNr2eMZ | patch_submitted | 1574.2 | 4.2 | 1.2027 | 91.2 | 49 |
+| XiangShan-pr-1679__CEhUduX | patch_submitted | 540.5 | 2.0 | 0.3575 | 88.9 | 30 |
+| XiangShan-pr-1694__JZjpdwQ | patch_submitted | 2354.9 | 4.5 | 1.0854 | 95.1 | 62 |
+| XiangShan-pr-1793__2iwkJD3 | patch_submitted | 556.7 | 2.3 | 0.3659 | 88.8 | 29 |
+| XiangShan-pr-1820__gM8LgmJ | patch_submitted | 629.6 | 2.5 | 0.4082 | 90.5 | 41 |
+| XiangShan-pr-1907__7iYzwnu | patch_submitted | 400.7 | 1.8 | 0.2961 | 87.4 | 23 |
+| XiangShan-pr-1931__8kkHwMG | patch_submitted | 988.1 | 2.7 | 0.5823 | 91.7 | 34 |
+| XiangShan-pr-2095__C9LTdDK | patch_submitted | 309.2 | 1.5 | 0.2357 | 84.3 | 23 |
+| XiangShan-pr-2195__Dp5jK6b | patch_submitted | 2318.9 | 5.2 | 1.0184 | 94.9 | 57 |
+| XiangShan-pr-2246__YiG7skh | patch_submitted | 1330.4 | 4.2 | 0.6352 | 94.8 | 55 |
+| XiangShan-pr-2351__GC7Pom6 | patch_submitted | 1985.4 | 5.7 | 1.0509 | 94.6 | 61 |
+| XiangShan-pr-2483__WyjmBnL | patch_submitted | 253.6 | 2.4 | 0.2081 | 88.8 | 21 |
+| XiangShan-pr-2513__rDP8ypX | patch_submitted | 1108.2 | 4.9 | 0.6493 | 92.9 | 43 |
+| XiangShan-pr-2781__XQaQtCx | patch_submitted | 1499.0 | 4.7 | 0.6915 | 95.7 | 61 |
+| XiangShan-pr-281__xiXJ3U4 | patch_submitted | 258.0 | 1.5 | 0.2298 | 82.8 | 23 |
+| XiangShan-pr-2845__D9gxndN | patch_submitted | 367.9 | 2.0 | 0.2263 | 90.3 | 24 |
+| XiangShan-pr-2997__jHJDkwy | patch_submitted | 1225.8 | 3.9 | 0.6627 | 94.9 | 58 |
+| XiangShan-pr-3182__sQKRo8z | patch_submitted | 988.1 | 4.2 | 0.5713 | 93.3 | 49 |
+| XiangShan-pr-3307__sP6BTCe | patch_submitted | 942.8 | 2.8 | 0.4860 | 93.9 | 41 |
+| XiangShan-pr-3329__j35qhvP | patch_submitted | 596.9 | 2.7 | 0.3789 | 91.3 | 31 |
+| XiangShan-pr-3555__ibZWzRm | patch_submitted | 701.7 | 2.0 | 0.3944 | 91.1 | 26 |
+| XiangShan-pr-3636__TNaDH4a | patch_submitted | 888.5 | 3.6 | 0.5009 | 92.7 | 44 |
+| XiangShan-pr-3717__ZXZMECB | patch_submitted | 3226.4 | 13.4 | 1.5300 | 96.8 | 79 |
+| XiangShan-pr-3753__gNCwwB2 | patch_submitted | 6057.5 | 16.4 | 2.5756 | 97.0 | 90 |
+| XiangShan-pr-3859__iGNzW93 | patch_submitted | 4352.4 | 8.0 | 1.7464 | 96.5 | 97 |
+| XiangShan-pr-3867__Jf7CsBv | patch_submitted | 1040.9 | 3.2 | 0.6159 | 93.1 | 41 |
+| XiangShan-pr-3907__b8Vdbcz | patch_submitted | 559.6 | 2.9 | 0.3456 | 91.8 | 42 |
+| XiangShan-pr-3955__uEYYLdP | patch_submitted | 674.0 | 2.8 | 0.3941 | 92.3 | 34 |
+| XiangShan-pr-39__BUrE2ZT | patch_submitted | 477.5 | 2.3 | 0.2988 | 91.5 | 24 |
+| XiangShan-pr-4110__nZNBgze | patch_submitted | 918.9 | 3.3 | 0.4844 | 93.9 | 47 |
+| XiangShan-pr-4166__ws9bPQD | patch_submitted | 2137.1 | 4.4 | 0.9265 | 95.6 | 56 |
+| XiangShan-pr-4179__ZmsBiYA | patch_submitted | 2076.2 | 10.1 | 1.0240 | 95.4 | 64 |
+| XiangShan-pr-4337__U9XJ3jT | patch_submitted | 978.4 | 3.3 | 0.6278 | 93.3 | 44 |
+| XiangShan-pr-4426__3QrvAgF | patch_submitted | 974.9 | 2.6 | 0.5027 | 93.1 | 30 |
+| XiangShan-pr-4442__iKVXr7b | patch_submitted | 936.3 | 2.7 | 0.4865 | 94.2 | 30 |
+| XiangShan-pr-4533__tiXCu3X | patch_submitted | 1753.1 | 5.1 | 0.8063 | 95.4 | 55 |
+| XiangShan-pr-4750__4gcy4w9 | patch_submitted | 2190.7 | 5.4 | 1.0859 | 95.7 | 54 |
+| XiangShan-pr-4764__4xnosxy | patch_submitted | 643.7 | 3.0 | 0.4212 | 90.8 | 41 |
+| XiangShan-pr-4943__5NekvXc | patch_submitted | 3675.6 | 8.3 | 1.5628 | 95.6 | 122 |
+| XiangShan-pr-4959__ACyNJDc | patch_submitted | 667.9 | 2.6 | 0.4586 | 91.4 | 30 |
+| XiangShan-pr-4968__KYxhQsq | patch_submitted | 1689.8 | 4.9 | 0.8348 | 94.6 | 62 |
+| XiangShan-pr-5080__Mv8rM4L | patch_submitted | 754.4 | 2.6 | 0.4352 | 92.7 | 35 |
+| XiangShan-pr-5182__AU6P9Dx | patch_submitted | 835.0 | 2.7 | 0.4738 | 92.2 | 32 |
+| XiangShan-pr-5189__MmYj3UZ | patch_submitted | 1584.2 | 3.6 | 0.7587 | 94.5 | 47 |
+| XiangShan-pr-5496__zuf4n68 | patch_submitted | 2727.3 | 4.4 | 1.2241 | 94.4 | 59 |
+| XiangShan-pr-5593__McG5Lit | patch_submitted | 1027.6 | 3.0 | 0.5219 | 94.1 | 38 |
+
