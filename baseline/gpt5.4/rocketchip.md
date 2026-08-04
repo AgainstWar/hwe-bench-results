@@ -82,3 +82,20 @@ comparison_with_official:
 ## 结论
 
 RocketChip 的 22 个未解决 case 全为 patch 质量问题, 基础设施错误 = 0。主要 bug 类型为 logic（7个）和 interface/config_integ（各 4 个）。OpenCode 在 RocketChip 上仅 27% 的修复率, 远低于官方的 72%, 差距比 XiangShan（50% vs 74%）更明显。值得注意的是 RocketChip 上 OpenCode 没有反超官方的 case（opencode_only = 0）。
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 32
+  status: resolved=8 unresolved=24
+  prompt_k: 1310.0
+  completion_k: 5.1
+  cache_hit_pct: 93.7
+  tool_calls: 51.0
+  cost_usd: 0.995443
+```
+
+## File-Level Precision
+
+- **Overall**: 69.8%

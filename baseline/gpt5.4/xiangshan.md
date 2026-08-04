@@ -86,3 +86,20 @@ comparison_with_official:
 ## 结论
 
 所有 27 个失败均为 patch 质量问题，基础设施错误 = 0。主要 bug 类型为 logic（52%）和 Spec（22%）。官方能解而 OpenCode 不能解的 17 个 case 中，logic 类占多数，反映了当前模型在 Chisel 硬件逻辑修复上的能力退化。Verilog 项目（Ibex、CVA6、Caliptra）不受此影响，OpenCode 达到 91-100% 的修复率。
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 54
+  status: patch_submitted=54
+  prompt_k: 1431.6
+  completion_k: 4.2
+  cache_hit_pct: 94.5
+  tool_calls: 47.3
+  cost_usd: 0.727621
+```
+
+## File-Level Precision
+
+- **Overall**: 81.1%

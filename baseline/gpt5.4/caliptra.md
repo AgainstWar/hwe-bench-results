@@ -45,3 +45,20 @@ comparison_with_official:
 ## 结论
 
 Caliptra 所有 16 个 case 全部修复（100%），与官方结果完全一致。
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 16
+  status: resolved=16
+  prompt_k: 2170.0
+  completion_k: 6.8
+  cache_hit_pct: 94.5
+  tool_calls: 58.2
+  cost_usd: 1.102473
+```
+
+## File-Level Precision
+
+- **Overall**: 59.0%

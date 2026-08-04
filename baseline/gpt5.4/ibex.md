@@ -60,3 +60,20 @@ comparison_with_official:
 ## 结论
 
 Ibex 仅 3 个 case 未解决，其中 2 个官方也没解（pr-104 和 pr-276），1 个官方能解而 OpenCode 没解（pr-1865, interface 类型）。整体修复率持平（91%），Verilog 项目不受模型退化影响。
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 35
+  status: resolved=32 unresolved=3
+  prompt_k: 1879.5
+  completion_k: 6.3
+  cache_hit_pct: 95.6
+  tool_calls: 59.3
+  cost_usd: 0.942087
+```
+
+## File-Level Precision
+
+- **Overall**: 88.3%

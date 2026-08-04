@@ -57,3 +57,20 @@ comparison_with_official:
 ## 结论
 
 CVA6 仅 2 个 case 未解决。官方能解而 OpenCode 没解的是 pr-2170（Config/Integ, AXI 总线宽度适配）。pr-3042 双方都没解。整体差距极小（97% vs 94%），Verilog 项目不受影响。
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  tasks: 35
+  status: resolved=33 unresolved=2
+  prompt_k: 1921.7
+  completion_k: 5.1
+  cache_hit_pct: 94.8
+  tool_calls: 59.7
+  cost_usd: 0.902463
+```
+
+## File-Level Precision
+
+- **Overall**: 72.2%
