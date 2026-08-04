@@ -56,12 +56,42 @@ uv run python results-archive/analysis/compute_precision.py \
 - **ground_truth_files**：官方 PR 实际修改的文件列表（dataset JSONL 中的 `modified_files` 字段）
 - **Overall Precision**：所有 case 的匹配文件数总和 / 所有 case 的 agent 修改文件数总和（论文 Table 3 的计算方式）
 
+### 3. token_report.py — Token 统计与任务状态
+
+```bash
+cd /path/to/hwe-bench
+python3 results-archive/analysis/token_report.py \
+  <jobs_dir> --eval <results_dir>/eval [--details]
+```
+
+示例（从 tarball 解压后的目录）：
+```bash
+python3 results-archive/analysis/token_report.py \
+  /tmp/extracted/jobs/hwe-test-skills-ibex \
+  --eval /tmp/extracted/results/hwe-test-skills-ibex/eval
+```
+
+| 参数 | 说明 |
+|------|------|
+| `<jobs_dir>` | Harbor job 目录路径 |
+| `--eval <eval_dir>` | 可选，指向 `eval/` 目录，从 `final_report.json` 读取 resolved 状态，将任务标记为 `resolved`/`unresolved` 而非仅有 `patch_submitted` |
+| `--details` | 可选，输出逐任务 token 明细 |
+
+该脚本输出五项指标（论文口径）：
+- **Prompt (K)**：平均每个任务的输入 Prompt tokens（千 token）
+- **Completion (K)**：平均每个任务的输出 Completion tokens（千 token）  
+- **Cache (%)**：缓存命中比例 = cache_hits / prompt_tokens × 100%
+- **Tool Calls**：平均每个任务的工具调用次数（从 trajectory.json 解析）
+- **Cost ($)**：报告 API 实际扣费 + 按官方模型定价估算的成本
+- **Status**：`resolved` / `unresolved`（需传入 `--eval`）或 `patch_submitted`（仅检查是否产出 patch）
+
 ## 数据来源
 
 | 数据 | 来源 |
 |------|------|
 | 官方 resolved/unresolved | `/home/username/hwe-bench-artifacts/results/{repo}/gpt5.4/eval/final_report.json` |
 | 本地方 resolved/unresolved | tarball 解压后的 `eval/final_report.json` |
+| 本地方 token 统计 | tarball 解压后的 `jobs/` 目录（`token_report.py` 解析 `result.json` + `trajectory.json`） |
 | agent 修改文件列表 | tarball 解压后的 `patches/patches.jsonl`（`compute_precision.py` 自动解析） |
 | ground-truth 修改文件 | `datasets/{org}__{repo}.jsonl` 的 `modified_files` 字段 |
 | 失败 case 的 fix.patch | `eval_workdir/{org}/{repo}/evals/pr-{N}/fix.patch` |
@@ -73,9 +103,10 @@ uv run python results-archive/analysis/compute_precision.py \
 1. 解压 tarball，找到 `patches/patches.jsonl` 和 `eval/final_report.json`
 2. 运行 `analyze_repo.py` 获取 resolved/unresolved 基础数据
 3. 运行 `compute_precision.py` 获取文件级精度
-4. 对于未解决的每个 PR，查阅 GitHub PR 描述，确定 bug 类别
-5. 汇总分类统计
-6. 按本模板格式写入对应 md 文件
+4. 运行 `token_report.py --eval <eval_dir>` 获取 token 消耗与任务状态统计
+5. 对于未解决的每个 PR，查阅 GitHub PR 描述，确定 bug 类别
+6. 汇总分类统计
+7. 按本模板格式写入对应 md 文件
 
 ## Bug 类别
 
@@ -115,6 +146,20 @@ opencode:
   resolved_rate: {N}          # Resolved Rate: 通过验证的任务比例
   file_level_precision: {N}   # File-Level Precision: 文件级修改精度
   infra_errors: 0
+```
+
+## Token 统计（token_report.py）
+
+```yaml
+token_statistics:
+  prompt_k: {N}          # 平均 Prompt tokens (K)
+  completion_k: {N}      # 平均 Completion tokens (K)
+  cache_hit_pct: {N}     # 缓存命中比例 (%)
+  tool_calls: {N}        # 平均工具调用次数
+  cost_usd: {N}          # API 扣费 ($) - 含 Harbor 实际扣费和官方定价估算
+  tasks: {N}             # 统计任务数
+  resolved: {N}          # 通过验证的任务数（需 --eval）
+  unresolved: {N}        # 未通过的任务数
 ```
 
 ## 文件级精度明细
