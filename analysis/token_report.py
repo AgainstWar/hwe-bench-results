@@ -25,7 +25,7 @@ def extract_model(trial_name, data):
         return model
     return "default"
 
-def load_trials(job_dir):
+def load_trials(job_dir, filter_repo=None):
     """Yield (trial_name, result_json, maybe_trajectory_json) for each trial."""
     for d in sorted(os.listdir(job_dir)):
         rpath = os.path.join(job_dir, d, "result.json")
@@ -33,6 +33,10 @@ def load_trials(job_dir):
             continue
         if d in ("result.json", "config.json", "job.log"):
             continue
+        if filter_repo:
+            prefix = d.split("__")[0].split("-")[0].lower()
+            if prefix != filter_repo.lower():
+                continue
         with open(rpath) as f:
             result = json.load(f)
         traj = None
@@ -99,10 +103,10 @@ def classify_status(result):
     return "patch_submitted"
 
 # ── Report ──────────────────────────────────────────────────────────────────
-def report(job_dir, eval_dir=None, show_details=False):
+def report(job_dir, eval_dir=None, filter_repo=None, show_details=False):
     resolved_ids = load_resolved_ids(eval_dir) if eval_dir else set()
     rows = []
-    for name, result, traj in load_trials(job_dir):
+    for name, result, traj in load_trials(job_dir, filter_repo=filter_repo):
         agent = result.get("agent_result") or {}
         inp  = agent.get("n_input_tokens")  or 0
         cch  = agent.get("n_cache_tokens")  or 0
@@ -199,8 +203,10 @@ def main():
                         help="Path to eval/ directory from hwe-bench.evaluator"
                              " (used to tag tasks as resolved/unresolved)")
     parser.add_argument("--details", action="store_true", help="Show per-task breakdown")
+    parser.add_argument("--filter", type=str, default=None,
+                        help="Filter trials by repo prefix (e.g. ibex, cva6, rocketchip)")
     args = parser.parse_args()
-    report(args.job_dir, eval_dir=args.eval, show_details=args.details)
+    report(args.job_dir, eval_dir=args.eval, filter_repo=args.filter, show_details=args.details)
 
 if __name__ == "__main__":
     main()
