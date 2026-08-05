@@ -3,84 +3,30 @@
 ## 总体结果
 
 ```yaml
-baseline (no skill):
-  resolved: 8
-  total: 32
-  pct: 25%
-
 repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
   resolved: 13
   total: 32
-  pct: 41%
+  resolved_rate: 40.6%
+  file_level_precision: 76.7%
+  infra_errors: 0
 ```
 
-## REPAIR vs Baseline
+## 指标对比
 
 | 指标 | Baseline | REPAIR |
-|------|:--------:|:--------------:|
-| 解决 | 8/32 (25%) | 13/32 (41%) |
-| 净变化 | | +5 |
+|------|:--------:|:-------------:|
+| Resolved Rate | 8/32 (25.0%) | 13/32 (40.6%) |
+| File-Level Precision | 87.0% | 76.7% |
 
 ### 新解决
-  ✅ pr-404: logic
-  ✅ pr-1093: sw_hw_interact
-  ✅ pr-1656: interface
-  ✅ pr-2213: interface
-  ✅ pr-2368: config_integ
-  ✅ pr-3600: timing_sync
+  pr-404, pr-1093, pr-1656, pr-2213, pr-2368, pr-3600
 
 ### 丢失
-  ❌ pr-576: logic
+  pr-576
 
-## Bug Type 影响
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| config_integ | +1 | -0 | +1 |
-| interface | +2 | -0 | +2 |
-| logic | +1 | -1 | +0 |
-| sw_hw_interact | +1 | -0 | +1 |
-| timing_sync | +1 | -0 | +1 |
-
-## 未解决 Case
-
-```json
-[
-  {"pr": 177, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 387, "test": "N/A", "type": "timing_sync", "desc": "N/A"},
-  {"pr": 485, "test": "N/A", "type": "interface", "desc": "N/A"},
-  {"pr": 745, "test": "N/A", "type": "config_integ", "desc": "N/A"},
-  {"pr": 1176, "test": "N/A", "type": "interface", "desc": "N/A"},
-  {"pr": 1493, "test": "N/A", "type": "config_integ", "desc": "N/A"},
-  {"pr": 1761, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 1878, "test": "N/A", "type": "spec", "desc": "N/A"},
-  {"pr": 2018, "test": "N/A", "type": "interface", "desc": "N/A"},
-  {"pr": 2036, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 2167, "test": "N/A", "type": "timing_sync", "desc": "N/A"},
-  {"pr": 2543, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 2621, "test": "N/A", "type": "config_integ", "desc": "N/A"},
-  {"pr": 3004, "test": "N/A", "type": "timing_sync", "desc": "N/A"},
-  {"pr": 3256, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 3526, "test": "N/A", "type": "logic", "desc": "N/A"},
-  {"pr": 3624, "test": "N/A", "type": "spec", "desc": "N/A"},
-  {"pr": 3651, "test": "N/A", "type": "spec", "desc": "N/A"}
-]
-```
-
-## Bug 类型分布
-
-```yaml
-  config_integ: 3
-  interface: 3
-  logic: 6
-  spec: 3
-  timing_sync: 3
-```
-
-## File-Level Precision
-
-- **Overall**: 76.7%
-- **Average (per-task)**: 83.9%
+## Task 级 File-Level Precision
 
 | PR | Precision | 匹配文件/修改文件 |
 |----|:---------:|:-----------------:|
@@ -116,14 +62,195 @@ repair:
 | pr-3624 | 100.0% | 1/1 |
 | pr-3651 | 100.0% | 1/1 |
 
+## File-Level Precision
+
+- **Overall**: 76.7%
+- **Average (per-task)**: 83.9%
+
+## 未解决 Case
+
+```json
+[
+  {
+    "pr": 177,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 387,
+    "test": "N/A",
+    "type": "timing_sync",
+    "desc": "N/A"
+  },
+  {
+    "pr": 485,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 576,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 745,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1176,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1493,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1761,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1878,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2018,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2036,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2167,
+    "test": "N/A",
+    "type": "timing_sync",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2543,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2621,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3004,
+    "test": "N/A",
+    "type": "timing_sync",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3256,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3526,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3624,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3651,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  }
+]
+```
+
+## Bug 类型分布
+
+```yaml
+  config_integ: 3
+  interface: 3
+  logic: 6
+  spec: 3
+  timing_sync: 3
+  unknown: 1
+```
 
 ## Token 统计（token_report.py）
 
 ### 平均指标
 
-
+```yaml
+token_statistics:
+  prompt_k: 1126.5
+  completion_k: 4.8
+  cache_hit_pct: 96.7
+  tool_calls: 33.5
+  cost_usd: 0.014027
+  own_price_cost_usd: 0.309403
+  tasks: 32
+  resolved: 13
+  unresolved: 19
+  error: 0
+  no_patch: 0
+```
 
 ### 逐 Task 明细
 
-注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
-
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| rocket-chip-pr-1069 | resolved | 1502.4 | 7.6 | 0.0148 | 97.7 | 57 |
+| rocket-chip-pr-1093 | resolved | 612.5 | 4.4 | 0.0144 | 95.2 | 19 |
+| rocket-chip-pr-1176 | unresolved | 1210.9 | 4.2 | 0.0191 | 96.1 | 33 |
+| rocket-chip-pr-1330 | resolved | 339.2 | 2.7 | 0.0059 | 93.2 | 18 |
+| rocket-chip-pr-1493 | unresolved | 643.7 | 3.5 | 0.0101 | 94.2 | 28 |
+| rocket-chip-pr-1656 | resolved | 1736.6 | 7.3 | 0.0163 | 97.3 | 54 |
+| rocket-chip-pr-1761 | unresolved | 430.6 | 2.7 | 0.0073 | 94.4 | 17 |
+| rocket-chip-pr-177 | unresolved | 408.7 | 3.4 | 0.0056 | 94.8 | 26 |
+| rocket-chip-pr-1878 | unresolved | 574.8 | 4.1 | 0.0087 | 94.8 | 30 |
+| rocket-chip-pr-2018 | unresolved | 1170.7 | 5.1 | 0.0134 | 97.1 | 33 |
+| rocket-chip-pr-2036 | unresolved | 383.3 | 2.9 | 0.0072 | 93.1 | 17 |
+| rocket-chip-pr-2167 | unresolved | 873.7 | 4.3 | 0.0139 | 95.6 | 30 |
+| rocket-chip-pr-2213 | resolved | 842.0 | 4.5 | 0.0180 | 92.7 | 26 |
+| rocket-chip-pr-2368 | resolved | 358.0 | 3.5 | 0.0073 | 92.0 | 24 |
+| rocket-chip-pr-2543 | unresolved | 1572.4 | 5.2 | 0.0270 | 96.6 | 43 |
+| rocket-chip-pr-2621 | unresolved | 1043.6 | 5.2 | 0.0115 | 96.7 | 46 |
+| rocket-chip-pr-2984 | resolved | 334.2 | 3.1 | 0.0072 | 91.8 | 21 |
+| rocket-chip-pr-2988 | resolved | 671.5 | 3.7 | 0.0084 | 95.8 | 32 |
+| rocket-chip-pr-2994 | resolved | 2488.9 | 8.9 | 0.0209 | 98.4 | 72 |
+| rocket-chip-pr-3004 | unresolved | 2463.0 | 7.5 | 0.0279 | 97.9 | 42 |
+| rocket-chip-pr-3065 | resolved | 5035.1 | 10.7 | 0.0349 | 98.9 | 80 |
+| rocket-chip-pr-3256 | unresolved | 915.9 | 4.5 | 0.0117 | 96.0 | 29 |
+| rocket-chip-pr-3526 | unresolved | 1226.0 | 5.7 | 0.0134 | 97.3 | 34 |
+| rocket-chip-pr-3600 | resolved | 2050.9 | 5.6 | 0.0316 | 97.7 | 39 |
+| rocket-chip-pr-3624 | unresolved | 805.3 | 5.1 | 0.0092 | 96.1 | 34 |
+| rocket-chip-pr-3651 | unresolved | 345.8 | 2.4 | 0.0065 | 93.1 | 15 |
+| rocket-chip-pr-387 | unresolved | 2345.7 | 8.5 | 0.0300 | 97.2 | 49 |
+| rocket-chip-pr-404 | resolved | 482.3 | 3.4 | 0.0082 | 93.4 | 26 |
+| rocket-chip-pr-485 | unresolved | 2038.0 | 6.3 | 0.0192 | 97.3 | 51 |
+| rocket-chip-pr-542 | resolved | 207.1 | 1.8 | 0.0043 | 90.3 | 12 |
+| rocket-chip-pr-576 | unresolved | 23.0 | 0.3 | 0.0030 | 34.5 | 3 |
+| rocket-chip-pr-745 | unresolved | 911.7 | 4.6 | 0.0119 | 95.5 | 32 |

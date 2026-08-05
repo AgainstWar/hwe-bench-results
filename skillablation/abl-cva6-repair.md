@@ -3,63 +3,30 @@
 ## 总体结果
 
 ```yaml
-baseline (no skill):
-  resolved: 28
-  total: 35
-  pct: 80%
-
 repair:
+  agent: OpenCode
+  model: DeepSeek V4 Flash
   resolved: 31
   total: 35
-  pct: 89%
+  resolved_rate: 88.6%
+  file_level_precision: 87.5%
+  infra_errors: 0
 ```
 
-## REPAIR vs Baseline
+## 指标对比
 
 | 指标 | Baseline | REPAIR |
-|------|:--------:|:--------------:|
-| 解决 | 28/35 (80%) | 31/35 (89%) |
-| 净变化 | | +3 |
+|------|:--------:|:-------------:|
+| Resolved Rate | 28/35 (80.0%) | 31/35 (88.6%) |
+| File-Level Precision | 79.0% | 87.5% |
 
 ### 新解决
-  ✅ pr-2170: config_integ
-  ✅ pr-2279: interface
-  ✅ pr-2420: config_integ
-  ✅ pr-2989: spec
+  pr-2170, pr-2279, pr-2420, pr-2989
 
 ### 丢失
-  ❌ pr-3231: spec
+  pr-3231
 
-## Bug Type 影响
-
-| Bug Type | +新解决 | -丢失 | 净变化 |
-|----------|:------:|:-----:|:------:|
-| config_integ | +2 | -0 | +2 |
-| interface | +1 | -0 | +1 |
-| spec | +1 | -1 | +0 |
-
-## 未解决 Case
-
-```json
-[
-  {"pr": 2802, "test": "N/A", "type": "spec", "desc": "N/A"},
-  {"pr": 2844, "test": "N/A", "type": "spec", "desc": "N/A"},
-  {"pr": 3042, "test": "N/A", "type": "config_integ", "desc": "N/A"},
-  {"pr": 3231, "test": "N/A", "type": "spec", "desc": "N/A"}
-]
-```
-
-## Bug 类型分布
-
-```yaml
-  config_integ: 1
-  spec: 3
-```
-
-## File-Level Precision
-
-- **Overall**: 87.5%
-- **Average (per-task)**: 95.1%
+## Task 级 File-Level Precision
 
 | PR | Precision | 匹配文件/修改文件 |
 |----|:---------:|:-----------------:|
@@ -99,14 +66,104 @@ repair:
 | pr-3226 | 66.7% | 2/3 |
 | pr-3231 | 100.0% | 1/1 |
 
+## File-Level Precision
+
+- **Overall**: 87.5%
+- **Average (per-task)**: 95.1%
+
+## 未解决 Case
+
+```json
+[
+  {
+    "pr": 2802,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2844,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3042,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3231,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  }
+]
+```
+
+## Bug 类型分布
+
+```yaml
+  config_integ: 1
+  spec: 3
+```
 
 ## Token 统计（token_report.py）
 
 ### 平均指标
 
-
+```yaml
+token_statistics:
+  prompt_k: 1036.5
+  completion_k: 4.8
+  cache_hit_pct: 96.2
+  tool_calls: 32.3
+  cost_usd: 0.012231
+  own_price_cost_usd: 0.285116
+  tasks: 35
+  resolved: 31
+  unresolved: 4
+  error: 0
+  no_patch: 0
+```
 
 ### 逐 Task 明细
 
-注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
-
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| cva6-pr-1482 | resolved | 1041.9 | 5.3 | 0.0145 | 96.4 | 35 |
+| cva6-pr-2017 | resolved | 407.3 | 2.8 | 0.0104 | 87.4 | 16 |
+| cva6-pr-2032 | resolved | 1686.2 | 6.9 | 0.0172 | 96.7 | 49 |
+| cva6-pr-2170 | resolved | 2671.7 | 5.4 | 0.0312 | 96.2 | 38 |
+| cva6-pr-2248 | resolved | 192.4 | 1.7 | 0.0042 | 90.0 | 14 |
+| cva6-pr-2279 | resolved | 5000.2 | 19.7 | 0.0370 | 98.6 | 105 |
+| cva6-pr-2282 | resolved | 2784.6 | 10.3 | 0.0197 | 98.5 | 74 |
+| cva6-pr-2330 | resolved | 494.7 | 3.0 | 0.0088 | 93.9 | 22 |
+| cva6-pr-2374 | resolved | 1885.3 | 6.1 | 0.0187 | 97.7 | 46 |
+| cva6-pr-2375 | resolved | 1044.4 | 5.3 | 0.0123 | 96.4 | 34 |
+| cva6-pr-2420 | resolved | 361.3 | 2.0 | 0.0082 | 90.6 | 15 |
+| cva6-pr-2468 | resolved | 524.9 | 4.5 | 0.0074 | 95.0 | 29 |
+| cva6-pr-2469 | resolved | 271.3 | 2.5 | 0.0050 | 93.2 | 18 |
+| cva6-pr-2476 | resolved | 2340.5 | 7.4 | 0.0213 | 97.6 | 73 |
+| cva6-pr-2549 | resolved | 49.0 | 0.6 | 0.0028 | 72.2 | 3 |
+| cva6-pr-2589 | resolved | 749.2 | 5.9 | 0.0134 | 94.6 | 42 |
+| cva6-pr-2685 | resolved | 405.4 | 3.1 | 0.0076 | 92.0 | 18 |
+| cva6-pr-2711 | resolved | 702.9 | 3.6 | 0.0097 | 95.6 | 30 |
+| cva6-pr-2728 | resolved | 444.7 | 3.1 | 0.0085 | 93.7 | 16 |
+| cva6-pr-2802 | unresolved | 1814.0 | 7.0 | 0.0203 | 96.4 | 39 |
+| cva6-pr-2844 | unresolved | 919.2 | 4.9 | 0.0094 | 96.6 | 36 |
+| cva6-pr-2916 | resolved | 530.0 | 4.5 | 0.0071 | 94.9 | 28 |
+| cva6-pr-2944 | resolved | 808.7 | 4.0 | 0.0103 | 95.5 | 29 |
+| cva6-pr-2945 | resolved | 287.4 | 2.4 | 0.0063 | 88.9 | 14 |
+| cva6-pr-2989 | resolved | 882.4 | 4.3 | 0.0130 | 93.6 | 26 |
+| cva6-pr-3042 | unresolved | 1167.4 | 5.4 | 0.0161 | 95.1 | 45 |
+| cva6-pr-3059 | resolved | 223.3 | 2.3 | 0.0043 | 91.1 | 12 |
+| cva6-pr-3107 | resolved | 42.8 | 0.6 | 0.0021 | 73.5 | 3 |
+| cva6-pr-3137 | resolved | 1237.6 | 5.5 | 0.0130 | 96.7 | 49 |
+| cva6-pr-3168 | resolved | 383.0 | 2.1 | 0.0081 | 92.8 | 12 |
+| cva6-pr-3171 | resolved | 284.0 | 3.4 | 0.0056 | 92.2 | 19 |
+| cva6-pr-3191 | resolved | 1584.2 | 5.3 | 0.0169 | 96.2 | 33 |
+| cva6-pr-3204 | resolved | 925.4 | 5.5 | 0.0104 | 96.8 | 38 |
+| cva6-pr-3226 | resolved | 1567.1 | 8.4 | 0.0166 | 97.2 | 46 |
+| cva6-pr-3231 | unresolved | 561.6 | 3.1 | 0.0109 | 91.3 | 23 |
