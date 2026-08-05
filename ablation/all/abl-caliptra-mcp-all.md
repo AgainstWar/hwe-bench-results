@@ -20,6 +20,11 @@ mcp+all:
 | Resolved Rate | 13/16 (81.2%) | 8/16 (50.0%) |
 | File-Level Precision | 90.0% | 78.6% |
 
+### 新解决
+  无
+
+### 丢失
+  pr-298, pr-506, pr-594, pr-1073, pr-1089
 
 ## Task 级 File-Level Precision
 
@@ -36,11 +41,63 @@ mcp+all:
 | pr-786 | 100.0% | 1/1 |
 | pr-963 | 100.0% | 1/1 |
 
+## File-Level Precision
+
+- **Overall**: 78.6%
+- **Average (per-task)**: 83.3%
+
 ## 未解决 Case
 
 ```json
 [
-  {"pr": 70, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 506, "test": "N/A", "type": "interface", "desc": "N/A"}
+  {
+    "pr": 70,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 298,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 506,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 594,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 725,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1033,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1073,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1089,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  }
 ]
 ```
 
@@ -49,16 +106,45 @@ mcp+all:
 ```yaml
   interface: 1
   logic: 1
+  unknown: 6
 ```
-
 
 ## Token 统计（token_report.py）
 
 ### 平均指标
 
-
+```yaml
+token_statistics:
+  prompt_k: 591.4
+  completion_k: 3.0
+  cache_hit_pct: 93.1
+  tool_calls: 17.1
+  cost_usd: 0.012533
+  own_price_cost_usd: 0.162962
+  tasks: 16
+  resolved: 8
+  unresolved: 8
+  error: 0
+  no_patch: 0
+```
 
 ### 逐 Task 明细
 
-注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
-
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| caliptra-rtl-pr-1033 | unresolved | 674.5 | 3.1 | 0.0135 | 90.2 | 19 |
+| caliptra-rtl-pr-1073 | unresolved | 66.6 | 0.5 | 0.0139 | 50.4 | 3 |
+| caliptra-rtl-pr-1089 | unresolved | 160.9 | 1.9 | 0.0104 | 80.1 | 5 |
+| caliptra-rtl-pr-134 | resolved | 538.4 | 5.4 | 0.0074 | 94.9 | 31 |
+| caliptra-rtl-pr-195 | resolved | 772.0 | 3.6 | 0.0133 | 95.0 | 16 |
+| caliptra-rtl-pr-252 | resolved | 332.4 | 2.2 | 0.0076 | 90.2 | 14 |
+| caliptra-rtl-pr-298 | unresolved | 191.9 | 3.0 | 0.0062 | 85.5 | 10 |
+| caliptra-rtl-pr-506 | unresolved | 1381.8 | 6.3 | 0.0182 | 95.9 | 41 |
+| caliptra-rtl-pr-594 | unresolved | 21.7 | 0.1 | 0.0016 | 50.1 | 2 |
+| caliptra-rtl-pr-633 | resolved | 558.7 | 3.1 | 0.0105 | 93.2 | 19 |
+| caliptra-rtl-pr-70 | unresolved | 2343.5 | 4.7 | 0.0378 | 96.6 | 33 |
+| caliptra-rtl-pr-725 | unresolved | 430.1 | 2.4 | 0.0136 | 83.0 | 13 |
+| caliptra-rtl-pr-747 | resolved | 126.7 | 1.1 | 0.0061 | 84.1 | 6 |
+| caliptra-rtl-pr-757 | resolved | 1143.2 | 5.6 | 0.0211 | 95.4 | 31 |
+| caliptra-rtl-pr-786 | resolved | 329.1 | 2.7 | 0.0070 | 89.8 | 16 |
+| caliptra-rtl-pr-963 | resolved | 391.3 | 1.9 | 0.0123 | 92.1 | 15 |

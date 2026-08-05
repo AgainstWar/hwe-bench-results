@@ -20,6 +20,11 @@ mcp+all:
 | Resolved Rate | 28/35 (80.0%) | 27/35 (77.1%) |
 | File-Level Precision | 79.0% | 81.5% |
 
+### 新解决
+  pr-2279, pr-2420, pr-2989
+
+### 丢失
+  pr-2032, pr-2282, pr-2916, pr-3226
 
 ## Task 级 File-Level Precision
 
@@ -57,11 +62,63 @@ mcp+all:
 | pr-3204 | 100.0% | 1/1 |
 | pr-3231 | 100.0% | 1/1 |
 
+## File-Level Precision
+
+- **Overall**: 81.5%
+- **Average (per-task)**: 90.5%
+
 ## 未解决 Case
 
 ```json
 [
-  {"pr": 2032, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 2802, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 2844, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 3042, "test": "N/A", "type": "config_integ", "desc": "N/A"}
+  {
+    "pr": 2032,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2170,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2282,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2802,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2844,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2916,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3042,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3226,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  }
 ]
 ```
 
@@ -71,16 +128,64 @@ mcp+all:
   config_integ: 1
   logic: 1
   spec: 2
+  unknown: 4
 ```
-
 
 ## Token 统计（token_report.py）
 
 ### 平均指标
 
-
+```yaml
+token_statistics:
+  prompt_k: 819.6
+  completion_k: 3.5
+  cache_hit_pct: 95.0
+  tool_calls: 23.6
+  cost_usd: 0.011474
+  own_price_cost_usd: 0.225187
+  tasks: 35
+  resolved: 27
+  unresolved: 8
+  error: 0
+  no_patch: 0
+```
 
 ### 逐 Task 明细
 
-注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
-
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| cva6-pr-1482 | resolved | 453.6 | 2.3 | 0.0122 | 91.9 | 14 |
+| cva6-pr-2017 | resolved | 177.1 | 1.6 | 0.0047 | 86.5 | 7 |
+| cva6-pr-2032 | unresolved | 1378.2 | 5.4 | 0.0200 | 96.4 | 31 |
+| cva6-pr-2170 | unresolved | 3905.5 | 6.3 | 0.0432 | 96.3 | 54 |
+| cva6-pr-2248 | resolved | 51.4 | 0.6 | 0.0022 | 74.2 | 3 |
+| cva6-pr-2279 | resolved | 4360.1 | 16.3 | 0.0344 | 98.4 | 101 |
+| cva6-pr-2282 | unresolved | 311.1 | 3.0 | 0.0069 | 91.3 | 19 |
+| cva6-pr-2330 | resolved | 80.7 | 0.9 | 0.0034 | 81.4 | 4 |
+| cva6-pr-2374 | resolved | 303.0 | 1.6 | 0.0120 | 80.1 | 8 |
+| cva6-pr-2375 | resolved | 574.3 | 2.6 | 0.0097 | 92.9 | 19 |
+| cva6-pr-2420 | resolved | 727.5 | 4.2 | 0.0145 | 92.8 | 21 |
+| cva6-pr-2468 | resolved | 498.7 | 3.2 | 0.0069 | 94.2 | 31 |
+| cva6-pr-2469 | resolved | 398.5 | 2.5 | 0.0070 | 93.1 | 17 |
+| cva6-pr-2476 | resolved | 1223.9 | 6.1 | 0.0140 | 96.8 | 48 |
+| cva6-pr-2549 | resolved | 133.3 | 1.1 | 0.0036 | 87.7 | 8 |
+| cva6-pr-2589 | resolved | 4317.5 | 11.4 | 0.0290 | 98.4 | 86 |
+| cva6-pr-2685 | resolved | 235.9 | 1.4 | 0.0056 | 87.6 | 13 |
+| cva6-pr-2711 | resolved | 930.0 | 4.9 | 0.0128 | 95.0 | 40 |
+| cva6-pr-2728 | resolved | 432.2 | 3.5 | 0.0069 | 94.6 | 18 |
+| cva6-pr-2802 | unresolved | 869.5 | 4.4 | 0.0199 | 92.2 | 15 |
+| cva6-pr-2844 | unresolved | 356.7 | 3.9 | 0.0072 | 92.0 | 19 |
+| cva6-pr-2916 | unresolved | 226.5 | 1.6 | 0.0047 | 89.9 | 10 |
+| cva6-pr-2944 | resolved | 193.3 | 1.2 | 0.0067 | 79.8 | 7 |
+| cva6-pr-2945 | resolved | 247.6 | 1.4 | 0.0048 | 90.2 | 12 |
+| cva6-pr-2989 | resolved | 1021.3 | 3.5 | 0.0140 | 95.1 | 26 |
+| cva6-pr-3042 | unresolved | 1119.0 | 3.1 | 0.0212 | 92.8 | 28 |
+| cva6-pr-3059 | resolved | 262.0 | 2.0 | 0.0076 | 89.0 | 10 |
+| cva6-pr-3107 | resolved | 181.9 | 1.4 | 0.0042 | 88.1 | 9 |
+| cva6-pr-3137 | resolved | 673.6 | 4.1 | 0.0076 | 95.9 | 41 |
+| cva6-pr-3168 | resolved | 577.3 | 2.7 | 0.0111 | 93.6 | 16 |
+| cva6-pr-3171 | resolved | 210.2 | 1.7 | 0.0052 | 87.8 | 10 |
+| cva6-pr-3191 | resolved | 965.7 | 4.2 | 0.0131 | 94.8 | 31 |
+| cva6-pr-3204 | resolved | 418.1 | 2.1 | 0.0080 | 91.6 | 13 |
+| cva6-pr-3226 | unresolved | 528.2 | 4.4 | 0.0098 | 92.7 | 23 |
+| cva6-pr-3231 | resolved | 343.3 | 3.3 | 0.0072 | 90.4 | 13 |
