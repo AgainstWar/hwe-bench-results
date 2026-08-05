@@ -20,7 +20,6 @@ skills:
 | Resolved Rate | 27/35 (77.1%) | 21/35 (60.0%) |
 | File-Level Precision | 79.2% | 84.9% |
 
-
 ## Task 级 File-Level Precision
 
 | PR | Precision | 匹配文件/修改文件 |
@@ -60,11 +59,99 @@ skills:
 | pr-1865 | 100.0% | 2/2 |
 | pr-2232 | 100.0% | 2/2 |
 
+## File-Level Precision
+
+- **Overall**: 84.9%
+- **Average (per-task)**: 89.7%
+
 ## 未解决 Case
 
 ```json
 [
-  {"pr": 83, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 104, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 155, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 293, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 332, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 475, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 882, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 907, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 1229, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 1469, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 1513, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 1816, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 2232, "test": "N/A", "type": "interface", "desc": "N/A"}
+  {
+    "pr": 83,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 104,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 155,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 293,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 332,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 475,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 882,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 907,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1229,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1469,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1513,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1584,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1816,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2232,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  }
 ]
 ```
 
@@ -74,6 +161,7 @@ skills:
   interface: 4
   logic: 4
   spec: 5
+  unknown: 1
 ```
 
 ## Token 统计（token_report.py）
@@ -82,52 +170,55 @@ skills:
 
 ```yaml
 token_statistics:
-  tasks: 35
-  status: unresolved=35
   prompt_k: 1361.3
   completion_k: 5.3
   cache_hit_pct: 96.7
   tool_calls: 31.6
   cost_usd: 0.016751
+  own_price_cost_usd: 0.373355
+  tasks: 35
+  resolved: 21
+  unresolved: 14
+  error: 0
+  no_patch: 0
 ```
 
 ### 逐 Task 明细
 
 | Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
 |-------|--------|-----------|---------|---------|--------|-------|
-| ibex-pr-104__aBGbV4C | unresolved | 2960.6 | 7.6 | 0.0251 | 97.5 | 58 |
-| ibex-pr-1135__RD9k2AG | resolved | 772.3 | 4.2 | 0.0126 | 94.4 | 23 |
-| ibex-pr-1141__soBYUku | resolved | 2611.9 | 7.0 | 0.0233 | 97.7 | 62 |
-| ibex-pr-1229__c2hZYko | unresolved | 1201.2 | 5.2 | 0.0161 | 95.4 | 32 |
-| ibex-pr-122__TBABxkJ | resolved | 851.4 | 2.7 | 0.0148 | 94.7 | 23 |
-| ibex-pr-1383__RusoDbq | resolved | 481.6 | 3.5 | 0.0080 | 95.2 | 30 |
-| ibex-pr-1469__MnDrKQV | unresolved | 4218.2 | 11.3 | 0.0367 | 97.5 | 47 |
-| ibex-pr-1513__UaybwUS | unresolved | 4891.0 | 11.6 | 0.0352 | 97.8 | 57 |
-| ibex-pr-155__j5f8hzj | unresolved | 2085.3 | 5.4 | 0.0265 | 97.8 | 51 |
-| ibex-pr-157__Zw5GGvG | resolved | 420.0 | 2.6 | 0.0098 | 92.1 | 14 |
-| ibex-pr-1584__HACYYdo | unresolved | 873.3 | 5.9 | 0.0178 | 93.2 | 36 |
-| ibex-pr-166__jEYtGfH | resolved | 156.1 | 1.2 | 0.0039 | 87.6 | 10 |
-| ibex-pr-167__U6pdPFy | resolved | 843.1 | 4.3 | 0.0108 | 95.8 | 31 |
-| ibex-pr-1735__MU2nSX4 | resolved | 2416.0 | 5.8 | 0.0242 | 96.9 | 36 |
-| ibex-pr-176__oAhbvKt | resolved | 349.2 | 2.4 | 0.0056 | 92.7 | 22 |
-| ibex-pr-1780__obmjvS9 | resolved | 1299.2 | 5.8 | 0.0168 | 96.4 | 30 |
-| ibex-pr-1816__2wMS9FU | unresolved | 97.2 | 2.6 | 0.0044 | 77.5 | 8 |
-| ibex-pr-1865__SmWEcKb | resolved | 1827.4 | 6.0 | 0.0181 | 97.4 | 45 |
-| ibex-pr-222__abuv6et | resolved | 997.4 | 4.3 | 0.0142 | 96.3 | 30 |
-| ibex-pr-2232__5GhiHGZ | unresolved | 1429.3 | 7.5 | 0.0150 | 96.8 | 43 |
-| ibex-pr-244__yzJyfHd | resolved | 2816.4 | 8.7 | 0.0384 | 97.0 | 39 |
-| ibex-pr-276__B9Muarx | resolved | 1547.6 | 5.9 | 0.0216 | 97.4 | 32 |
-| ibex-pr-282__CzhCvu3 | resolved | 276.4 | 1.6 | 0.0083 | 91.7 | 12 |
-| ibex-pr-293__WBwsQp7 | unresolved | 811.9 | 5.7 | 0.0179 | 96.5 | 16 |
-| ibex-pr-332__cHaHjAk | unresolved | 1648.7 | 6.1 | 0.0211 | 97.3 | 30 |
-| ibex-pr-377__kkkuy4w | resolved | 709.1 | 5.2 | 0.0130 | 95.3 | 25 |
-| ibex-pr-45__FTzdcfL | resolved | 199.4 | 1.2 | 0.0055 | 87.2 | 12 |
-| ibex-pr-465__jfnxPYw | resolved | 2224.6 | 9.1 | 0.0168 | 98.0 | 68 |
-| ibex-pr-475__8aTJFbh | unresolved | 759.6 | 5.5 | 0.0116 | 94.7 | 23 |
-| ibex-pr-48__2RyeV38 | resolved | 180.5 | 2.2 | 0.0046 | 90.6 | 11 |
-| ibex-pr-54__aTTteEg | resolved | 455.2 | 5.0 | 0.0072 | 94.9 | 26 |
-| ibex-pr-83__xkRvkom | unresolved | 1017.2 | 6.0 | 0.0116 | 96.9 | 32 |
-| ibex-pr-882__x7wdhFP | unresolved | 1455.3 | 4.4 | 0.0252 | 95.8 | 26 |
-| ibex-pr-907__LYSD6Zm | unresolved | 1228.6 | 4.9 | 0.0238 | 96.7 | 27 |
-| ibex-pr-974__QQkCQNS | resolved | 1534.2 | 6.2 | 0.0206 | 97.3 | 38 |
-
+| ibex-pr-104 | unresolved | 2960.6 | 7.6 | 0.0251 | 97.5 | 58 |
+| ibex-pr-1135 | resolved | 772.3 | 4.2 | 0.0126 | 94.4 | 23 |
+| ibex-pr-1141 | resolved | 2611.9 | 7.0 | 0.0233 | 97.7 | 62 |
+| ibex-pr-122 | resolved | 851.4 | 2.7 | 0.0148 | 94.7 | 23 |
+| ibex-pr-1229 | unresolved | 1201.2 | 5.2 | 0.0161 | 95.4 | 32 |
+| ibex-pr-1383 | resolved | 481.6 | 3.5 | 0.0080 | 95.2 | 30 |
+| ibex-pr-1469 | unresolved | 4218.2 | 11.3 | 0.0367 | 97.5 | 47 |
+| ibex-pr-1513 | unresolved | 4891.0 | 11.6 | 0.0352 | 97.8 | 57 |
+| ibex-pr-155 | unresolved | 2085.3 | 5.4 | 0.0265 | 97.8 | 51 |
+| ibex-pr-157 | resolved | 420.0 | 2.6 | 0.0098 | 92.1 | 14 |
+| ibex-pr-1584 | unresolved | 873.3 | 5.9 | 0.0178 | 93.2 | 36 |
+| ibex-pr-166 | resolved | 156.1 | 1.2 | 0.0039 | 87.6 | 10 |
+| ibex-pr-167 | resolved | 843.1 | 4.3 | 0.0108 | 95.8 | 31 |
+| ibex-pr-1735 | resolved | 2416.0 | 5.8 | 0.0242 | 96.9 | 36 |
+| ibex-pr-176 | resolved | 349.2 | 2.4 | 0.0056 | 92.7 | 22 |
+| ibex-pr-1780 | resolved | 1299.2 | 5.8 | 0.0168 | 96.4 | 30 |
+| ibex-pr-1816 | unresolved | 97.2 | 2.6 | 0.0044 | 77.5 | 8 |
+| ibex-pr-1865 | resolved | 1827.4 | 6.0 | 0.0181 | 97.4 | 45 |
+| ibex-pr-222 | resolved | 997.4 | 4.3 | 0.0142 | 96.3 | 30 |
+| ibex-pr-2232 | unresolved | 1429.3 | 7.5 | 0.0150 | 96.8 | 43 |
+| ibex-pr-244 | resolved | 2816.4 | 8.7 | 0.0384 | 97.0 | 39 |
+| ibex-pr-276 | resolved | 1547.6 | 5.9 | 0.0216 | 97.4 | 32 |
+| ibex-pr-282 | resolved | 276.4 | 1.6 | 0.0083 | 91.7 | 12 |
+| ibex-pr-293 | unresolved | 811.9 | 5.7 | 0.0179 | 96.5 | 16 |
+| ibex-pr-332 | unresolved | 1648.7 | 6.1 | 0.0211 | 97.3 | 30 |
+| ibex-pr-377 | resolved | 709.1 | 5.2 | 0.0130 | 95.3 | 25 |
+| ibex-pr-45 | resolved | 199.4 | 1.2 | 0.0055 | 87.2 | 12 |
+| ibex-pr-465 | resolved | 2224.6 | 9.1 | 0.0168 | 98.0 | 68 |
+| ibex-pr-475 | unresolved | 759.6 | 5.5 | 0.0116 | 94.7 | 23 |
+| ibex-pr-48 | resolved | 180.5 | 2.2 | 0.0046 | 90.6 | 11 |
+| ibex-pr-54 | resolved | 455.2 | 5.0 | 0.0072 | 94.9 | 26 |
+| ibex-pr-83 | unresolved | 1017.2 | 6.0 | 0.0116 | 96.9 | 32 |
+| ibex-pr-882 | unresolved | 1455.3 | 4.4 | 0.0252 | 95.8 | 26 |
+| ibex-pr-907 | unresolved | 1228.6 | 4.9 | 0.0238 | 96.7 | 27 |
+| ibex-pr-974 | resolved | 1534.2 | 6.2 | 0.0206 | 97.3 | 38 |
