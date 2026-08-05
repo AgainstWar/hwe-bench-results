@@ -20,6 +20,11 @@ mcp+repair:
 | Resolved Rate | 28/35 (80.0%) | 30/35 (85.7%) |
 | File-Level Precision | 79.0% | 81.8% |
 
+### 新解决
+  pr-2279, pr-2420, pr-2989
+
+### 丢失
+  pr-2032
 
 ## Task 级 File-Level Precision
 
@@ -61,11 +66,45 @@ mcp+repair:
 | pr-3226 | 100.0% | 2/2 |
 | pr-3231 | 100.0% | 1/1 |
 
+## File-Level Precision
+
+- **Overall**: 81.8%
+- **Average (per-task)**: 91.6%
+
 ## 未解决 Case
 
 ```json
 [
-  {"pr": 2032, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 2170, "test": "N/A", "type": "config_integ", "desc": "N/A"},  {"pr": 2802, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 2844, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 3042, "test": "N/A", "type": "config_integ", "desc": "N/A"}
+  {
+    "pr": 2032,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2170,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2802,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 2844,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 3042,
+    "test": "N/A",
+    "type": "config_integ",
+    "desc": "N/A"
+  }
 ]
 ```
 
@@ -77,14 +116,61 @@ mcp+repair:
   spec: 2
 ```
 
-
 ## Token 统计（token_report.py）
 
 ### 平均指标
 
-
+```yaml
+token_statistics:
+  prompt_k: 1333.6
+  completion_k: 5.1
+  cache_hit_pct: 96.6
+  tool_calls: 34.7
+  cost_usd: 0.014044
+  own_price_cost_usd: 0.365631
+  tasks: 35
+  resolved: 30
+  unresolved: 5
+  error: 0
+  no_patch: 0
+```
 
 ### 逐 Task 明细
 
-注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
-
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| cva6-pr-1482 | resolved | 550.2 | 3.8 | 0.0097 | 93.6 | 21 |
+| cva6-pr-2017 | resolved | 466.3 | 3.6 | 0.0069 | 94.4 | 25 |
+| cva6-pr-2032 | unresolved | 1258.4 | 3.9 | 0.0142 | 97.0 | 37 |
+| cva6-pr-2170 | unresolved | 3256.6 | 7.5 | 0.0318 | 97.2 | 53 |
+| cva6-pr-2248 | resolved | 204.3 | 1.7 | 0.0046 | 88.7 | 15 |
+| cva6-pr-2279 | resolved | 7500.2 | 22.4 | 0.0508 | 98.8 | 115 |
+| cva6-pr-2282 | resolved | 4032.8 | 10.5 | 0.0355 | 97.3 | 65 |
+| cva6-pr-2330 | resolved | 725.2 | 4.1 | 0.0134 | 91.8 | 25 |
+| cva6-pr-2374 | resolved | 2432.6 | 6.2 | 0.0263 | 96.6 | 48 |
+| cva6-pr-2375 | resolved | 651.6 | 3.2 | 0.0104 | 93.3 | 22 |
+| cva6-pr-2420 | resolved | 277.4 | 1.9 | 0.0072 | 87.5 | 9 |
+| cva6-pr-2468 | resolved | 342.0 | 2.4 | 0.0062 | 92.3 | 19 |
+| cva6-pr-2469 | resolved | 312.7 | 2.2 | 0.0059 | 91.9 | 15 |
+| cva6-pr-2476 | resolved | 3926.0 | 8.9 | 0.0260 | 98.5 | 87 |
+| cva6-pr-2549 | resolved | 1318.9 | 6.7 | 0.0132 | 96.8 | 40 |
+| cva6-pr-2589 | resolved | 1626.9 | 10.1 | 0.0181 | 96.4 | 68 |
+| cva6-pr-2685 | resolved | 1020.5 | 4.6 | 0.0138 | 95.7 | 37 |
+| cva6-pr-2711 | resolved | 1200.8 | 4.7 | 0.0138 | 96.0 | 36 |
+| cva6-pr-2728 | resolved | 698.3 | 4.5 | 0.0107 | 95.2 | 29 |
+| cva6-pr-2802 | unresolved | 2148.6 | 7.8 | 0.0181 | 97.6 | 53 |
+| cva6-pr-2844 | unresolved | 805.6 | 4.1 | 0.0103 | 95.4 | 24 |
+| cva6-pr-2916 | resolved | 1275.4 | 7.3 | 0.0117 | 97.2 | 44 |
+| cva6-pr-2944 | resolved | 913.8 | 3.7 | 0.0120 | 94.1 | 22 |
+| cva6-pr-2945 | resolved | 103.0 | 0.9 | 0.0047 | 77.8 | 4 |
+| cva6-pr-2989 | resolved | 695.6 | 3.0 | 0.0132 | 91.3 | 20 |
+| cva6-pr-3042 | unresolved | 2736.2 | 5.9 | 0.0277 | 96.9 | 58 |
+| cva6-pr-3059 | resolved | 293.6 | 2.3 | 0.0072 | 92.0 | 12 |
+| cva6-pr-3107 | resolved | 146.9 | 1.4 | 0.0039 | 86.2 | 9 |
+| cva6-pr-3137 | resolved | 103.5 | 1.4 | 0.0039 | 80.2 | 8 |
+| cva6-pr-3168 | resolved | 467.7 | 3.9 | 0.0086 | 93.3 | 19 |
+| cva6-pr-3171 | resolved | 151.4 | 1.9 | 0.0045 | 85.7 | 9 |
+| cva6-pr-3191 | resolved | 1304.3 | 4.5 | 0.0134 | 96.6 | 36 |
+| cva6-pr-3204 | resolved | 655.3 | 4.2 | 0.0077 | 95.8 | 27 |
+| cva6-pr-3226 | resolved | 600.6 | 4.2 | 0.0091 | 94.2 | 25 |
+| cva6-pr-3231 | resolved | 2471.8 | 7.7 | 0.0172 | 98.3 | 79 |
