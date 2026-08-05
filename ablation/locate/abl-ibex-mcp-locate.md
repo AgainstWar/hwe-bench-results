@@ -20,6 +20,11 @@ mcp+locate:
 | Resolved Rate | 27/35 (77.1%) | 19/35 (54.3%) |
 | File-Level Precision | 79.2% | 80.5% |
 
+### 新解决
+  pr-155, pr-1229
+
+### 丢失
+  pr-222, pr-293, pr-377, pr-465, pr-882, pr-1135, pr-1469, pr-1584, pr-1735, pr-1865
 
 ## Task 级 File-Level Precision
 
@@ -54,11 +59,111 @@ mcp+locate:
 | pr-1865 | 100.0% | 1/1 |
 | pr-2232 | 100.0% | 2/2 |
 
+## File-Level Precision
+
+- **Overall**: 80.5%
+- **Average (per-task)**: 86.5%
+
 ## 未解决 Case
 
 ```json
 [
-  {"pr": 104, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 293, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 377, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 974, "test": "N/A", "type": "timing_sync", "desc": "N/A"},  {"pr": 1141, "test": "N/A", "type": "interface", "desc": "N/A"},  {"pr": 1469, "test": "N/A", "type": "spec", "desc": "N/A"},  {"pr": 1513, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 1735, "test": "N/A", "type": "logic", "desc": "N/A"},  {"pr": 1865, "test": "N/A", "type": "interface", "desc": "N/A"}
+  {
+    "pr": 104,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 222,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 293,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 377,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 465,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 475,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 882,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 907,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 974,
+    "test": "N/A",
+    "type": "timing_sync",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1135,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1141,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1469,
+    "test": "N/A",
+    "type": "spec",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1513,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1584,
+    "test": "N/A",
+    "type": "unknown",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1735,
+    "test": "N/A",
+    "type": "logic",
+    "desc": "N/A"
+  },
+  {
+    "pr": 1865,
+    "test": "N/A",
+    "type": "interface",
+    "desc": "N/A"
+  }
 ]
 ```
 
@@ -69,16 +174,64 @@ mcp+locate:
   logic: 3
   spec: 2
   timing_sync: 1
+  unknown: 7
 ```
-
 
 ## Token 统计（token_report.py）
 
 ### 平均指标
 
-
+```yaml
+token_statistics:
+  prompt_k: 1255.7
+  completion_k: 5.1
+  cache_hit_pct: 96.3
+  tool_calls: 29.5
+  cost_usd: 0.016165
+  own_price_cost_usd: 0.344695
+  tasks: 35
+  resolved: 19
+  unresolved: 16
+  error: 0
+  no_patch: 0
+```
 
 ### 逐 Task 明细
 
-注：此配置使用 combined tarball，token 数据为所有 repo 混合统计，无法拆分为 per-task 明细。
-
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
+|-------|--------|-----------|---------|---------|--------|-------|
+| ibex-pr-104 | unresolved | 2405.8 | 8.5 | 0.0201 | 97.5 | 57 |
+| ibex-pr-1135 | unresolved | 79.5 | 2.4 | 0.0043 | 70.7 | 6 |
+| ibex-pr-1141 | unresolved | 2973.2 | 7.3 | 0.0253 | 98.1 | 59 |
+| ibex-pr-122 | resolved | 1542.3 | 4.9 | 0.0194 | 96.9 | 34 |
+| ibex-pr-1229 | resolved | 1606.8 | 5.2 | 0.0173 | 95.9 | 53 |
+| ibex-pr-1383 | resolved | 811.0 | 3.4 | 0.0130 | 93.9 | 21 |
+| ibex-pr-1469 | unresolved | 1165.4 | 4.3 | 0.0192 | 93.8 | 27 |
+| ibex-pr-1513 | unresolved | 5200.7 | 11.5 | 0.0330 | 98.3 | 75 |
+| ibex-pr-155 | resolved | 2056.1 | 6.9 | 0.0324 | 97.2 | 37 |
+| ibex-pr-157 | resolved | 385.3 | 2.5 | 0.0095 | 92.1 | 14 |
+| ibex-pr-1584 | unresolved | 925.7 | 4.7 | 0.0217 | 93.2 | 31 |
+| ibex-pr-166 | resolved | 188.4 | 4.0 | 0.0057 | 86.3 | 8 |
+| ibex-pr-167 | resolved | 314.9 | 2.7 | 0.0068 | 90.8 | 12 |
+| ibex-pr-1735 | unresolved | 2337.7 | 7.3 | 0.0243 | 96.2 | 42 |
+| ibex-pr-176 | resolved | 209.8 | 2.3 | 0.0051 | 88.5 | 10 |
+| ibex-pr-1780 | resolved | 1415.2 | 6.3 | 0.0185 | 96.2 | 37 |
+| ibex-pr-1816 | resolved | 2438.6 | 7.4 | 0.0240 | 98.2 | 56 |
+| ibex-pr-1865 | unresolved | 1798.7 | 6.2 | 0.0218 | 96.9 | 45 |
+| ibex-pr-222 | unresolved | 436.3 | 3.8 | 0.0118 | 91.5 | 23 |
+| ibex-pr-2232 | resolved | 1434.8 | 7.3 | 0.0192 | 95.5 | 41 |
+| ibex-pr-244 | resolved | 1157.7 | 3.7 | 0.0183 | 95.3 | 25 |
+| ibex-pr-276 | resolved | 1481.6 | 5.4 | 0.0239 | 96.7 | 32 |
+| ibex-pr-282 | resolved | 392.1 | 3.9 | 0.0080 | 92.1 | 14 |
+| ibex-pr-293 | unresolved | 5309.1 | 20.7 | 0.0426 | 98.7 | 72 |
+| ibex-pr-332 | resolved | 1848.7 | 4.7 | 0.0253 | 97.7 | 28 |
+| ibex-pr-377 | unresolved | 785.8 | 4.8 | 0.0126 | 95.0 | 30 |
+| ibex-pr-45 | resolved | 399.4 | 2.5 | 0.0067 | 92.9 | 17 |
+| ibex-pr-465 | unresolved | 106.2 | 2.5 | 0.0047 | 76.4 | 10 |
+| ibex-pr-475 | unresolved | 341.9 | 3.2 | 0.0089 | 86.9 | 15 |
+| ibex-pr-48 | resolved | 234.5 | 2.3 | 0.0043 | 92.3 | 14 |
+| ibex-pr-54 | resolved | 616.8 | 4.3 | 0.0087 | 96.0 | 30 |
+| ibex-pr-83 | resolved | 232.0 | 2.5 | 0.0048 | 91.8 | 15 |
+| ibex-pr-882 | unresolved | 536.7 | 3.4 | 0.0201 | 87.8 | 12 |
+| ibex-pr-907 | unresolved | 108.5 | 2.5 | 0.0097 | 70.6 | 6 |
+| ibex-pr-974 | unresolved | 673.5 | 4.6 | 0.0144 | 93.5 | 23 |
