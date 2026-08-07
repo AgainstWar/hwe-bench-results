@@ -274,6 +274,9 @@ token_statistics:
   completion_k: 4.2
   cache_hit_pct: 94.5
   tool_calls: 47.3
+  mcp_calls: 0.0
+  skill_calls: 0.0
+  ordinary_calls: 47.3
   cost_usd: 0.727621
   own_price_cost_usd: 1.831318
   tasks: 54
@@ -285,59 +288,59 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
-|-------|--------|-----------|---------|---------|--------|-------|
-| XiangShan-pr-1242 | unresolved | 1032.7 | 3.1 | 0.6285 | 94.9 | 41 |
-| XiangShan-pr-1323 | unresolved | 1799.1 | 3.5 | 0.8218 | 94.0 | 49 |
-| XiangShan-pr-1395 | unresolved | 1176.4 | 3.9 | 0.7157 | 94.8 | 56 |
-| XiangShan-pr-1401 | unresolved | 2715.2 | 5.9 | 1.3220 | 95.3 | 65 |
-| XiangShan-pr-1602 | unresolved | 1574.2 | 4.2 | 1.2027 | 91.2 | 49 |
-| XiangShan-pr-1679 | resolved | 540.5 | 2.0 | 0.3575 | 88.9 | 30 |
-| XiangShan-pr-1694 | unresolved | 2354.9 | 4.5 | 1.0854 | 95.1 | 62 |
-| XiangShan-pr-1793 | resolved | 556.7 | 2.3 | 0.3659 | 88.8 | 29 |
-| XiangShan-pr-1820 | resolved | 629.6 | 2.5 | 0.4082 | 90.5 | 41 |
-| XiangShan-pr-1907 | unresolved | 400.7 | 1.8 | 0.2961 | 87.4 | 23 |
-| XiangShan-pr-1931 | unresolved | 988.1 | 2.7 | 0.5823 | 91.7 | 34 |
-| XiangShan-pr-2095 | resolved | 309.2 | 1.5 | 0.2357 | 84.3 | 23 |
-| XiangShan-pr-2195 | unresolved | 2318.9 | 5.2 | 1.0184 | 94.9 | 57 |
-| XiangShan-pr-2246 | unresolved | 1330.4 | 4.2 | 0.6352 | 94.8 | 55 |
-| XiangShan-pr-2351 | resolved | 1985.4 | 5.7 | 1.0509 | 94.6 | 61 |
-| XiangShan-pr-2483 | unresolved | 253.6 | 2.4 | 0.2081 | 88.8 | 21 |
-| XiangShan-pr-2513 | unresolved | 1108.2 | 4.9 | 0.6493 | 92.9 | 43 |
-| XiangShan-pr-2781 | resolved | 1499.0 | 4.7 | 0.6915 | 95.7 | 61 |
-| XiangShan-pr-281 | unresolved | 258.0 | 1.5 | 0.2298 | 82.8 | 23 |
-| XiangShan-pr-2845 | resolved | 367.9 | 2.0 | 0.2263 | 90.3 | 24 |
-| XiangShan-pr-2997 | unresolved | 1225.8 | 3.9 | 0.6627 | 94.9 | 58 |
-| XiangShan-pr-3182 | resolved | 988.1 | 4.2 | 0.5713 | 93.3 | 49 |
-| XiangShan-pr-3307 | resolved | 942.8 | 2.8 | 0.4860 | 93.9 | 41 |
-| XiangShan-pr-3329 | resolved | 596.9 | 2.7 | 0.3789 | 91.3 | 31 |
-| XiangShan-pr-3555 | resolved | 701.7 | 2.0 | 0.3944 | 91.1 | 26 |
-| XiangShan-pr-3636 | unresolved | 888.5 | 3.6 | 0.5009 | 92.7 | 44 |
-| XiangShan-pr-3717 | unresolved | 3226.4 | 13.4 | 1.5300 | 96.8 | 79 |
-| XiangShan-pr-3753 | unresolved | 6057.5 | 16.4 | 2.5756 | 97.0 | 90 |
-| XiangShan-pr-3859 | unresolved | 4352.4 | 8.0 | 1.7464 | 96.5 | 97 |
-| XiangShan-pr-3867 | unresolved | 1040.9 | 3.2 | 0.6159 | 93.1 | 41 |
-| XiangShan-pr-39 | resolved | 477.5 | 2.3 | 0.2988 | 91.5 | 24 |
-| XiangShan-pr-3907 | unresolved | 559.6 | 2.9 | 0.3456 | 91.8 | 42 |
-| XiangShan-pr-3955 | resolved | 674.0 | 2.8 | 0.3941 | 92.3 | 34 |
-| XiangShan-pr-4110 | unresolved | 918.9 | 3.3 | 0.4844 | 93.9 | 47 |
-| XiangShan-pr-4166 | resolved | 2137.1 | 4.4 | 0.9265 | 95.6 | 56 |
-| XiangShan-pr-4179 | unresolved | 2076.2 | 10.1 | 1.0240 | 95.4 | 64 |
-| XiangShan-pr-4337 | unresolved | 978.4 | 3.3 | 0.6278 | 93.3 | 44 |
-| XiangShan-pr-4426 | resolved | 974.9 | 2.6 | 0.5027 | 93.1 | 30 |
-| XiangShan-pr-4442 | resolved | 936.3 | 2.7 | 0.4865 | 94.2 | 30 |
-| XiangShan-pr-4533 | resolved | 1753.1 | 5.1 | 0.8063 | 95.4 | 55 |
-| XiangShan-pr-4750 | resolved | 2190.7 | 5.4 | 1.0859 | 95.7 | 54 |
-| XiangShan-pr-4764 | resolved | 643.7 | 3.0 | 0.4212 | 90.8 | 41 |
-| XiangShan-pr-4943 | unresolved | 3675.6 | 8.3 | 1.5628 | 95.6 | 122 |
-| XiangShan-pr-4959 | resolved | 667.9 | 2.6 | 0.4586 | 91.4 | 30 |
-| XiangShan-pr-4968 | unresolved | 1689.8 | 4.9 | 0.8348 | 94.6 | 62 |
-| XiangShan-pr-5080 | resolved | 754.4 | 2.6 | 0.4352 | 92.7 | 35 |
-| XiangShan-pr-5182 | resolved | 835.0 | 2.7 | 0.4738 | 92.2 | 32 |
-| XiangShan-pr-5189 | resolved | 1584.2 | 3.6 | 0.7587 | 94.5 | 47 |
-| XiangShan-pr-5496 | unresolved | 2727.3 | 4.4 | 1.2241 | 94.4 | 59 |
-| XiangShan-pr-5593 | resolved | 1027.6 | 3.0 | 0.5219 | 94.1 | 38 |
-| XiangShan-pr-5687 | resolved | 1667.6 | 4.5 | 0.8947 | 94.3 | 52 |
-| XiangShan-pr-5700 | resolved | 1377.5 | 2.9 | 0.6917 | 93.6 | 36 |
-| XiangShan-pr-655 | unresolved | 1856.6 | 4.2 | 0.8933 | 95.3 | 55 |
-| XiangShan-pr-739 | resolved | 1904.8 | 5.4 | 0.9450 | 95.2 | 64 |
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| XiangShan-pr-1242 | unresolved | 1032.7 | 3.1 | 0.6285 | 94.9 | 41 | 0 | 0 | 41 |
+| XiangShan-pr-1323 | unresolved | 1799.1 | 3.5 | 0.8218 | 94.0 | 49 | 0 | 0 | 49 |
+| XiangShan-pr-1395 | unresolved | 1176.4 | 3.9 | 0.7157 | 94.8 | 56 | 0 | 0 | 56 |
+| XiangShan-pr-1401 | unresolved | 2715.2 | 5.9 | 1.3220 | 95.3 | 65 | 0 | 0 | 65 |
+| XiangShan-pr-1602 | unresolved | 1574.2 | 4.2 | 1.2027 | 91.2 | 49 | 0 | 0 | 49 |
+| XiangShan-pr-1679 | resolved | 540.5 | 2.0 | 0.3575 | 88.9 | 30 | 0 | 0 | 30 |
+| XiangShan-pr-1694 | unresolved | 2354.9 | 4.5 | 1.0854 | 95.1 | 62 | 0 | 0 | 62 |
+| XiangShan-pr-1793 | resolved | 556.7 | 2.3 | 0.3659 | 88.8 | 29 | 0 | 0 | 29 |
+| XiangShan-pr-1820 | resolved | 629.6 | 2.5 | 0.4082 | 90.5 | 41 | 0 | 0 | 41 |
+| XiangShan-pr-1907 | unresolved | 400.7 | 1.8 | 0.2961 | 87.4 | 23 | 0 | 0 | 23 |
+| XiangShan-pr-1931 | unresolved | 988.1 | 2.7 | 0.5823 | 91.7 | 34 | 0 | 0 | 34 |
+| XiangShan-pr-2095 | resolved | 309.2 | 1.5 | 0.2357 | 84.3 | 23 | 0 | 0 | 23 |
+| XiangShan-pr-2195 | unresolved | 2318.9 | 5.2 | 1.0184 | 94.9 | 57 | 0 | 0 | 57 |
+| XiangShan-pr-2246 | unresolved | 1330.4 | 4.2 | 0.6352 | 94.8 | 55 | 0 | 0 | 55 |
+| XiangShan-pr-2351 | resolved | 1985.4 | 5.7 | 1.0509 | 94.6 | 61 | 0 | 0 | 61 |
+| XiangShan-pr-2483 | unresolved | 253.6 | 2.4 | 0.2081 | 88.8 | 21 | 0 | 0 | 21 |
+| XiangShan-pr-2513 | unresolved | 1108.2 | 4.9 | 0.6493 | 92.9 | 43 | 0 | 0 | 43 |
+| XiangShan-pr-2781 | resolved | 1499.0 | 4.7 | 0.6915 | 95.7 | 61 | 0 | 0 | 61 |
+| XiangShan-pr-281 | unresolved | 258.0 | 1.5 | 0.2298 | 82.8 | 23 | 0 | 0 | 23 |
+| XiangShan-pr-2845 | resolved | 367.9 | 2.0 | 0.2263 | 90.3 | 24 | 0 | 0 | 24 |
+| XiangShan-pr-2997 | unresolved | 1225.8 | 3.9 | 0.6627 | 94.9 | 58 | 0 | 0 | 58 |
+| XiangShan-pr-3182 | resolved | 988.1 | 4.2 | 0.5713 | 93.3 | 49 | 0 | 0 | 49 |
+| XiangShan-pr-3307 | resolved | 942.8 | 2.8 | 0.4860 | 93.9 | 41 | 0 | 0 | 41 |
+| XiangShan-pr-3329 | resolved | 596.9 | 2.7 | 0.3789 | 91.3 | 31 | 0 | 0 | 31 |
+| XiangShan-pr-3555 | resolved | 701.7 | 2.0 | 0.3944 | 91.1 | 26 | 0 | 0 | 26 |
+| XiangShan-pr-3636 | unresolved | 888.5 | 3.6 | 0.5009 | 92.7 | 44 | 0 | 0 | 44 |
+| XiangShan-pr-3717 | unresolved | 3226.4 | 13.4 | 1.5300 | 96.8 | 79 | 0 | 0 | 79 |
+| XiangShan-pr-3753 | unresolved | 6057.5 | 16.4 | 2.5756 | 97.0 | 90 | 0 | 0 | 90 |
+| XiangShan-pr-3859 | unresolved | 4352.4 | 8.0 | 1.7464 | 96.5 | 97 | 0 | 0 | 97 |
+| XiangShan-pr-3867 | unresolved | 1040.9 | 3.2 | 0.6159 | 93.1 | 41 | 0 | 0 | 41 |
+| XiangShan-pr-39 | resolved | 477.5 | 2.3 | 0.2988 | 91.5 | 24 | 0 | 0 | 24 |
+| XiangShan-pr-3907 | unresolved | 559.6 | 2.9 | 0.3456 | 91.8 | 42 | 0 | 0 | 42 |
+| XiangShan-pr-3955 | resolved | 674.0 | 2.8 | 0.3941 | 92.3 | 34 | 0 | 0 | 34 |
+| XiangShan-pr-4110 | unresolved | 918.9 | 3.3 | 0.4844 | 93.9 | 47 | 0 | 0 | 47 |
+| XiangShan-pr-4166 | resolved | 2137.1 | 4.4 | 0.9265 | 95.6 | 56 | 0 | 0 | 56 |
+| XiangShan-pr-4179 | unresolved | 2076.2 | 10.1 | 1.0240 | 95.4 | 64 | 0 | 0 | 64 |
+| XiangShan-pr-4337 | unresolved | 978.4 | 3.3 | 0.6278 | 93.3 | 44 | 0 | 0 | 44 |
+| XiangShan-pr-4426 | resolved | 974.9 | 2.6 | 0.5027 | 93.1 | 30 | 0 | 0 | 30 |
+| XiangShan-pr-4442 | resolved | 936.3 | 2.7 | 0.4865 | 94.2 | 30 | 0 | 0 | 30 |
+| XiangShan-pr-4533 | resolved | 1753.1 | 5.1 | 0.8063 | 95.4 | 55 | 0 | 0 | 55 |
+| XiangShan-pr-4750 | resolved | 2190.7 | 5.4 | 1.0859 | 95.7 | 54 | 0 | 0 | 54 |
+| XiangShan-pr-4764 | resolved | 643.7 | 3.0 | 0.4212 | 90.8 | 41 | 0 | 0 | 41 |
+| XiangShan-pr-4943 | unresolved | 3675.6 | 8.3 | 1.5628 | 95.6 | 122 | 0 | 0 | 122 |
+| XiangShan-pr-4959 | resolved | 667.9 | 2.6 | 0.4586 | 91.4 | 30 | 0 | 0 | 30 |
+| XiangShan-pr-4968 | unresolved | 1689.8 | 4.9 | 0.8348 | 94.6 | 62 | 0 | 0 | 62 |
+| XiangShan-pr-5080 | resolved | 754.4 | 2.6 | 0.4352 | 92.7 | 35 | 0 | 0 | 35 |
+| XiangShan-pr-5182 | resolved | 835.0 | 2.7 | 0.4738 | 92.2 | 32 | 0 | 0 | 32 |
+| XiangShan-pr-5189 | resolved | 1584.2 | 3.6 | 0.7587 | 94.5 | 47 | 0 | 0 | 47 |
+| XiangShan-pr-5496 | unresolved | 2727.3 | 4.4 | 1.2241 | 94.4 | 59 | 0 | 0 | 59 |
+| XiangShan-pr-5593 | resolved | 1027.6 | 3.0 | 0.5219 | 94.1 | 38 | 0 | 0 | 38 |
+| XiangShan-pr-5687 | resolved | 1667.6 | 4.5 | 0.8947 | 94.3 | 52 | 0 | 0 | 52 |
+| XiangShan-pr-5700 | resolved | 1377.5 | 2.9 | 0.6917 | 93.6 | 36 | 0 | 0 | 36 |
+| XiangShan-pr-655 | unresolved | 1856.6 | 4.2 | 0.8933 | 95.3 | 55 | 0 | 0 | 55 |
+| XiangShan-pr-739 | resolved | 1904.8 | 5.4 | 0.9450 | 95.2 | 64 | 0 | 0 | 64 |
