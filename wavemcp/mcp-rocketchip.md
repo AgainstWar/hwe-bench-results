@@ -209,6 +209,9 @@ token_statistics:
   completion_k: 3.5
   cache_hit_pct: 95.9
   tool_calls: 23.3
+  mcp_calls: 0.0
+  skill_calls: 0.4
+  ordinary_calls: 22.9
   cost_usd: 0.012307
   own_price_cost_usd: 0.231441
   tasks: 32
@@ -220,37 +223,37 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
-|-------|--------|-----------|---------|---------|--------|-------|
-| rocket-chip-pr-1069 | resolved | 1305.9 | 6.9 | 0.0136 | 97.0 | 45 |
-| rocket-chip-pr-1093 | resolved | 237.7 | 1.7 | 0.0082 | 89.9 | 10 |
-| rocket-chip-pr-1176 | resolved | 105.1 | 1.3 | 0.0048 | 84.1 | 7 |
-| rocket-chip-pr-1330 | resolved | 89.5 | 0.9 | 0.0039 | 78.6 | 6 |
-| rocket-chip-pr-1493 | unresolved | 1246.1 | 4.2 | 0.0178 | 95.1 | 33 |
-| rocket-chip-pr-1656 | unresolved | 480.1 | 3.1 | 0.0116 | 87.8 | 23 |
-| rocket-chip-pr-1761 | unresolved | 138.7 | 1.2 | 0.0041 | 87.9 | 7 |
-| rocket-chip-pr-177 | unresolved | 1033.4 | 5.4 | 0.0131 | 95.4 | 35 |
-| rocket-chip-pr-1878 | resolved | 161.0 | 1.4 | 0.0046 | 86.8 | 11 |
-| rocket-chip-pr-2018 | unresolved | 577.5 | 3.3 | 0.0086 | 95.0 | 24 |
-| rocket-chip-pr-2036 | unresolved | 127.0 | 1.5 | 0.0032 | 87.5 | 9 |
-| rocket-chip-pr-2167 | unresolved | 309.7 | 1.9 | 0.0087 | 90.6 | 12 |
-| rocket-chip-pr-2213 | resolved | 2210.5 | 4.9 | 0.0340 | 97.3 | 38 |
-| rocket-chip-pr-2368 | unresolved | 2701.2 | 5.6 | 0.0271 | 98.3 | 53 |
-| rocket-chip-pr-2543 | unresolved | 2994.6 | 6.0 | 0.0345 | 98.2 | 57 |
-| rocket-chip-pr-2621 | unresolved | 432.5 | 3.9 | 0.0067 | 94.5 | 27 |
-| rocket-chip-pr-2984 | resolved | 177.4 | 1.6 | 0.0053 | 88.0 | 12 |
-| rocket-chip-pr-2988 | resolved | 207.9 | 1.3 | 0.0041 | 89.5 | 10 |
-| rocket-chip-pr-2994 | resolved | 1143.7 | 4.8 | 0.0159 | 95.6 | 32 |
-| rocket-chip-pr-3004 | unresolved | 407.6 | 2.2 | 0.0115 | 90.2 | 11 |
-| rocket-chip-pr-3065 | unresolved | 480.0 | 3.0 | 0.0071 | 95.7 | 20 |
-| rocket-chip-pr-3256 | unresolved | 91.4 | 1.2 | 0.0038 | 78.7 | 6 |
-| rocket-chip-pr-3526 | unresolved | 895.5 | 3.1 | 0.0142 | 95.8 | 22 |
-| rocket-chip-pr-3600 | unresolved | 72.8 | 0.5 | 0.0143 | 57.3 | 3 |
-| rocket-chip-pr-3624 | unresolved | 816.1 | 4.5 | 0.0097 | 95.9 | 38 |
-| rocket-chip-pr-3651 | unresolved | 207.3 | 1.6 | 0.0060 | 88.8 | 11 |
-| rocket-chip-pr-387 | unresolved | 1933.3 | 9.8 | 0.0251 | 97.7 | 41 |
-| rocket-chip-pr-404 | resolved | 610.7 | 3.0 | 0.0083 | 95.3 | 25 |
-| rocket-chip-pr-485 | unresolved | 4565.7 | 15.7 | 0.0401 | 98.0 | 76 |
-| rocket-chip-pr-542 | resolved | 54.1 | 0.6 | 0.0025 | 73.6 | 3 |
-| rocket-chip-pr-576 | resolved | 617.5 | 2.7 | 0.0132 | 94.5 | 18 |
-| rocket-chip-pr-745 | unresolved | 543.8 | 2.6 | 0.0082 | 94.0 | 21 |
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| rocket-chip-pr-1069 | resolved | 1305.9 | 6.9 | 0.0136 | 97.0 | 45 | 0 | 1 | 44 |
+| rocket-chip-pr-1093 | resolved | 237.7 | 1.7 | 0.0082 | 89.9 | 10 | 0 | 1 | 9 |
+| rocket-chip-pr-1176 | resolved | 105.1 | 1.3 | 0.0048 | 84.1 | 7 | 0 | 0 | 7 |
+| rocket-chip-pr-1330 | resolved | 89.5 | 0.9 | 0.0039 | 78.6 | 6 | 0 | 1 | 5 |
+| rocket-chip-pr-1493 | unresolved | 1246.1 | 4.2 | 0.0178 | 95.1 | 33 | 0 | 1 | 32 |
+| rocket-chip-pr-1656 | unresolved | 480.1 | 3.1 | 0.0116 | 87.8 | 23 | 0 | 1 | 22 |
+| rocket-chip-pr-1761 | unresolved | 138.7 | 1.2 | 0.0041 | 87.9 | 7 | 0 | 0 | 7 |
+| rocket-chip-pr-177 | unresolved | 1033.4 | 5.4 | 0.0131 | 95.4 | 35 | 0 | 0 | 35 |
+| rocket-chip-pr-1878 | resolved | 161.0 | 1.4 | 0.0046 | 86.8 | 11 | 0 | 1 | 10 |
+| rocket-chip-pr-2018 | unresolved | 577.5 | 3.3 | 0.0086 | 95.0 | 24 | 0 | 0 | 24 |
+| rocket-chip-pr-2036 | unresolved | 127.0 | 1.5 | 0.0032 | 87.5 | 9 | 0 | 0 | 9 |
+| rocket-chip-pr-2167 | unresolved | 309.7 | 1.9 | 0.0087 | 90.6 | 12 | 0 | 0 | 12 |
+| rocket-chip-pr-2213 | resolved | 2210.5 | 4.9 | 0.0340 | 97.3 | 38 | 0 | 0 | 38 |
+| rocket-chip-pr-2368 | unresolved | 2701.2 | 5.6 | 0.0271 | 98.3 | 53 | 0 | 0 | 53 |
+| rocket-chip-pr-2543 | unresolved | 2994.6 | 6.0 | 0.0345 | 98.2 | 57 | 0 | 0 | 57 |
+| rocket-chip-pr-2621 | unresolved | 432.5 | 3.9 | 0.0067 | 94.5 | 27 | 0 | 0 | 27 |
+| rocket-chip-pr-2984 | resolved | 177.4 | 1.6 | 0.0053 | 88.0 | 12 | 0 | 1 | 11 |
+| rocket-chip-pr-2988 | resolved | 207.9 | 1.3 | 0.0041 | 89.5 | 10 | 0 | 1 | 9 |
+| rocket-chip-pr-2994 | resolved | 1143.7 | 4.8 | 0.0159 | 95.6 | 32 | 0 | 0 | 32 |
+| rocket-chip-pr-3004 | unresolved | 407.6 | 2.2 | 0.0115 | 90.2 | 11 | 0 | 0 | 11 |
+| rocket-chip-pr-3065 | unresolved | 480.0 | 3.0 | 0.0071 | 95.7 | 20 | 0 | 0 | 20 |
+| rocket-chip-pr-3256 | unresolved | 91.4 | 1.2 | 0.0038 | 78.7 | 6 | 0 | 1 | 5 |
+| rocket-chip-pr-3526 | unresolved | 895.5 | 3.1 | 0.0142 | 95.8 | 22 | 0 | 1 | 21 |
+| rocket-chip-pr-3600 | unresolved | 72.8 | 0.5 | 0.0143 | 57.3 | 3 | 0 | 0 | 3 |
+| rocket-chip-pr-3624 | unresolved | 816.1 | 4.5 | 0.0097 | 95.9 | 38 | 0 | 1 | 37 |
+| rocket-chip-pr-3651 | unresolved | 207.3 | 1.6 | 0.0060 | 88.8 | 11 | 0 | 0 | 11 |
+| rocket-chip-pr-387 | unresolved | 1933.3 | 9.8 | 0.0251 | 97.7 | 41 | 0 | 0 | 41 |
+| rocket-chip-pr-404 | resolved | 610.7 | 3.0 | 0.0083 | 95.3 | 25 | 0 | 1 | 24 |
+| rocket-chip-pr-485 | unresolved | 4565.7 | 15.7 | 0.0401 | 98.0 | 76 | 0 | 1 | 75 |
+| rocket-chip-pr-542 | resolved | 54.1 | 0.6 | 0.0025 | 73.6 | 3 | 0 | 0 | 3 |
+| rocket-chip-pr-576 | resolved | 617.5 | 2.7 | 0.0132 | 94.5 | 18 | 0 | 0 | 18 |
+| rocket-chip-pr-745 | unresolved | 543.8 | 2.6 | 0.0082 | 94.0 | 21 | 0 | 1 | 20 |
