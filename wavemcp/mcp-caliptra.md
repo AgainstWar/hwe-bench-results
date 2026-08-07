@@ -94,6 +94,9 @@ token_statistics:
   completion_k: 4.2
   cache_hit_pct: 95.0
   tool_calls: 22.8
+  mcp_calls: 0.2
+  skill_calls: 0.4
+  ordinary_calls: 22.1
   cost_usd: 0.012190
   own_price_cost_usd: 0.221453
   tasks: 16
@@ -105,21 +108,21 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls |
-|-------|--------|-----------|---------|---------|--------|-------|
-| caliptra-rtl-pr-1033 | unresolved | 663.2 | 3.3 | 0.0124 | 93.7 | 22 |
-| caliptra-rtl-pr-1073 | resolved | 642.8 | 2.7 | 0.0151 | 91.6 | 15 |
-| caliptra-rtl-pr-1089 | resolved | 539.9 | 2.7 | 0.0117 | 93.2 | 14 |
-| caliptra-rtl-pr-134 | resolved | 976.9 | 6.7 | 0.0117 | 95.4 | 40 |
-| caliptra-rtl-pr-195 | resolved | 227.5 | 2.0 | 0.0069 | 88.2 | 11 |
-| caliptra-rtl-pr-252 | resolved | 136.7 | 1.6 | 0.0037 | 87.0 | 8 |
-| caliptra-rtl-pr-298 | resolved | 222.2 | 1.9 | 0.0050 | 89.5 | 13 |
-| caliptra-rtl-pr-506 | resolved | 694.6 | 3.3 | 0.0117 | 93.5 | 26 |
-| caliptra-rtl-pr-594 | resolved | 2279.2 | 16.8 | 0.0239 | 97.5 | 48 |
-| caliptra-rtl-pr-633 | unresolved | 463.1 | 3.5 | 0.0086 | 91.9 | 24 |
-| caliptra-rtl-pr-70 | unresolved | 2821.1 | 6.1 | 0.0337 | 97.5 | 48 |
-| caliptra-rtl-pr-725 | unresolved | 1729.8 | 6.5 | 0.0171 | 96.6 | 34 |
-| caliptra-rtl-pr-747 | resolved | 238.7 | 1.8 | 0.0066 | 89.3 | 12 |
-| caliptra-rtl-pr-757 | resolved | 444.9 | 3.7 | 0.0108 | 93.1 | 19 |
-| caliptra-rtl-pr-786 | resolved | 646.7 | 3.2 | 0.0121 | 91.5 | 23 |
-| caliptra-rtl-pr-963 | resolved | 124.6 | 1.0 | 0.0040 | 87.7 | 7 |
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| caliptra-rtl-pr-1033 | unresolved | 663.2 | 3.3 | 0.0124 | 93.7 | 22 | 0 | 0 | 22 |
+| caliptra-rtl-pr-1073 | resolved | 642.8 | 2.7 | 0.0151 | 91.6 | 15 | 0 | 1 | 14 |
+| caliptra-rtl-pr-1089 | resolved | 539.9 | 2.7 | 0.0117 | 93.2 | 14 | 0 | 1 | 13 |
+| caliptra-rtl-pr-134 | resolved | 976.9 | 6.7 | 0.0117 | 95.4 | 40 | 0 | 0 | 40 |
+| caliptra-rtl-pr-195 | resolved | 227.5 | 2.0 | 0.0069 | 88.2 | 11 | 0 | 0 | 11 |
+| caliptra-rtl-pr-252 | resolved | 136.7 | 1.6 | 0.0037 | 87.0 | 8 | 0 | 0 | 8 |
+| caliptra-rtl-pr-298 | resolved | 222.2 | 1.9 | 0.0050 | 89.5 | 13 | 0 | 1 | 12 |
+| caliptra-rtl-pr-506 | resolved | 694.6 | 3.3 | 0.0117 | 93.5 | 26 | 3 | 1 | 22 |
+| caliptra-rtl-pr-594 | resolved | 2279.2 | 16.8 | 0.0239 | 97.5 | 48 | 0 | 1 | 47 |
+| caliptra-rtl-pr-633 | unresolved | 463.1 | 3.5 | 0.0086 | 91.9 | 24 | 0 | 0 | 24 |
+| caliptra-rtl-pr-70 | unresolved | 2821.1 | 6.1 | 0.0337 | 97.5 | 48 | 0 | 0 | 48 |
+| caliptra-rtl-pr-725 | unresolved | 1729.8 | 6.5 | 0.0171 | 96.6 | 34 | 0 | 1 | 33 |
+| caliptra-rtl-pr-747 | resolved | 238.7 | 1.8 | 0.0066 | 89.3 | 12 | 0 | 1 | 11 |
+| caliptra-rtl-pr-757 | resolved | 444.9 | 3.7 | 0.0108 | 93.1 | 19 | 0 | 0 | 19 |
+| caliptra-rtl-pr-786 | resolved | 646.7 | 3.2 | 0.0121 | 91.5 | 23 | 0 | 0 | 23 |
+| caliptra-rtl-pr-963 | resolved | 124.6 | 1.0 | 0.0040 | 87.7 | 7 | 0 | 0 | 7 |
