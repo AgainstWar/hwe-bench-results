@@ -275,7 +275,7 @@ token_statistics:
   cache_hit_pct: 94.5
   tool_calls: 47.3
   mcp_calls: 0.0
-  skill_calls: 0.0
+  other_skill_calls: 0.0
   ordinary_calls: 47.3
   cost_usd: 0.727621
   own_price_cost_usd: 1.831318
@@ -288,8 +288,8 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
-|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Other Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|------|-------------|----------|
 | XiangShan-pr-1242 | unresolved | 1032.7 | 3.1 | 0.6285 | 94.9 | 41 | 0 | 0 | 41 |
 | XiangShan-pr-1323 | unresolved | 1799.1 | 3.5 | 0.8218 | 94.0 | 49 | 0 | 0 | 49 |
 | XiangShan-pr-1395 | unresolved | 1176.4 | 3.9 | 0.7157 | 94.8 | 56 | 0 | 0 | 56 |

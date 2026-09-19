@@ -140,7 +140,7 @@ token_statistics:
   cache_hit_pct: 97.0
   tool_calls: 23.2
   mcp_calls: 0.0
-  skill_calls: 0.0
+  other_skill_calls: 0.0
   ordinary_calls: 23.2
   cost_usd: 0.000000
   own_price_cost_usd: 0.250615
@@ -153,8 +153,8 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
-|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Other Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|------|-------------|----------|
 | ibex-pr-104 | unresolved | 1488.0 | 12.5 | 0.0000 | 96.8 | 37 | 0 | 0 | 37 |
 | ibex-pr-1135 | resolved | 598.0 | 24.4 | 0.0000 | 93.7 | 16 | 0 | 0 | 16 |
 | ibex-pr-1141 | unresolved | 1313.9 | 20.6 | 0.0000 | 97.2 | 38 | 0 | 0 | 38 |

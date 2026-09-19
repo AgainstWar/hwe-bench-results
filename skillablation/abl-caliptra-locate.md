@@ -143,7 +143,7 @@ token_statistics:
   cache_hit_pct: 89.0
   tool_calls: 13.2
   mcp_calls: 0.0
-  skill_calls: 1.0
+  other_skill_calls: 1.0
   ordinary_calls: 12.2
   cost_usd: 0.010577
   own_price_cost_usd: 0.103265
@@ -156,8 +156,8 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
-|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Other Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|------|-------------|----------|
 | caliptra-rtl-pr-1033 | unresolved | 407.5 | 2.9 | 0.0134 | 80.8 | 12 | 0 | 1 | 11 |
 | caliptra-rtl-pr-1073 | unresolved | 144.9 | 2.3 | 0.0079 | 74.6 | 5 | 0 | 1 | 4 |
 | caliptra-rtl-pr-1089 | unresolved | 115.0 | 1.8 | 0.0082 | 72.6 | 4 | 0 | 1 | 3 |

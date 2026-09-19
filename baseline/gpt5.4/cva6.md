@@ -102,7 +102,7 @@ token_statistics:
   cache_hit_pct: 94.8
   tool_calls: 59.7
   mcp_calls: 0.0
-  skill_calls: 0.0
+  other_skill_calls: 0.0
   ordinary_calls: 59.7
   cost_usd: 0.902463
   own_price_cost_usd: 2.453382
@@ -115,8 +115,8 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
-|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Other Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|------|-------------|----------|
 | cva6-pr-1482 | resolved | 2022.8 | 6.8 | 0.9612 | 95.0 | 77 | 0 | 0 | 77 |
 | cva6-pr-2017 | resolved | 2311.9 | 6.8 | 1.0359 | 96.0 | 81 | 0 | 0 | 81 |
 | cva6-pr-2032 | resolved | 799.6 | 2.8 | 0.4936 | 90.7 | 35 | 0 | 0 | 35 |

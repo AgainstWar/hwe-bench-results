@@ -252,7 +252,7 @@ token_statistics:
   cache_hit_pct: 93.4
   tool_calls: 19.1
   mcp_calls: 0.0
-  skill_calls: 1.0
+  other_skill_calls: 1.0
   ordinary_calls: 18.1
   cost_usd: 0.011171
   own_price_cost_usd: 0.149823
@@ -265,8 +265,8 @@ token_statistics:
 
 ### 逐 Task 明细
 
-| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Skill | Ordinary |
-|-------|--------|-----------|---------|---------|--------|-------|-----|-------|----------|
+| Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Other Skill | Ordinary |
+|-------|--------|-----------|---------|---------|--------|-------|------|-------------|----------|
 | rocket-chip-pr-1069 | unresolved | 83.5 | 2.2 | 0.0042 | 72.2 | 10 | 0 | 1 | 9 |
 | rocket-chip-pr-1093 | unresolved | 297.1 | 2.8 | 0.0070 | 91.5 | 16 | 0 | 1 | 15 |
 | rocket-chip-pr-1176 | unresolved | 288.4 | 3.1 | 0.0118 | 88.1 | 12 | 0 | 1 | 11 |
