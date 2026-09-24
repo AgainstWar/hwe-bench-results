@@ -23,16 +23,15 @@
 |------|:--------:|:----:|:--------------------:|:------:|:--------:|
 | ibex | 31/35 | 88.6% | 90.10% | 0 | 0 |
 | cva6 | 34/35 | 97.1% | 88.54% | 0 | 0 |
-| caliptra | 14/14 | 100.0% | 96.15% | 2 | 0 |
+| caliptra | 15/16 | 93.8% | 92.86% | 0 | 0 |
 | rocketchip | 20/32 | 62.5% | 84.27% | 0 | 0 |
 | xiangshan | 25/53 | 47.2% | 96.23% | 0 | 1 (pr-4750) |
-| **Total** | **124/169** | **73.4%** | — | **2** | **1** |
+| **Total** | **125/171** | **73.1%** | — | **0** | **1** |
 
 说明：
-- caliptra 数据集 16 例，其中 `pr-70`、`pr-786` 未产出 verifier 结果（未完成），最终进入评估 14 例。
 - xiangshan `pr-4750` 为空 patch，被 `verify_bridge` 排除。
-- 若按全量数据集 172 例计，总体为 124/172 (72.1%)。
-- 全部 170 条已完成轨迹中 `skill` 调用为 0。
+- caliptra 首次运行时 `pr-70`/`pr-786` 因 WAVES 安装阶段的网络问题未完成，已单独重跑并合并；其中 `pr-786` resolved，`pr-70` 仍 unresolved。
+- 全部 171 条已完成轨迹中 `skill` 调用为 0。
 
 ---
 
@@ -46,9 +45,9 @@
 
 未解决（1）：2170
 
-### Caliptra (chipsalliance/caliptra-rtl) — 14/14 (100.0%)
+### Caliptra (chipsalliance/caliptra-rtl) — 15/16 (93.8%)
 
-未完成（2）：`pr-70`, `pr-786`（agent 已运行，MCP 已注册，但无 `result.json` / verifier 输出，未计入）
+未解决（1）：70
 
 ### RocketChip (chipsalliance/rocket-chip) — 20/32 (62.5%)
 
@@ -69,7 +68,7 @@
 |------|:------------:|:-----------------:|:----------------------------:|
 | ibex | 88.6% | 90.10% | 93.03% |
 | cva6 | 97.1% | 88.54% | 92.38% |
-| caliptra | 100.0% | 96.15% | 96.43% |
+| caliptra | 93.8% | 92.86% | 90.62% |
 | rocketchip | 62.5% | 84.27% | 93.36% |
 | xiangshan | 47.2% | 96.23% | 97.17% |
 
@@ -81,29 +80,28 @@
 |------|-------|-----------|---------|--------|-------|-----|-------------|----------|---------|--------------|
 | ibex | 35 | 10749.4 | 61.4 | 99.1 | 96.5 | 0.03 | 0.0 | 96.4 | 0.083391 | 2.969838 |
 | cva6 | 35 | 4196.5 | 26.1 | 98.5 | 59.3 | 0.0 | 0.0 | 59.3 | 0.037451 | 1.161739 |
-| caliptra | 14 | 4240.2 | 40.2 | 97.9 | 62.3 | 0.0 | 0.0 | 62.3 | 0.049825 | 1.189132 |
+| caliptra | 16 | 8040.8 | 56.0 | 98.2 | 78.1 | 0.0 | 0.0 | 78.1 | 0.078789 | 2.232623 |
 | rocketchip | 32 | 3630.0 | 24.3 | 96.4 | 59.6 | 0.0 | 0.0 | 59.6 | 0.046343 | 1.006849 |
 | xiangshan | 53 | 3335.6 | 33.0 | 97.4 | 47.7 | 0.0 | 0.0 | 47.7 | 0.042657 | 0.936871 |
 
 注：
 - 上表除 `Tasks` 外均为**每任务均值**。
-- 全实验 API 总成本 **$8.7135**，own-price 估算总成本 **$244.063**。
-- caliptra 仅统计已完成的 14 例。
+- 全实验 API 总成本 **$9.2766**，own-price 估算总成本 **$263.137**。
 
 ---
 
 ## MCP 使用情况
 
-170 条已完成轨迹的工具调用统计：
+171 条已完成轨迹的工具调用统计：
 
 | Repo | `waves_wave_*`（MCP） | `skill`（Skill） | Ordinary |
 |------|:---------------------:|:----------------:|:--------:|
 | ibex | 1 | 0 | 3375 |
 | cva6 | 0 | 0 | 2076 |
-| caliptra | 0 | 0 | 872 |
+| caliptra | 0 | 0 | 1249 |
 | rocketchip | 0 | 0 | 1907 |
 | xiangshan | 0 | 0 | 2576 |
-| **合计** | **1** | **0** | **10806** |
+| **合计** | **1** | **0** | **11183** |
 
 唯一一次 MCP 调用是 `waves_wave_get_info`（ibex）。其余主要工具为 `bash`、`read`、`edit`、`grep`，另有 `webfetch` 与 `websearch` 被频繁使用。也就是说，仅开启 `WAVES_ENABLED=true` 时，agent 基本不会主动使用 WAVES MCP。
 
@@ -115,18 +113,16 @@
 |------|:-----------:|:------:|:----:|
 | ibex | 35/35 (100.0%) | 31/35 (88.6%) | -11.4 |
 | cva6 | 35/35 (100.0%) | 34/35 (97.1%) | -2.9 |
-| caliptra | 15/16 (93.8%) | 14/14 (100.0%) | +6.2 |
+| caliptra | 15/16 (93.8%) | 15/16 (93.8%) | 0.0 |
 | rocketchip | 20/32 (62.5%) | 20/32 (62.5%) | 0.0 |
 | xiangshan | 32/53 (60.4%) | 25/53 (47.2%) | -13.2 |
-| **Total** | **137/171 (80.1%)** | **124/169 (73.4%)** | **-6.7** |
-
-注：两次运行的 caliptra 分母不同（baseline 16，MCP 14，差在 `pr-70`/`pr-786` 未完成），比较以 per-repo 行为准。
+| **Total** | **137/171 (80.1%)** | **125/171 (73.1%)** | **-7.0** |
 
 | Repo | Baseline V2 Precision | MCP V2 Precision |
 |------|:---------------------:|:----------------:|
 | ibex | 98.15% | 90.10% |
 | cva6 | 94.83% | 88.54% |
-| caliptra | 93.33% | 96.15% |
+| caliptra | 93.33% | 92.86% |
 | rocketchip | 94.52% | 84.27% |
 | xiangshan | 93.64% | 96.23% |
 
@@ -134,15 +130,15 @@
 
 ## 核心发现
 
-1. **MCP 几乎未被调用**：170 条轨迹中仅 1 次 `waves_wave_*`，且没有 skill 调用。仅设置 `WAVES_ENABLED=true` 并没有让 agent 使用 WAVES。
+1. **MCP 几乎未被调用**：171 条轨迹中仅 1 次 `waves_wave_*`，且没有 skill 调用。仅设置 `WAVES_ENABLED=true` 并没有让 agent 使用 WAVES。
 
-2. **总体低于 Baseline V2**：124/169 (73.4%) vs 137/171 (80.1%)。下降主要来自 ibex（-4）与 xiangshan（-7）。
+2. **总体低于 Baseline V2**：125/171 (73.1%) vs 137/171 (80.1%)。下降主要来自 ibex（-4）与 xiangshan（-7）。
 
 3. **Chisel 项目仍是最弱环节**：rocketchip 62.5%、xiangshan 47.2%，两库合计贡献 40/45 个未解决。
 
-4. **精度表现分化**：caliptra 96.15%、xiangshan 96.23% 较高，但 rocketchip 84.27%、cva6 88.54% 偏低。
+4. **精度表现分化**：xiangshan 96.23%、caliptra 92.86% 较高，但 rocketchip 84.27%、cva6 88.54% 偏低。
 
-5. **数据完整性问题**：caliptra `pr-70`、`pr-786` 未完成，xiangshan `pr-4750` 空 patch；评估前需注意分母差异。
+5. **数据完整性已修复**：caliptra `pr-70`/`pr-786` 补齐后无未完成 trial；xiangshan `pr-4750` 为空 patch。
 
 ---
 
@@ -153,5 +149,6 @@
 - File-Level Precision：`results-archive/analysis/compute_precision.py`
 - Token / Calls：`results-archive/analysis/token_report.py`（`result.json` + `agent/trajectory.json`）
 - MCP / Skill 分类：`waves_wave_*` 计为 MCP，`skill` 计为 Skill，其余为 Ordinary
+- WAVES 安装：`git clone` 经 `ghproxy.net` 镜像、`pip install` 经 `pypi.tuna.tsinghua.edu.cn` 镜像；caliptra 重跑使用独立 job `hwe-mcp-v2-caliptra-retry`（已随包归档，作为补跑记录）
 - 未完成判定：trial 目录缺 `result.json` 且 `verifier/` 为空
 - 本报告未修改 `results-archive/analysis/`；旧版报告（`MCP_BASELINE_REPORT.md`、`mcp-<repo>.md`）保持原样。

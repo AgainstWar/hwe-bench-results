@@ -7,10 +7,10 @@ mcp_v2:
   agent: OpenCode
   model: DeepSeek V4 Flash
   mcp: WAVES (WAVES_ENABLED=true, no skills)
-  resolved: 14
-  total: 14
-  resolved_rate: 100.0%
-  file_level_precision: 96.15%
+  resolved: 15
+  total: 16
+  resolved_rate: 93.8%
+  file_level_precision: 92.86%
   infra_errors: 0
 ```
 
@@ -18,20 +18,14 @@ mcp_v2:
 
 | 指标 | Baseline V2 | MCP V2 |
 |------|:-----------:|:------:|
-| Resolved Rate | 15/16 (93.8%) | 14/14 (100.0%) |
-| File-Level Precision | 93.33% | 96.15% |
-
-## 未完成 Trial（无 verifier 输出，未进入评估）
-
-| PR | Trial |
-|----|-------|
-| pr-70 | caliptra-rtl-pr-70__wAESsk5 |
-| pr-786 | caliptra-rtl-pr-786__6f8QrGK |
+| Resolved Rate | 15/16 (93.8%) | 15/16 (93.8%) |
+| File-Level Precision | 93.33% | 92.86% |
 
 ## Task 级 File-Level Precision
 
 | PR | Precision | 匹配文件/修改文件 |
 |----|:---------:|:-----------------:|
+| pr-70 | 0.0% | 0/1 |
 | pr-134 | 100.0% | 3/3 |
 | pr-195 | 100.0% | 1/1 |
 | pr-252 | 100.0% | 1/1 |
@@ -42,6 +36,7 @@ mcp_v2:
 | pr-725 | 100.0% | 1/1 |
 | pr-747 | 100.0% | 1/1 |
 | pr-757 | 100.0% | 1/1 |
+| pr-786 | 100.0% | 1/1 |
 | pr-963 | 100.0% | 1/1 |
 | pr-1033 | 100.0% | 4/4 |
 | pr-1073 | 100.0% | 1/1 |
@@ -49,8 +44,14 @@ mcp_v2:
 
 ## File-Level Precision
 
-- **Overall**: 96.2%
-- **Average (per-task)**: 96.4%
+- **Overall**: 92.9%
+- **Average (per-task)**: 90.6%
+
+## 未解决 Case
+
+| PR |
+|----|
+| pr-70 |
 
 ## Token 统计（token_report.py）
 
@@ -58,17 +59,17 @@ mcp_v2:
 
 ```yaml
 token_statistics:
-  prompt_k: 4240.2
-  completion_k: 40.2
-  cache_hit_pct: 97.9
-  tool_calls: 62.3
+  prompt_k: 8040.8
+  completion_k: 56.0
+  cache_hit_pct: 98.2
+  tool_calls: 78.1
   mcp_calls: 0.0
   other_skill_calls: 0.0
-  ordinary_calls: 62.3
-  cost_usd: 0.049825
-  tasks: 14
-  resolved: 14
-  unresolved: 0
+  ordinary_calls: 78.1
+  cost_usd: 0.078789
+  tasks: 16
+  resolved: 15
+  unresolved: 1
   error: 0
   no_patch: 0
 ```
@@ -77,6 +78,7 @@ token_statistics:
 
 | Trial | Status | Prompt(K) | Comp(K) | Cost($) | Cache% | Calls | MCP | Other Skill | Ordinary |
 |-------|--------|-----------|---------|---------|--------|-------|-----|-------------|----------|
+| caliptra-rtl-pr-70__zGyENDJ | unresolved | 31541.3 | 179.8 | 0.2358 | 99.3 | 173 | 0 | 0 | 173 |
 | caliptra-rtl-pr-134__KFdgPbA | resolved | 717.9 | 10.2 | 0.0130 | 95.5 | 40 | 0 | 0 | 40 |
 | caliptra-rtl-pr-195__iKLEKBF | resolved | 6875.7 | 40.6 | 0.0662 | 97.9 | 71 | 0 | 0 | 71 |
 | caliptra-rtl-pr-252__KFesMwU | resolved | 6395.8 | 57.2 | 0.0653 | 98.8 | 81 | 0 | 0 | 81 |
@@ -87,6 +89,7 @@ token_statistics:
 | caliptra-rtl-pr-725__XmkeB88 | resolved | 1670.9 | 26.2 | 0.0301 | 96.2 | 37 | 0 | 0 | 37 |
 | caliptra-rtl-pr-747__RZmGkQh | resolved | 1799.1 | 39.8 | 0.0352 | 97.8 | 45 | 0 | 0 | 45 |
 | caliptra-rtl-pr-757__vwx6pYf | resolved | 2938.6 | 49.9 | 0.0483 | 97.8 | 57 | 0 | 0 | 57 |
+| caliptra-rtl-pr-786__PfpzFc7 | resolved | 37747.7 | 153.0 | 0.3273 | 97.8 | 204 | 0 | 0 | 204 |
 | caliptra-rtl-pr-963__xaZPCaK | resolved | 2483.2 | 39.9 | 0.0404 | 97.5 | 56 | 0 | 0 | 56 |
 | caliptra-rtl-pr-1033__6nkLk43 | resolved | 15731.0 | 50.8 | 0.1002 | 99.0 | 125 | 0 | 0 | 125 |
 | caliptra-rtl-pr-1073__6EFB6SP | resolved | 5491.3 | 64.2 | 0.0659 | 98.7 | 73 | 0 | 0 | 73 |
