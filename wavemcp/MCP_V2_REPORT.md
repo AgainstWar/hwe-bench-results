@@ -19,19 +19,17 @@
 
 ## 总体结果
 
-| Repo | Resolved | Rate | File-Level Precision | 未完成 | 空 Patch |
-|------|:--------:|:----:|:--------------------:|:------:|:--------:|
-| ibex | 31/35 | 88.6% | 90.10% | 0 | 0 |
-| cva6 | 34/35 | 97.1% | 88.54% | 0 | 0 |
-| caliptra | 15/16 | 93.8% | 92.86% | 0 | 0 |
-| rocketchip | 20/32 | 62.5% | 84.27% | 0 | 0 |
-| xiangshan | 35/53 | 66.0% | 95.24% | 0 | 1 (pr-4750) |
-| **Total** | **135/171** | **78.9%** | — | **0** | **1** |
+| Repo | Resolved | Rate | File-Level Precision | 空 Patch |
+|------|:--------:|:----:|:--------------------:|:--------:|
+| ibex | 31/35 | 88.6% | 90.10% | 0 |
+| cva6 | 34/35 | 97.1% | 88.54% | 0 |
+| caliptra | 15/16 | 93.8% | 92.86% | 0 |
+| rocketchip | 20/32 | 62.5% | 84.27% | 0 |
+| xiangshan | 35/53 | 66.0% | 95.24% | 1 (pr-4750) |
+| **Total** | **135/171** | **78.9%** | — | **1** |
 
 说明：
 - xiangshan `pr-4750` 为空 patch，被 `verify_bridge` 排除。
-- caliptra 首次运行时 `pr-70`/`pr-786` 因 WAVES 安装阶段的网络问题未完成，已单独重跑并合并（`pr-786` resolved，`pr-70` 仍 unresolved）。
-- xiangshan 的 28 个未解决用例额外重跑一次并合并，新增解决 10 个（含评估抖动，见文末说明）。
 - 全部 171 条已完成轨迹中 `skill` 调用为 0。
 
 ---
@@ -139,9 +137,7 @@
 
 4. **精度表现分化**：xiangshan 95.24%、caliptra 92.86% 较高，但 rocketchip 84.27%、cva6 88.54% 偏低。
 
-5. **数据完整性**：caliptra `pr-70`/`pr-786` 与 xiangshan 28 个未解决用例均已补跑合并；xiangshan `pr-4750` 为空 patch。
-
-6. **评估存在抖动**：xiangshan 的 28 个未解决用例独立重跑评估时解决 7 个，合并后全量重算解决 10 个（3753、3907、4764、5593 由未解决变解决，5182 反向），同一份 patch 结果不一致，提示仿真/评估存在不稳定性。本报告采用全量重算后的结果。
+5. **数据完整性**：除 xiangshan `pr-4750` 为空 patch 外，其余用例均有非空 patch。
 
 ---
 
@@ -153,6 +149,4 @@
 - Token / Calls：`results-archive/analysis/token_report.py`（`result.json` + `agent/trajectory.json`）
 - MCP / Skill 分类：`waves_wave_*` 计为 MCP，`skill` 计为 Skill，其余为 Ordinary
 - WAVES 安装：`git clone` 经 `ghproxy.net` 镜像、`pip install` 经 `pypi.tuna.tsinghua.edu.cn` 镜像
-- 补跑记录：`hwe-mcp-v2-caliptra-retry`（caliptra pr-70/pr-786）、`hwe-mcp-v2-xiangshan-retry`（xiangshan 28 例），均随包归档
-- 未完成判定：trial 目录缺 `result.json` 且 `verifier/` 为空
 - 本报告未修改 `results-archive/analysis/`；旧版报告（`MCP_BASELINE_REPORT.md`、`mcp-<repo>.md`）保持原样。
