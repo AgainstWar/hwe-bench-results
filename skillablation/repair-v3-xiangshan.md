@@ -7,9 +7,9 @@ repair_v3:
   agent: OpenCode
   model: DeepSeek V4 Flash
   skill: repair (revised, hdl-minimal-repair)
-  resolved: 30
+  resolved: 31
   total: 53
-  resolved_rate: 56.6%
+  resolved_rate: 58.5%
   file_level_precision: 99.01%
   infra_errors: 0
 ```
@@ -18,7 +18,7 @@ repair_v3:
 
 | 指标 | Baseline V2 | Repair V3 |
 |------|:-----------:|:---------:|
-| Resolved Rate | 32/53 (60.4%) | 30/53 (56.6%) |
+| Resolved Rate | 32/53 (60.4%) | 31/53 (58.5%) |
 | File-Level Precision | 93.64% | 99.01% |
 
 ## Task 级 File-Level Precision
@@ -91,7 +91,6 @@ repair_v3:
 | pr-655 |
 | pr-1242 |
 | pr-1323 |
-| pr-1401 |
 | pr-1694 |
 | pr-1907 |
 | pr-2195 |
@@ -127,8 +126,8 @@ token_statistics:
   ordinary_calls: 44.1
   cost_usd: 0.035388
   tasks: 53
-  resolved: 30
-  unresolved: 23
+  resolved: 31
+  unresolved: 22
   error: 0
   no_patch: 0
 ```

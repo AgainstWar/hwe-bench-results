@@ -7,9 +7,9 @@ repair_v3:
   agent: OpenCode
   model: DeepSeek V4 Flash
   skill: repair (revised, hdl-minimal-repair)
-  resolved: 23
+  resolved: 25
   total: 32
-  resolved_rate: 71.9%
+  resolved_rate: 78.1%
   file_level_precision: 92.42%
   infra_errors: 0
 ```
@@ -18,7 +18,7 @@ repair_v3:
 
 | 指标 | Baseline V2 | Repair V3 |
 |------|:-----------:|:---------:|
-| Resolved Rate | 20/32 (62.5%) | 23/32 (71.9%) |
+| Resolved Rate | 20/32 (62.5%) | 25/32 (78.1%) |
 | File-Level Precision | 94.52% | 92.42% |
 
 ## Task 级 File-Level Precision
@@ -73,9 +73,7 @@ repair_v3:
 | pr-2036 |
 | pr-2167 |
 | pr-3256 |
-| pr-3526 |
 | pr-3624 |
-| pr-3651 |
 
 ## Token 统计（token_report.py）
 
@@ -92,8 +90,8 @@ token_statistics:
   ordinary_calls: 55.3
   cost_usd: 0.036150
   tasks: 32
-  resolved: 23
-  unresolved: 9
+  resolved: 25
+  unresolved: 7
   error: 0
   no_patch: 0
 ```
@@ -130,8 +128,8 @@ token_statistics:
 | rocket-chip-pr-3004__8v5nL5C | resolved | 1409.6 | 4.3 | 0.0180 | 95.8 | 42 | 0 | 2 | 40 |
 | rocket-chip-pr-3065__RYK6dZd | resolved | 1728.3 | 4.5 | 0.0228 | 96.8 | 35 | 0 | 2 | 33 |
 | rocket-chip-pr-3256__RBdcHGK | unresolved | 378.7 | 2.0 | 0.0112 | 89.7 | 18 | 0 | 1 | 17 |
-| rocket-chip-pr-3526__bxR3UTc | unresolved | 579.5 | 2.6 | 0.0111 | 94.3 | 23 | 0 | 1 | 22 |
+| rocket-chip-pr-3526__bxR3UTc | resolved | 579.5 | 2.6 | 0.0111 | 94.3 | 23 | 0 | 1 | 22 |
 | rocket-chip-pr-3600__4F2fF2J | resolved | 2217.1 | 4.8 | 0.0330 | 97.5 | 44 | 0 | 1 | 43 |
 | rocket-chip-pr-3624__mzD4JQU | unresolved | 1318.3 | 6.4 | 0.0199 | 96.2 | 59 | 0 | 2 | 57 |
-| rocket-chip-pr-3651__A8hUTG2 | unresolved | 502.7 | 1.9 | 0.0138 | 90.5 | 18 | 0 | 1 | 17 |
+| rocket-chip-pr-3651__A8hUTG2 | resolved | 502.7 | 1.9 | 0.0138 | 90.5 | 18 | 0 | 1 | 17 |
 
